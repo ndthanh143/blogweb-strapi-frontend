@@ -22,7 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
   return new Promise(() => {
     req.headers.cookie = '';
 
-    const handleRegisterResponse: ProxyResCallback = (proxyResponse, req, res) => {
+    const handleLoginResponse: ProxyResCallback = (proxyResponse, req, res) => {
       let apiResponseBody = '';
 
       proxyResponse.on('data', (chunk) => {
@@ -60,7 +60,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     };
 
     const handleProxyInit = (proxy: any) => {
-      proxy.on('proxyRes', handleRegisterResponse);
+      proxy.on('proxyRes', handleLoginResponse);
     };
 
     httpProxyMiddleware(req, res, {
