@@ -29,7 +29,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
       proxyResponse.on('data', (chunk) => {
         console.log('chunk', chunk);
-        apiResponseBody += decoder.write(chunk);
+        console.log('zzzz', decoder.write(chunk));
+        apiResponseBody = decoder.write(chunk);
+        console.log('apiResponseBody', apiResponseBody);
       });
 
       proxyResponse.on('end', () => {
