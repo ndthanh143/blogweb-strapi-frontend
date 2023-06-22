@@ -31,7 +31,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
       proxyResponse.on('end', () => {
         try {
-          const { jwt } = JSON.parse(apiResponseBody);
+          const data = JSON.parse(apiResponseBody);
+
+          console.log('data', data);
+
+          const { jwt } = data;
 
           if (!jwt) {
             (res as NextApiResponse).status(401).json({ message: 'invalid username or password' });
