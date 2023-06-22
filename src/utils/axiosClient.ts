@@ -13,6 +13,7 @@ export const axiosClient = axios.create({
   headers: {
     'Content-Type': 'application/json;charset=utf-8',
   },
+  responseEncoding: 'utf8',
 });
 
 axiosServer.interceptors.response.use(

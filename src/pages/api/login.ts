@@ -33,6 +33,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
         console.log('hahahaha', apiResponseBody);
         try {
           const sanitizedString = apiResponseBody.replace(/[\u0000-\u001F\u0080-\u009F]/g, '');
+          console.log('hehehe', sanitizedString);
 
           const data = JSON.parse(sanitizedString);
 
