@@ -2,6 +2,8 @@ import Cookies from 'cookies';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import httpProxyMiddleware from 'next-http-proxy-middleware';
 import { ProxyResCallback } from 'http-proxy';
+import { StringDecoder } from 'string_decoder';
+const decoder = new StringDecoder('utf8');
 
 export const config = {
   api: {
@@ -26,18 +28,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       let apiResponseBody = '';
 
       proxyResponse.on('data', (chunk) => {
-        apiResponseBody += chunk;
+        console.log('chunk', chunk);
+        apiResponseBody += decoder.write(chunk);
       });
 
       proxyResponse.on('end', () => {
         console.log('hahahaha', apiResponseBody);
         try {
-          const sanitizedString = apiResponseBody.replace(/[\u0000-\u001F\u0080-\u009F]/g, '');
-          console.log('hehehe', sanitizedString);
-
-          const data = JSON.parse(sanitizedString);
-
-          console.log('data', data);
+          const data = JSON.parse(apiResponseBody);
 
           const { jwt } = data;
 
