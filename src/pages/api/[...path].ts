@@ -1,3 +1,4 @@
+import { rejects } from 'assert';
 import Cookies from 'cookies';
 import httpProxy, { ProxyResCallback } from 'http-proxy';
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -34,14 +35,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
           const data = JSON.parse(apiResponseBody);
           if (data.data === null) {
             (res as NextApiResponse).status(400).json({ message: 'oops, something went wrong' });
+          } else {
+            (res as NextApiResponse).status(200).json(data);
           }
-
-          (res as NextApiResponse).status(200).json(data);
         } catch (error) {
           (res as NextApiResponse).status(400).json({ message: 'oops, something went wrong' });
         }
-
-        resolve(true);
+        return res.end();
       });
     };
     const handleProxyInit = (proxy: any) => {

@@ -10,6 +10,7 @@ import { Button, Card, Slider, Seo } from '@/components';
 
 const PAGE_SIZE = 6;
 export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProps>) {
+  console.log('Hahaha');
   const { t } = useTranslation('home');
 
   const dispatch = useAppDispatch();

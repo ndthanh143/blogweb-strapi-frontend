@@ -4,8 +4,6 @@ import { axiosServer } from '@/utils/axiosClient';
 export const getCategoriesAPI = async () => {
   const { data } = await axiosServer.get<CategoriesResponse>('/categories', { params: { populate: '*' } });
 
-  console.log(data);
-
   return data;
 };
 

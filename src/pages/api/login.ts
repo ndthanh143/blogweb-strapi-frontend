@@ -19,7 +19,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     return res.status(404).json({ message: 'method not supported' });
   }
 
-  return new Promise((resolve, rejects) => {
+  return new Promise(() => {
     req.headers.cookie = '';
 
     const handleRegisterResponse: ProxyResCallback = (proxyResponse, req, res) => {
@@ -35,23 +35,22 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
           if (!jwt) {
             (res as NextApiResponse).status(401).json({ message: 'invalid username or password' });
-            rejects(true);
+            return res.end();
+          } else {
+            const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV !== 'development' });
+
+            cookies.set('access_token', jwt, {
+              httpOnly: true,
+              sameSite: 'lax',
+            });
+            (res as NextApiResponse).status(200).json({ message: 'login successfully' });
           }
-
-          const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV !== 'development' });
-
-          cookies.set('access_token', jwt, {
-            httpOnly: true,
-            sameSite: 'none',
-          });
-
-          (res as NextApiResponse).status(200).json({ message: 'login successfully' });
         } catch (error) {
           console.log(error);
           (res as NextApiResponse).status(400).json({ message: 'oops, something went wrong' });
         }
 
-        resolve(true);
+        return res.end();
       });
     };
 

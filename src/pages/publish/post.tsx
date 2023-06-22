@@ -24,8 +24,6 @@ const schema = object({
 
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
 export default function PostBlog() {
-  console.log('hahaa', process.env.NEXT_PUBLIC_API_URL);
-
   const { t } = useTranslation('publish.post');
 
   const { user } = useAuth({ redirectTo: '/login' });

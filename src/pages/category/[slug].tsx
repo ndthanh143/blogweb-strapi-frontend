@@ -26,8 +26,6 @@ export default function Category() {
 
   const { slug } = router.query;
 
-  console.log('object', categories);
-
   useEffect(() => {
     if (!category || category.slug !== slug) {
       dispatch(getCategoryDetail(slug as string));
@@ -96,8 +94,6 @@ Category.Layout = 'Main';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await getCategoriesAPI();
-
-  console.log('hahaa', data);
 
   const paths = data.map((item) => ({
     params: {
