@@ -1,9 +1,7 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import Cookies from 'cookies';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import httpProxyMiddleware from 'next-http-proxy-middleware';
-import { ProxyResCallback } from 'http-proxy';
-import { StringDecoder } from 'string_decoder';
-const decoder = new StringDecoder('utf8');
+import httpProxy, { ProxyResCallback } from 'http-proxy';
 
 export const config = {
   api: {
@@ -12,30 +10,27 @@ export const config = {
 };
 
 type Data = {
-  token?: string;
   message: string;
 };
 
+const proxy = httpProxy.createProxyServer();
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  if (req.method != 'POST') {
+  if (req.method !== 'POST') {
     return res.status(404).json({ message: 'method not supported' });
   }
 
-  return new Promise(() => {
+  return new Promise((resolve) => {
+    // don't forward cookie
     req.headers.cookie = '';
 
     const handleLoginResponse: ProxyResCallback = (proxyResponse, req, res) => {
       let apiResponseBody = '';
-
       proxyResponse.on('data', (chunk) => {
-        console.log('chunk', chunk);
-        console.log('zzzz', decoder.write(chunk));
-        apiResponseBody += decoder.write(chunk);
-        console.log('apiResponseBody', apiResponseBody);
+        apiResponseBody += chunk;
       });
 
       proxyResponse.on('end', () => {
-        console.log('hahahaha', apiResponseBody);
         try {
           const data = JSON.parse(apiResponseBody);
 
@@ -62,21 +57,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       });
     };
 
-    const handleProxyInit = (proxy: any) => {
-      proxy.on('proxyRes', handleLoginResponse);
-    };
-
-    httpProxyMiddleware(req, res, {
+    proxy.on('proxyRes', handleLoginResponse);
+    proxy.web(req, res, {
       target: process.env.NEXT_PUBLIC_API_URL,
-      pathRewrite: [
-        {
-          patternStr: '^/api/login',
-          replaceStr: '/api/auth/local',
-        },
-      ],
-      selfHandleResponse: true,
+      autoRewrite: false,
       changeOrigin: true,
-      onProxyInit: handleProxyInit,
+      selfHandleResponse: true,
     });
   });
 }
