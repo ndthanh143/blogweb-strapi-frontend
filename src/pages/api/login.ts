@@ -30,6 +30,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       });
 
       proxyResponse.on('end', () => {
+        console.log('hahahaha', apiResponseBody);
         try {
           const data = JSON.parse(apiResponseBody);
 
