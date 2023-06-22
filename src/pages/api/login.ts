@@ -4,6 +4,7 @@ import httpProxyMiddleware from 'next-http-proxy-middleware';
 import { ProxyResCallback } from 'http-proxy';
 import { StringDecoder } from 'string_decoder';
 const decoder = new StringDecoder('utf8');
+const iconv = require('iconv-lite');
 
 export const config = {
   api: {
@@ -29,8 +30,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
       proxyResponse.on('data', (chunk) => {
         console.log('chunk', chunk);
-        console.log('zzzz', decoder.write(chunk));
-        apiResponseBody += decoder.write(chunk);
+        const encodedBuffer = Buffer.from(chunk, 'binary');
+        console.log('zzzz', iconv.decode(encodedBuffer, 'utf-8'));
+        apiResponseBody += iconv.decode(encodedBuffer, 'utf-8');
         console.log('apiResponseBody', apiResponseBody);
       });
 
