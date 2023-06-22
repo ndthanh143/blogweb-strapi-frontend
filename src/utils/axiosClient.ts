@@ -11,7 +11,7 @@ export const axiosServer = axios.create({
 export const axiosClient = axios.create({
   baseURL: '/api',
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json;charset=utf-8',
   },
 });
 
@@ -27,10 +27,6 @@ axiosServer.interceptors.response.use(
 
 axiosClient.interceptors.response.use(
   function (response) {
-    var ctype: string = response.headers['content-type'];
-    response.data = ctype.includes('charset=GB2312')
-      ? iconv.decode(response.data, 'gb2312')
-      : iconv.decode(response.data, 'utf-8');
     return response;
   },
 

@@ -32,7 +32,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       proxyResponse.on('end', () => {
         console.log('hahahaha', apiResponseBody);
         try {
-          const data = JSON.parse(apiResponseBody);
+          const sanitizedString = apiResponseBody.replace(/[\u0000-\u001F\u0080-\u009F]/g, '');
+
+          const data = JSON.parse(sanitizedString);
 
           console.log('data', data);
 
