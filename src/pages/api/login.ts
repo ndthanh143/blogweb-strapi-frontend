@@ -42,7 +42,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
           cookies.set('access_token', jwt, {
             httpOnly: true,
-            sameSite: 'lax',
+            sameSite: 'none',
           });
 
           (res as NextApiResponse).status(200).json({ message: 'login successfully' });
