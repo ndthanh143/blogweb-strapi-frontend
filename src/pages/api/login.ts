@@ -47,6 +47,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
           (res as NextApiResponse).status(200).json({ message: 'login successfully' });
         } catch (error) {
+          console.log(error);
           (res as NextApiResponse).status(400).json({ message: 'oops, something went wrong' });
         }
 
