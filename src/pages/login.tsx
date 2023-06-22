@@ -21,7 +21,7 @@ const schema = object({
 });
 
 export default function Login() {
-  console.log('2');
+  console.log('3');
   const { t } = useTranslation('login');
 
   const router = useRouter();
