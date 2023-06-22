@@ -1,0 +1,35 @@
+{
+    "plugins": ["react"],
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:storybook/recommended",
+        "plugin:storybook/recommended",
+        "plugin:storybook/recommended"
+    ],
+    "rules": {
+        "indent": [2, 2],
+        "quotes": [2, "single"],
+        "camelcase": [
+            2,
+            {
+                "properties": "always"
+            }
+        ],
+        "react/jsx-uses-react": 2,
+        "react/display-name": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "arguments": true
+    }
+}

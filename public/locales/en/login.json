@@ -1,0 +1,8 @@
+{
+  "title": "Login into Go Blog",
+  "forgotPassword": "Forgot password",
+  "register": "Register",
+  "login": "Login",
+  "error": "Wrong username/email or password !",
+  "password": "Password"
+}
