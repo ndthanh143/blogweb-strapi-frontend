@@ -1,4 +1,5 @@
 import axios from 'axios';
+import iconv from 'iconv-lite';
 
 export const axiosServer = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api`,
@@ -12,7 +13,6 @@ export const axiosClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 15000,
 });
 
 axiosServer.interceptors.response.use(
@@ -27,6 +27,10 @@ axiosServer.interceptors.response.use(
 
 axiosClient.interceptors.response.use(
   function (response) {
+    var ctype: string = response.headers['content-type'];
+    response.data = ctype.includes('charset=GB2312')
+      ? iconv.decode(response.data, 'gb2312')
+      : iconv.decode(response.data, 'utf-8');
     return response;
   },
 
