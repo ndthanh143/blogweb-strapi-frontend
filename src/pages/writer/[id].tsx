@@ -1,7 +1,7 @@
 import { storeWrapper, useAppSelector } from '@/redux/store';
 import { getStrapiMedia } from '@/utils/media';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { getUserDetail } from '@/redux/features/users/userSlice';

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import iconv from 'iconv-lite';
 
 export const axiosServer = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api`,

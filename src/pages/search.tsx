@@ -1,7 +1,7 @@
 import { searchArticles } from '@/redux/features/articles/articlesSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import cx from 'classnames';
 import Link from 'next/link';
 import { BiSearch } from 'react-icons/bi';

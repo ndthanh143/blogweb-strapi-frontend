@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { Avatar, Label } from '@/components';
 import cx from 'classnames';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { GetStaticPaths } from 'next';
 import { getCategoryDetail } from '@/redux/features/categories/categorySlice';
@@ -25,17 +25,11 @@ export default function Category() {
   const { data: category, loading: categoryLoading } = useAppSelector((state) => state.categoryDetail);
 
   const { slug } = router.query;
-
   useEffect(() => {
     if (!category || category.slug !== slug) {
       dispatch(getCategoryDetail(slug as string));
     }
-    if (categories.length === 0) {
-      dispatch(getCategories());
-    }
-  }, [dispatch, category, slug, categories.length]);
-
-  if (!category || !categories) return null;
+  }, [dispatch, category, slug]);
 
   const loading = categoryLoading;
 
@@ -105,6 +99,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = storeWrapper.getStaticProps(({ dispatch }) => async ({ params, locale }) => {
+  // await dispatch(getCategories());
   await dispatch(getCategoryDetail(params?.slug as string));
 
   return {

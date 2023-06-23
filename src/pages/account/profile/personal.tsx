@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { UpdateUserPayload } from '@/services/user/users.dto';
 import { getStrapiMedia } from '@/utils/media';
 import { yupResolver } from '@hookform/resolvers/yup';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { mixed, object, string } from 'yup';
 import { ToastContainer, toast } from 'react-toastify';

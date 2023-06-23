@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
 import cx from 'classnames';
 

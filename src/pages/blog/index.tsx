@@ -1,4 +1,4 @@
-import React, { GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function AllPost() {

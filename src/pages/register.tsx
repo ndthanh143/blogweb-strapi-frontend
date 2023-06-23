@@ -10,7 +10,7 @@ import { MdEmail } from 'react-icons/md';
 import { object, ref, string } from 'yup';
 import cx from 'classnames';
 import { useAuth } from '@/hooks/useAuth';
-import React, { useEffect, useTransition } from 'react';
+import { useEffect, useTransition } from 'react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';

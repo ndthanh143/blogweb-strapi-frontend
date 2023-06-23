@@ -26,10 +26,10 @@ export function Footer() {
   };
 
   useEffect(() => {
-    if (data.length === 0) {
+    if (!data) {
       dispatch(getCategories());
     }
-  }, [dispatch, data.length]);
+  }, [dispatch, data]);
 
   return (
     <div className="bg-footer-color dark:bg-footer-color-dark">

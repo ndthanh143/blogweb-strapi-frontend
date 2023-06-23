@@ -29,14 +29,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       let apiResponseBody = '';
 
       proxyResponse.on('data', (chunk) => {
-        console.log('chunk', chunk);
-        const encodedBuffer = Buffer.from(chunk, 'binary');
-        apiResponseBody += encodedBuffer.toJSON();
-        console.log('apiResponseBody', apiResponseBody);
+        const bufferAsString = chunk.toString('utf-8');
+        apiResponseBody += bufferAsString;
       });
 
       proxyResponse.on('end', () => {
-        console.log('hahahaha', apiResponseBody);
         try {
           const data = JSON.parse(apiResponseBody);
 
