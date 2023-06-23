@@ -1,3 +1,4 @@
+import React from 'react';
 import { NextPage, NextPageContext } from 'next';
 
 interface Props {

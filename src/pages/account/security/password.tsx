@@ -2,7 +2,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useAppDispatch } from '@/redux/store';
 import { ChangePasswordPayload } from '@/services/auth/auth.dto';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { object, ref, string } from 'yup';
 import { resetStateChangePassword } from '@/redux/features/auth/authSlice';

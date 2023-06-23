@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { GetStaticPaths } from 'next';
 import { getCategoryDetail } from '@/redux/features/categories/categorySlice';

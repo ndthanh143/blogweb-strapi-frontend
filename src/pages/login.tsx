@@ -7,7 +7,7 @@ import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useRouter } from 'next/router';
 import { LoginPayload } from '@/services/auth/auth.dto';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { SEO } from '@/services/homepage/homepage.dto';
 import { useAuth } from '@/hooks/useAuth';
 import { GetStaticProps } from 'next';

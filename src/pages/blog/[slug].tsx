@@ -9,7 +9,7 @@ import { SEO } from '@/services/homepage/homepage.dto';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import { useArticle } from '@/hooks/useArticle';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCommentsArticle } from '@/redux/features/comments/commentsSlice';
 import dynamic from 'next/dynamic';
 import { useAuth } from '@/hooks/useAuth';
