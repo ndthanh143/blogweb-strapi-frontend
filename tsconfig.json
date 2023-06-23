@@ -19,6 +19,6 @@
       "react": ["./node_modules/@types/react"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/redux/store.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/redux/store.ts", "src/pages/sitemap.xml.js"],
   "exclude": ["node_modules"]
 }

@@ -31,8 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       proxyResponse.on('data', (chunk) => {
         console.log('chunk', chunk);
         const encodedBuffer = Buffer.from(chunk, 'binary');
-        console.log('zzzz', iconv.decode(encodedBuffer, 'utf-8'));
-        apiResponseBody += iconv.decode(encodedBuffer, 'utf-8');
+        apiResponseBody += encodedBuffer.toJSON();
         console.log('apiResponseBody', apiResponseBody);
       });
 

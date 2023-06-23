@@ -5,7 +5,7 @@ import { Avatar } from '../user/users.dto';
 import { PaginationOption } from '@/dtos/api.dto';
 import { OrderEnum } from '@/constants';
 
-export const getArticlesAPI = async ({ page, pageSize }: PaginationOption) => {
+export const getArticlesAPI = async ({ page, pageSize }: PaginationOption = {}) => {
   const { data } = await axiosServer.get<ArticlesResponse>('/articles', {
     params: {
       populate: {

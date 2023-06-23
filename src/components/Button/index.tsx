@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
 import cx from 'classnames';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
