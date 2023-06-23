@@ -2,8 +2,8 @@ import { AuthorResponse } from '@/dtos/author.dto';
 import { ArticleResponse } from '../article/article.dto';
 import { BasePaginationResponse, BaseSingleResponse } from '@/dtos/base';
 
-export type CommentsResponse = BasePaginationResponse<Comment>;
-export type CommentResponse = BaseSingleResponse<Comment>;
+export type CommentsResponse = BasePaginationResponse<CommentAttribute>;
+export type CommentResponse = BaseSingleResponse<CommentAttribute>;
 
 export type CommentPayload = {
   data: {
@@ -13,7 +13,7 @@ export type CommentPayload = {
   };
 };
 
-export interface Comment {
+export interface CommentAttribute {
   content: string;
   article: ArticleResponse;
   user: AuthorResponse;

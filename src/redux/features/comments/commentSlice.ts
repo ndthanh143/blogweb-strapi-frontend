@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { BaseResponseData } from '@/dtos/base';
-import { Comment, CommentPayload } from '@/services/comment/comment.dto';
+import { CommentAttribute, CommentPayload } from '@/services/comment/comment.dto';
 import { createCommentAPI, deleteCommentAPI } from '@/services/comment/comment.service';
-import { stat } from 'fs';
 
 interface CommentState {
   isPostSuccess: boolean;

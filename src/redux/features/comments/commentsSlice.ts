@@ -1,10 +1,10 @@
 import { BaseResponseData } from '@/dtos/base';
-import { Comment } from '@/services/comment/comment.dto';
+import { CommentAttribute } from '@/services/comment/comment.dto';
 import { getCommentsArticleAPI } from '@/services/comment/comment.service';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 interface CommentsState {
-  data: BaseResponseData<Comment>[];
+  data: BaseResponseData<CommentAttribute>[];
   loading: boolean;
   error: boolean;
 }

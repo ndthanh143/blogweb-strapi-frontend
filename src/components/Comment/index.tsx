@@ -1,4 +1,4 @@
-import { Comment } from '@/services/comment/comment.dto';
+import { CommentAttribute } from '@/services/comment/comment.dto';
 import { Avatar, Popper } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import moment from 'moment';
@@ -8,12 +8,12 @@ import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi';
 import useBoolean from '@/hooks/useBoolean';
 import { useAuth } from '@/hooks/useAuth';
 
-export interface CommentProps {
-  data: Comment;
+export interface ICommentProps {
+  data: CommentAttribute;
   onDelete?: () => void;
 }
 
-export function Comment({ data, onDelete }: CommentProps) {
+export function Comment({ data, onDelete }: ICommentProps) {
   const { user } = useAuth();
 
   const { value, setFalse, toggle } = useBoolean(false);
