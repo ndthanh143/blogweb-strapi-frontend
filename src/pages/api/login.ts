@@ -29,8 +29,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       let apiResponseBody = '';
 
       proxyResponse.on('data', (chunk) => {
-        const bufferAsString = chunk.toString('utf-8');
-        apiResponseBody += bufferAsString;
+        apiResponseBody += chunk;
       });
 
       proxyResponse.on('end', () => {

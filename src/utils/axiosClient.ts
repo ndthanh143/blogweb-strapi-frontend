@@ -12,6 +12,7 @@ export const axiosClient = axios.create({
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
+  timeout: 15000,
 });
 
 axiosServer.interceptors.response.use(
