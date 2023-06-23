@@ -38,6 +38,7 @@ const SliderNextArrow = ({ onClick }: ArrowProps) => {
 };
 
 export function Slider({ data }: SliderProps) {
+  console.log('reeerender');
   return (
     <div className="rounded-lg">
       <SliderSlick

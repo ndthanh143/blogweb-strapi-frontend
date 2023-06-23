@@ -6,15 +6,15 @@ import { storeWrapper } from '@/redux/store';
 import Head from 'next/head';
 import { GlobalAttributes } from '@/services/global/global.dto';
 import { NextPage } from 'next';
-import NProgress from 'nprogress';
 import { Router } from 'next/router';
 import App from 'next/app';
 import { getGlobal } from '@/services/global/global.service';
 import { appWithTranslation } from 'next-i18next';
-import { Layouts, Seo, AuthProvider } from '@/components';
-import '@/styles/globals.css';
+import { Seo, AuthProvider, Layouts } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import { LayoutKeys } from '@/dtos/layout.dto';
+import NProgress from 'nprogress';
+import '@/styles/globals.css';
 
 export type NextComponentType<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -49,7 +49,7 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
         <link
           rel="shortcut icon"
           href={getStrapiMedia(global.attributes.favicon.data.attributes.formats.thumbnail)}
-          hrefLang="en-US"
+          hrefLang="en"
         />
         <link
           rel="shortcut icon"

@@ -1,3 +1,3 @@
-import { Layouts } from '@/components';
+import { Layouts } from '@/components/Layout';
 
 export type LayoutKeys = keyof typeof Layouts;

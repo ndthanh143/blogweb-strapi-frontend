@@ -12,12 +12,12 @@ import { object, string } from 'yup';
 import { searchUsers } from '@/redux/features/users/usersSlice';
 import { getStrapiMedia } from '@/utils/media';
 import { FaPencilAlt } from 'react-icons/fa';
-import scrollToTop from '@/utils/scrollToTop';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Avatar, Button, Card, Input, Pagination, Select, SearchPayload } from '@/components';
 import { ORDER_OPTIONS, OrderEnum } from '@/constants';
+import scrollToTop from '@/utils/scrollToTop';
 
 const PAGE_SIZE = 3;
 

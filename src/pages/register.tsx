@@ -1,5 +1,5 @@
 import Logo from '@/assets/logo';
-import { postRegister } from '@/redux/features/auth/authSlice';
+import { postRegister, resetStateError } from '@/redux/features/auth/authSlice';
 import { useAppDispatch } from '@/redux/store';
 import { RegisterPayload } from '@/services/auth/auth.dto';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -64,6 +64,12 @@ export default function SignUp() {
       router.push('/');
     }
   }, [user, router, loading]);
+
+  useEffect(() => {
+    if (error) {
+      dispatch(resetStateError());
+    }
+  }, []);
 
   return (
     <div className="h-screen flex items-center justify-center text-center">

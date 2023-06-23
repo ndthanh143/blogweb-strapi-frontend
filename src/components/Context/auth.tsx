@@ -1,4 +1,11 @@
-import { getMe, postChangePassword, postLogin, postLogout, postRegister } from '@/redux/features/auth/authSlice';
+import {
+  getMe,
+  postChangePassword,
+  postLogin,
+  postLogout,
+  postRegister,
+  resetStateError,
+} from '@/redux/features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { ChangePasswordPayload, LoginPayload, RegisterPayload } from '@/services/auth/auth.dto';
 import { UserResponseData } from '@/services/user/users.dto';
@@ -10,7 +17,7 @@ type AuthContextProps = {
   loading: boolean;
   error: boolean;
   isAuthenticated?: boolean;
-  isPasswordChanged: boolean;
+  isPasswordChanged?: boolean;
   login: (payload: LoginPayload) => void;
   logout: () => void;
   register: (payload: RegisterPayload) => void;
@@ -20,8 +27,6 @@ type AuthContextProps = {
 const defaultValue: AuthContextProps = {
   loading: false,
   error: false,
-  isAuthenticated: false,
-  isPasswordChanged: false,
   user: null,
   login: () => {},
   logout: () => {},

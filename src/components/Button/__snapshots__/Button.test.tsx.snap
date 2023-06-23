@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Button component should render correctly 1`] = `
-<button
-  className="bg-color-primary text-white hover:bg-color-primary-hover active:color-primary-active flex justify-center items-center border-transparent py-2 px-4 rounded-md font-semibold border"
->
-  Hello
-</button>
-`;

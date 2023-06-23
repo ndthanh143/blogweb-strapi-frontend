@@ -1,7 +1,7 @@
 import Logo from '@/assets/logo';
 import Link from 'next/link';
 import { FaLock } from 'react-icons/fa';
-import { FaFacebook, FaGithub, FaGoogle, FaUser } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -14,6 +14,8 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Button, Input, Seo } from '@/components';
+import { useAppDispatch } from '@/redux/store';
+import { resetStateError } from '@/redux/features/auth/authSlice';
 
 const schema = object({
   identifier: string().required('Required'),
@@ -21,10 +23,11 @@ const schema = object({
 });
 
 export default function Login() {
-  console.log('3');
   const { t } = useTranslation('login');
 
   const router = useRouter();
+
+  const dispatch = useAppDispatch();
 
   const { user, loading, error, login } = useAuth();
 
@@ -50,6 +53,12 @@ export default function Login() {
       router.push('/');
     }
   }, [user, router, loading]);
+
+  useEffect(() => {
+    if (error) {
+      dispatch(resetStateError());
+    }
+  }, []);
 
   return (
     <>

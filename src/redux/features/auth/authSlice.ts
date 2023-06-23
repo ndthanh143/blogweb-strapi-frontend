@@ -9,7 +9,7 @@ export interface AuthState {
   loading: boolean;
   error: boolean;
   isAuthenticated?: boolean;
-  isPasswordChanged: boolean;
+  isPasswordChanged?: boolean;
 }
 
 const initialState: AuthState = {
@@ -35,6 +35,9 @@ export const authSlice = createSlice({
   reducers: {
     resetStateChangePassword: (state) => {
       state.isPasswordChanged = false;
+    },
+    resetStateError: (state) => {
+      state.error = false;
     },
   },
   extraReducers: (builder) => {
@@ -85,7 +88,6 @@ export const authSlice = createSlice({
       .addCase(postRegister.fulfilled, (state, action) => {
         state.loading = false;
         state.isAuthenticated = true;
-        state.loading = false;
       })
       .addCase(postRegister.rejected, (state, action) => {
         state.loading = false;
@@ -107,5 +109,5 @@ export const authSlice = createSlice({
   },
 });
 
-export const { resetStateChangePassword } = authSlice.actions;
+export const { resetStateChangePassword, resetStateError } = authSlice.actions;
 export default authSlice.reducer;

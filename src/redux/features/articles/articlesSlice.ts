@@ -43,7 +43,7 @@ export const articlesSlice = createSlice({
   initialState,
   reducers: {
     addMoreData: (state, action) => {
-      state.data = state.data.concat(action.payload.data);
+      state.data = [...state.data, ...action.payload.data];
       if (state.data.length === action.payload.meta.pagination.total) {
         state.isMaximum = true;
       }
@@ -76,7 +76,7 @@ export const articlesSlice = createSlice({
         state.loading = true;
       })
       .addCase(getMoreArticles.fulfilled, (state, action) => {
-        state.data = state.data.concat(action.payload.data);
+        state.data = [...state.data, ...action.payload.data];
         if (state.data.length === action.payload.meta.pagination.total) {
           state.isMaximum = true;
         }
