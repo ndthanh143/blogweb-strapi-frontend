@@ -41,7 +41,7 @@ export function Card({ title, thumbnail, slug, category, author, publishedAt, cl
               <Image
                 src={getStrapiMedia(
                   thumbnail.data.attributes.formats.small || thumbnail.data.attributes.formats.thumbnail,
-                )}
+                ).replace(/\/v\d+\//g, '/q_60/')}
                 alt={thumbnail.data.attributes.alternativeText || ''}
                 fill
                 style={{ objectFit: 'cover' }}

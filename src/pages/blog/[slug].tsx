@@ -69,7 +69,7 @@ export default function Post() {
   };
 
   let content = data?.attributes.content.replaceAll(/\/uploads/g, `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`);
-  content = content?.replaceAll(/\/v\d+\//, '/q_60/');
+  content = content?.replaceAll(/\/v\d+\//g, '/q_60/');
 
   return (
     data && (

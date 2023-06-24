@@ -58,7 +58,7 @@ export function Slider({ data }: SliderProps) {
                   item.attributes.thumbnail.data.attributes.formats.medium ||
                   item.attributes.thumbnail.data.attributes.formats.small ||
                   item.attributes.thumbnail.data.attributes.formats.thumbnail,
-              ).replace(/\/v\d+\//, '/q_60/')}
+              ).replace(/\/v\d+\//g, '/q_60/')}
               alt={item.attributes.thumbnail.data.attributes.alternativeText || ''}
               fill
               style={{
@@ -82,7 +82,7 @@ export function Slider({ data }: SliderProps) {
                       item.attributes.author.data.attributes.avatar?.data &&
                       getStrapiMedia(
                         item.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail,
-                      ).replace(/\/v\d+\//, '/q_60/')
+                      ).replace(/\/v\d+\//g, '/q_60/')
                     }
                     width={40}
                     height={40}
