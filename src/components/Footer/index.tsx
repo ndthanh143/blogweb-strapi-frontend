@@ -26,10 +26,10 @@ export function Footer() {
   };
 
   useEffect(() => {
-    if (!data) {
+    if (data.length === 0) {
       dispatch(getCategories());
     }
-  }, [dispatch, data]);
+  }, [data.length, dispatch]);
 
   return (
     <div className="bg-footer-color dark:bg-footer-color-dark">
@@ -63,15 +63,16 @@ export function Footer() {
           </div>
           <div className="lg:col-span-1 text-color-medium dark:text-color-medium-dark text-sm py-4">
             <h1 className="text-color-bold dark:text-color-bold-dark text-base font-bold mb-3">{translate.category}</h1>
-            {data.map((item) => (
-              <Link
-                href={`/category/${item.attributes.slug}`}
-                className="mb-2 hover:text-red-500 block w-full"
-                key={item.id}
-              >
-                {item.attributes.name}
-              </Link>
-            ))}
+            {data.length > 0 &&
+              data.map((item) => (
+                <Link
+                  href={`/category/${item.attributes.slug}`}
+                  className="mb-2 hover:text-red-500 block w-full"
+                  key={item.id}
+                >
+                  {item.attributes.name}
+                </Link>
+              ))}
           </div>
           <div className="lg:col-span-2 bg-white text-center px-6 rounded-lg dark:bg-input-dark py-4">
             <h1 className="font-bold mb-1 dark:text-color-bold-dark">Weekly Newsletter</h1>

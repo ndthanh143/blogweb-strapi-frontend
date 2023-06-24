@@ -58,6 +58,7 @@ export default function Login() {
     if (error) {
       dispatch(resetStateError());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

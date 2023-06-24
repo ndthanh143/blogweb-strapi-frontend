@@ -38,7 +38,6 @@ const SliderNextArrow = ({ onClick }: ArrowProps) => {
 };
 
 export function Slider({ data }: SliderProps) {
-  console.log('reeerender');
   return (
     <div className="rounded-lg">
       <SliderSlick
@@ -59,8 +58,8 @@ export function Slider({ data }: SliderProps) {
                   item.attributes.thumbnail.data.attributes.formats.medium ||
                   item.attributes.thumbnail.data.attributes.formats.small ||
                   item.attributes.thumbnail.data.attributes.formats.thumbnail,
-              )}
-              alt={item.attributes.title}
+              ).replace(/\/v\d+\//, '/q_60/')}
+              alt={item.attributes.thumbnail.data.attributes.alternativeText || ''}
               fill
               style={{
                 objectFit: 'cover',
@@ -81,7 +80,9 @@ export function Slider({ data }: SliderProps) {
                   <Avatar
                     src={
                       item.attributes.author.data.attributes.avatar?.data &&
-                      getStrapiMedia(item.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail)
+                      getStrapiMedia(
+                        item.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail,
+                      ).replace(/\/v\d+\//, '/q_60/')
                     }
                     width={40}
                     height={40}

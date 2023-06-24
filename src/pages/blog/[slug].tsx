@@ -68,6 +68,9 @@ export default function Post() {
     article: true,
   };
 
+  let content = data?.attributes.content.replaceAll(/\/uploads/g, `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`);
+  content = content?.replaceAll(/\/v\d+\//, '/q_60/');
+
   return (
     data && (
       <div className="mb-8">
@@ -96,15 +99,14 @@ export default function Post() {
             </Link>
             <p>{moment(data.attributes.publishedAt).format('MMMM DD, YYYY')}</p>
           </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.attributes.content.replaceAll(
-                /\/uploads/g,
-                `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`,
-              ),
-            }}
-            className="my-4"
-          />
+          {content && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: content,
+              }}
+              className="my-4"
+            />
+          )}
         </div>
         <div className="">
           <h2 className="font-medium text-2xl mb-4">Answers</h2>

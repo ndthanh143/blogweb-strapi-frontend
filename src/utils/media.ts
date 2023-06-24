@@ -8,5 +8,6 @@ export function getStrapiMedia(image: ImageType) {
   const { url } = image;
 
   const imageUrl = url.startsWith('/') ? getStrapiURL(url) : url;
+
   return imageUrl;
 }

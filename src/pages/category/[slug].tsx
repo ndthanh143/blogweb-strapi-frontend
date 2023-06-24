@@ -29,7 +29,10 @@ export default function Category() {
     if (!category || category.slug !== slug) {
       dispatch(getCategoryDetail(slug as string));
     }
-  }, [dispatch, category, slug]);
+    if (categories.length === 0) {
+      dispatch(getCategories());
+    }
+  }, [dispatch, category, slug, categories.length]);
 
   const loading = categoryLoading;
 
@@ -99,7 +102,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = storeWrapper.getStaticProps(({ dispatch }) => async ({ params, locale }) => {
-  // await dispatch(getCategories());
+  await dispatch(getCategories());
   await dispatch(getCategoryDetail(params?.slug as string));
 
   return {

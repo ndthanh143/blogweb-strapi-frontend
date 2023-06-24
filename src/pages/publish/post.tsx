@@ -4,7 +4,7 @@ import { useController, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { mixed, number, object, string } from 'yup';
 import { PostArticlePayloadAttributes } from '@/services/article/article.dto';
-import { useAppDispatch, useAppSelector } from '@/redux/store';
+import { storeWrapper, useAppDispatch, useAppSelector } from '@/redux/store';
 import { useAuth } from '@/hooks/useAuth';
 import { convertToSlug } from '@/utils/slugConvert';
 import { postArticle, resetState } from '@/redux/features/articles/postArticleSlice';
@@ -13,6 +13,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Button, Input, Select } from '@/components';
+import { getCategories } from '@/redux/features/categories/categoriesSlice';
 
 const schema = object({
   title: string().required('This field is required'),
@@ -54,6 +55,7 @@ export default function PostBlog() {
     if (user) {
       payload.author = user.id;
       payload.slug = convertToSlug(payload.title);
+      console.log('content', payload.content);
       payload.content = payload.content.replaceAll(`${process.env.NEXT_PUBLIC_API_URL}`, '');
       dispatch(postArticle({ data: payload }));
     }
@@ -145,8 +147,11 @@ export default function PostBlog() {
 
 PostBlog.Layout = 'Main';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps = storeWrapper.getStaticProps(({ dispatch }) => async ({ params, locale }) => {
+  await dispatch(getCategories());
+
   return {
     props: { ...(await serverSideTranslations(locale || 'en', ['common', 'publish.post', 'header', 'footer'])) },
+    revalidate: 10,
   };
-};
+});

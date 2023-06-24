@@ -8,11 +8,10 @@ export const axiosServer = axios.create({
 });
 
 export const axiosClient = axios.create({
-  baseURL: '/api',
+  baseURL: 'http://localhost:3000/api',
   headers: {
-    'Content-Type': 'application/json; charset=utf-8',
+    'Content-Type': 'application/json',
   },
-  timeout: 15000,
 });
 
 axiosServer.interceptors.response.use(

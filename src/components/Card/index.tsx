@@ -15,7 +15,6 @@ export type CardProps = (
 ) & {} & HTMLAttributes<HTMLDivElement>;
 
 export function Card({ title, thumbnail, slug, category, author, publishedAt, className, isLoading }: CardProps) {
-  console.log('rerender');
   return (
     <div
       className={cx(

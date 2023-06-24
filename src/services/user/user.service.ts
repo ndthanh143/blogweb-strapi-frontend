@@ -33,7 +33,6 @@ export const getUsersAPI = async () => {
 
 export const getLoggedInUserAPI = async () => {
   const { data } = await axiosClient.get<UserResponseData>('/users/me', { params: { populate: '*' } });
-  console.log('datazz', data);
 
   return data;
 };

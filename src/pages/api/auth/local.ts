@@ -1,37 +1,34 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import Cookies from 'cookies';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import httpProxyMiddleware from 'next-http-proxy-middleware';
-import { ProxyResCallback } from 'http-proxy';
-import { StringDecoder } from 'string_decoder';
-const decoder = new StringDecoder('utf8');
-const iconv = require('iconv-lite');
+import httpProxy, { ProxyResCallback } from 'http-proxy';
 
 export const config = {
   api: {
-    externalResolver: true,
     bodyParser: false,
   },
 };
 
 type Data = {
-  token?: string;
   message: string;
 };
 
+const proxy = httpProxy.createProxyServer();
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  if (req.method != 'POST') {
+  if (req.method !== 'POST') {
     return res.status(404).json({ message: 'method not supported' });
   }
 
-  return new Promise(() => {
+  return new Promise((resolve) => {
+    // don't forward cookie
     req.headers.cookie = '';
 
     const handleLoginResponse: ProxyResCallback = (proxyResponse, req, res) => {
       let apiResponseBody = '';
-
       proxyResponse.on('data', (chunk) => {
-        console.log('hahahahzz', chunk);
         apiResponseBody += chunk;
+        console.log(apiResponseBody);
       });
 
       proxyResponse.on('end', () => {
@@ -61,22 +58,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       });
     };
 
-    const handleProxyInit = (proxy: any) => {
-      proxy.on('proxyRes', handleLoginResponse);
-    };
-
-    httpProxyMiddleware(req, res, {
+    proxy.on('proxyRes', handleLoginResponse);
+    proxy.web(req, res, {
       target: process.env.NEXT_PUBLIC_API_URL,
-      pathRewrite: [
-        {
-          patternStr: '^/api/login',
-          replaceStr: '/api/auth/local',
-        },
-      ],
-      autoRewrite: true,
-      selfHandleResponse: true,
+      autoRewrite: false,
       changeOrigin: true,
-      onProxyInit: handleProxyInit,
+      selfHandleResponse: true,
     });
   });
 }

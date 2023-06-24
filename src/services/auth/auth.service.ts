@@ -3,7 +3,7 @@ import { ChangePasswordPayload, LoginPayload, RegisterPayload } from './auth.dto
 import { updateUserAPI } from '../user/user.service';
 import { UserResponseData } from '../user/users.dto';
 
-export const loginAPI = async (loginPayload: LoginPayload) => await axiosClient.post('/login', loginPayload);
+export const loginAPI = async (loginPayload: LoginPayload) => await axiosClient.post('/auth/local', loginPayload);
 
 export const logoutAPI = async () => await axiosClient.post('/logout');
 
