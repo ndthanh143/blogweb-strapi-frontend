@@ -17,12 +17,12 @@ export default function UserManagementHeader(props: UserManagementHeaderProps) {
   const { user, logout } = useAuth();
 
   return (
-    <div className="flex p-4 justify-between mx-2">
-      <Link href="/">
+    <div className="grid p-4 mx-2 fixed top-0 bg-white dark:bg-dark-mode overflow-hidden grid-cols-10 z-10 w-full">
+      <Link href="/" className="flex items-center col-span-3">
         <Logo />
       </Link>
       {user && (
-        <div className="flex justify-end items-center relative">
+        <div className="items-center flex col-span-7 text-sm justify-end">
           <div className="relative flex items-center">
             <p className="mx-4">Welcome {user.name}!</p>
             <Avatar

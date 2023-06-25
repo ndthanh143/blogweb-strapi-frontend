@@ -1,7 +1,3 @@
-:root {
-  --ck-color-base-background: black;
-}
-
 .dark .ck-editor {
   color: black;
   background: transparent;

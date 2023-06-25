@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, createContext } from 'react';
+import { PropsWithChildren, ReactElement, ReactNode, createContext } from 'react';
 import { Provider } from 'react-redux';
 import type { AppContext, AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
@@ -8,7 +8,7 @@ import { GlobalAttributes } from '@/services/global/global.dto';
 import { NextPage } from 'next';
 import { Router } from 'next/router';
 import App from 'next/app';
-import { getGlobal } from '@/services/global/global.service';
+import { getGlobalAPI } from '@/services/global/global.service';
 import { appWithTranslation } from 'next-i18next';
 import { Seo, AuthProvider, Layouts } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
@@ -40,7 +40,7 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
 
   const { store } = storeWrapper.useWrappedStore(rest);
 
-  const Layout = Layouts[Component.Layout] ?? ((page: ReactElement) => page);
+  const Layout = Layouts[Component.Layout] ?? ((page: PropsWithChildren<ReactElement>) => page);
 
   return (
     <>
@@ -75,13 +75,13 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
 };
 
 MyApp.getInitialProps = async (ctx: AppContext) => {
-  // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
-  // Fetch global site settings from Strapi
-  const { data } = await getGlobal();
 
-  // Pass the data to our page via props
-  return { ...appProps, pageProps: { global: data } };
+  const { req } = ctx.ctx;
+
+  const { data } = await getGlobalAPI();
+
+  return { ...appProps, pageProps: { global: data, host: req?.headers.host } };
 };
 
 export default appWithTranslation(MyApp);

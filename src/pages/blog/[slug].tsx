@@ -1,4 +1,4 @@
-import { Avatar, Label, Seo, Comment, Button } from '@/components';
+import { Avatar, Label, Seo, Comment, Button, Popper } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import moment from 'moment';
 import { storeWrapper, useAppDispatch, useAppSelector } from '@/redux/store';
@@ -13,36 +13,80 @@ import { useEffect, useState } from 'react';
 import { getCommentsArticle } from '@/redux/features/comments/commentsSlice';
 import dynamic from 'next/dynamic';
 import { useAuth } from '@/hooks/useAuth';
-import { useForm } from 'react-hook-form';
-import { CommentPayload } from '@/services/comment/comment.dto';
-import { deleteComment, postComment, resetState } from '@/redux/features/comments/commentSlice';
+import { UpdateCommentPayload } from '@/services/comment/comment.dto';
+import {
+  answerComment,
+  deleteComment,
+  postComment,
+  resetState,
+  updateComment,
+} from '@/redux/features/comments/commentSlice';
 import { ToastContainer, toast } from 'react-toastify';
+import { useRouter } from 'next/router';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TelegramIcon,
+  TelegramShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from 'react-share';
+import { useTranslation } from 'next-i18next';
 
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
 export default function Post() {
+  const { t } = useTranslation('blog');
   const dispatch = useAppDispatch();
+
+  const router = useRouter();
+
   const { data } = useArticle();
 
   const { user } = useAuth();
 
   const [comment, setComment] = useState('');
 
-  const { data: comments } = useAppSelector((state) => state.comments);
-  const { isPostSuccess, isDeleteSuccess, loading: commentResLoading } = useAppSelector((state) => state.handleComment);
+  const { data: comments, loading: commentsLoading } = useAppSelector((state) => state.comments);
+
+  const {
+    isPostSuccess,
+    isDeleteSuccess,
+    isUpdateSuccess,
+    isAnswerSuccess,
+    loading: commentResLoading,
+  } = useAppSelector((state) => state.handleComment);
 
   const onSubmitHandler = () => {
     if (user && data) {
       const payload = {
         data: { content: comment, user: user.id, article: data.id },
       };
-
       dispatch(postComment(payload));
+    } else {
+      router.push('/login');
     }
   };
 
   const onDeleteHandler = (commentId: number) => {
     if (user && data) {
       dispatch(deleteComment(commentId));
+    }
+  };
+
+  const onUpdateCommentHandler = (payload: UpdateCommentPayload) => {
+    dispatch(updateComment(payload));
+  };
+
+  const onAnswerCommentHandler = (commentId: number, reply: string) => {
+    if (user && data) {
+      const payload = {
+        article: data.id,
+        user: user.id,
+        commentId,
+        reply,
+      };
+      dispatch(answerComment(payload));
     }
   };
 
@@ -54,12 +98,20 @@ export default function Post() {
     if (isDeleteSuccess) {
       toast.success('Comment deleted!');
     }
+    if (isUpdateSuccess) {
+      toast.success('Comment updated!');
+    }
+
+    if (isAnswerSuccess) {
+      toast.success('Answer successfully!');
+    }
+
     dispatch(resetState());
 
     if (data) {
       dispatch(getCommentsArticle(data.id));
     }
-  }, [dispatch, isPostSuccess, isDeleteSuccess, data]);
+  }, [dispatch, isPostSuccess, isDeleteSuccess, isUpdateSuccess, isAnswerSuccess, data]);
 
   const seo: SEO = {
     metaTitle: data?.attributes.title,
@@ -67,6 +119,8 @@ export default function Post() {
     shareImage: data?.attributes.thumbnail,
     article: true,
   };
+
+  const shareUrl = process.env.NEXT_PUBLIC_SITE_URL + router.asPath;
 
   let content = data?.attributes.content.replaceAll(/\/uploads/g, `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`);
   content = content?.replaceAll(/\/v\d+\//g, '/q_60/');
@@ -108,9 +162,19 @@ export default function Post() {
             />
           )}
         </div>
-        <div className="">
-          <h2 className="font-medium text-2xl mb-4">Answers</h2>
-
+        <div className="my-2">
+          <FacebookShareButton url={shareUrl} className="rounded-full overflow-hidden">
+            <FacebookIcon size={30} />
+          </FacebookShareButton>
+          <TwitterShareButton url={shareUrl} className="rounded-full overflow-hidden ml-2">
+            <TwitterIcon size={30} />
+          </TwitterShareButton>
+          <TelegramShareButton url={shareUrl} className="rounded-full overflow-hidden ml-2">
+            <TelegramIcon size={30} />
+          </TelegramShareButton>
+        </div>
+        <div>
+          <h2 className="font-medium text-2xl mb-4">{t('titleComment')}</h2>
           <div className="border dark:border-dark-mode p-4 mb-8 rounded-lg">
             <div className="flex-1">
               <Editor onChange={(e) => setComment(e.target.value)} value={comment} />
@@ -123,17 +187,46 @@ export default function Post() {
                 onClick={onSubmitHandler}
                 aria-label="Comment - CLick to submit your comment"
               >
-                Comment
+                {t('comment')}
               </Button>
             </div>
           </div>
         </div>
-        {comments.length > 0 && (
-          <div className="border dark:border-dark-mode rounded-lg px-6">
-            {comments.map((item) => (
-              <Comment data={item.attributes} key={item.id} onDelete={() => onDeleteHandler(item.id)} />
-            ))}
+        {commentsLoading ? (
+          <div className="text-2xl my-4 flex justify-center animate-spin duration-200">
+            <AiOutlineLoading3Quarters />
           </div>
+        ) : (
+          comments &&
+          comments.length > 0 && (
+            <div>
+              {comments.map(
+                (comment) =>
+                  !comment.attributes.comment.data && (
+                    <div className="border dark:border-dark-mode rounded-lg px-6 my-4" key={comment.id}>
+                      <Comment
+                        data={comment.attributes}
+                        key={comment.id}
+                        onDelete={() => onDeleteHandler(comment.id)}
+                        onUpdate={(newContent) => onUpdateCommentHandler({ commentId: comment.id, newContent })}
+                        onAnswer={(reply) => onAnswerCommentHandler(comment.id, reply)}
+                        className="py-4"
+                      />
+
+                      {comment.attributes.answers.data.map((answer) => (
+                        <Comment
+                          data={answer.attributes}
+                          key={answer.id}
+                          onDelete={() => onDeleteHandler(comment.id)}
+                          onUpdate={(newContent) => onUpdateCommentHandler({ commentId: answer.id, newContent })}
+                          className="mx-6 pb-2"
+                        />
+                      ))}
+                    </div>
+                  ),
+              )}
+            </div>
+          )
         )}
       </div>
     )
@@ -162,7 +255,7 @@ export const getStaticProps: GetStaticProps = storeWrapper.getStaticProps(
       }
 
       return {
-        props: { ...(await serverSideTranslations(locale || 'en', ['common', 'header', 'footer'])) },
+        props: { ...(await serverSideTranslations(locale || 'en', ['common', 'blog', 'header', 'footer'])) },
         revalidate: 10,
       };
     },

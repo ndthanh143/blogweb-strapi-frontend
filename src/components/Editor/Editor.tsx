@@ -4,7 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { FileLoader, UploadAdapter } from '@ckeditor/ckeditor5-upload';
 import type { Editor as IEditor } from '@ckeditor/ckeditor5-core';
-import { ChangeEvent, ChangeEventHandler } from 'react';
+import { ChangeEvent, ChangeEventHandler, forwardRef } from 'react';
 
 export type EditorProps = {
   value?: string;
@@ -40,7 +40,7 @@ function uploadPlugin(editor: IEditor) {
                   },
                 });
 
-                resolve({ default: process.env.API_NEXT_PUBLIC_IMAGE_URL + data?.[0].url });
+                resolve({ default: data?.[0].url });
               } catch (error) {
                 reject(error);
               }
@@ -52,9 +52,10 @@ function uploadPlugin(editor: IEditor) {
   };
 }
 
-function Editor({ value, onChange, onBlur, ...props }: EditorProps) {
+const Editor = forwardRef<CKEditor<ClassicEditor>, EditorProps>(({ value, onChange, onBlur, ...props }, ref) => {
   return (
     <CKEditor
+      ref={ref}
       {...props}
       config={{
         extraPlugins: [initPlugin, uploadPlugin],
@@ -83,6 +84,6 @@ function Editor({ value, onChange, onBlur, ...props }: EditorProps) {
       }}
     />
   );
-}
+});
 
 export default Editor;

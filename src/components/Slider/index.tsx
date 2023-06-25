@@ -51,38 +51,36 @@ export function Slider({ data }: SliderProps) {
         nextArrow={<SliderNextArrow />}
       >
         {data.map((item) => (
-          <div className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7]" key={item.id}>
+          <div className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none" key={item.id}>
             <Image
               src={getStrapiMedia(
                 item.attributes.thumbnail.data.attributes.formats.large ||
                   item.attributes.thumbnail.data.attributes.formats.medium ||
                   item.attributes.thumbnail.data.attributes.formats.small ||
                   item.attributes.thumbnail.data.attributes.formats.thumbnail,
-              ).replace(/\/v\d+\//g, '/q_60/')}
+              )}
               alt={item.attributes.thumbnail.data.attributes.alternativeText || ''}
               fill
               style={{
-                objectFit: 'cover',
+                objectFit: 'contain',
               }}
               className="rounded-lg"
               sizes={item.attributes.thumbnail.data.attributes.formats.large + ''}
               priority
             />
             <Link href={`/blog/${item.attributes.slug}`}>
-              <div className="absolute lg:w-2/5 text-sm drop-shadow-xl shadow-red-500 lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90">
+              <div className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90">
                 <div className="my-4">
                   <Label color="primary">{item.attributes.category.data.attributes.name}</Label>
                 </div>
-                <p className="flex font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate">
+                <p className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all">
                   {item.attributes.title}
                 </p>
                 <div className="flex items-center drop-shadow-xl lg:text-color-blur">
                   <Avatar
                     src={
                       item.attributes.author.data.attributes.avatar?.data &&
-                      getStrapiMedia(
-                        item.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail,
-                      ).replace(/\/v\d+\//g, '/q_60/')
+                      getStrapiMedia(item.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail)
                     }
                     width={40}
                     height={40}

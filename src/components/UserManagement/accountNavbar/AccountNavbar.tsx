@@ -69,28 +69,30 @@ export default function AccountNavbar({ className }: HTMLAttributes<HTMLDivEleme
     <div>
       <div
         className={cx(
-          'text-base text-color-bold dark:text-color-bold-dark transition-all duration-100 disable',
+          'text-base text-color-bold dark:text-color-bold-dark transition-all duration-100 disable flex flex-col h-screen justify-between',
           isCollapse && '!text-2xl',
           className,
         )}
       >
-        <SubMenuItem href="/account">
-          <MdHome />
-          <span className={cx('mx-4', isCollapse && 'hidden')}>Home</span>
-        </SubMenuItem>
-        <NavbarSubMenu startIcons={<BsPersonVcardFill />} title="My Profile" className="py-2" isCollapse={isCollapse}>
-          <NavbarSubMenuItem href="/account/profile/personal" isCollapse>
-            <BsPersonFill />
-            <span className={cx('mx-4', isCollapse && 'hidden')}>Personal Info</span>
-          </NavbarSubMenuItem>
-        </NavbarSubMenu>
-        <NavbarSubMenu startIcons={<MdSecurity />} title="Security" className="py-2" isCollapse={isCollapse}>
-          <NavbarSubMenuItem href="/account/security/password">
-            <HiKey />
-            <span className={cx('mx-4', isCollapse && 'hidden')}> Password</span>
-          </NavbarSubMenuItem>
-        </NavbarSubMenu>
-        <SubMenuItem className="border-t border-b" onClick={() => setIsCollapse(!isCollapse)}>
+        <div className="border-r flex-1">
+          <SubMenuItem href="/account">
+            <MdHome />
+            <span className={cx('mx-4', isCollapse && 'hidden')}>Home</span>
+          </SubMenuItem>
+          <NavbarSubMenu startIcons={<BsPersonVcardFill />} title="My Profile" className="py-2" isCollapse={isCollapse}>
+            <NavbarSubMenuItem href="/account/profile/personal" isCollapse>
+              <BsPersonFill />
+              <span className={cx('mx-4', isCollapse && 'hidden')}>Personal Info</span>
+            </NavbarSubMenuItem>
+          </NavbarSubMenu>
+          <NavbarSubMenu startIcons={<MdSecurity />} title="Security" className="py-2" isCollapse={isCollapse}>
+            <NavbarSubMenuItem href="/account/security/password">
+              <HiKey />
+              <span className={cx('mx-4', isCollapse && 'hidden')}> Password</span>
+            </NavbarSubMenuItem>
+          </NavbarSubMenu>
+        </div>
+        <SubMenuItem className="border-t border-r border-b" onClick={() => setIsCollapse(!isCollapse)}>
           {isCollapse ? <MdKeyboardDoubleArrowRight /> : <MdKeyboardDoubleArrowLeft />}
           <span className={cx('mx-4', isCollapse && 'hidden')}>Collapse</span>
         </SubMenuItem>

@@ -28,7 +28,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       let apiResponseBody = '';
       proxyResponse.on('data', (chunk) => {
         apiResponseBody += chunk;
-        console.log(apiResponseBody);
       });
 
       proxyResponse.on('end', () => {
@@ -50,7 +49,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
             (res as NextApiResponse).status(200).json({ message: 'login successfully' });
           }
         } catch (error) {
-          console.log('object', error);
           (res as NextApiResponse).status(400).json({ error: error });
         }
 

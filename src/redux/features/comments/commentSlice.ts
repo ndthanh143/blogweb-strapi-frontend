@@ -1,18 +1,36 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { CommentAttribute, CommentPayload } from '@/services/comment/comment.dto';
-import { createCommentAPI, deleteCommentAPI } from '@/services/comment/comment.service';
+import {
+  AnswerCommentPayload,
+  CommentAttribute,
+  CommentPayload,
+  UpdateCommentPayload,
+} from '@/services/comment/comment.dto';
+import {
+  answerCommentAPI,
+  createCommentAPI,
+  deleteCommentAPI,
+  updateCommentAPI,
+} from '@/services/comment/comment.service';
 
 interface CommentState {
   isPostSuccess: boolean;
   isDeleteSuccess: boolean;
+  isUpdateSuccess: boolean;
+  isAnswerSuccess: boolean;
   loading: boolean;
+  updateLoading: boolean;
+  answerLoading: boolean;
   error: boolean;
 }
 
 const initialState: CommentState = {
   isPostSuccess: false,
   isDeleteSuccess: false,
+  isUpdateSuccess: false,
+  isAnswerSuccess: false,
   loading: false,
+  updateLoading: false,
+  answerLoading: false,
   error: false,
 };
 
@@ -24,6 +42,14 @@ export const deleteComment = createAsyncThunk('article/deleteComment', (commentI
   deleteCommentAPI(commentId),
 );
 
+export const updateComment = createAsyncThunk('article/updateComment', (payload: UpdateCommentPayload) =>
+  updateCommentAPI(payload),
+);
+
+export const answerComment = createAsyncThunk('article/answerComment', (payload: AnswerCommentPayload) =>
+  answerCommentAPI(payload),
+);
+
 export const handleCommentSlice = createSlice({
   name: 'handleComment',
   initialState,
@@ -31,6 +57,8 @@ export const handleCommentSlice = createSlice({
     resetState: (state) => {
       state.isPostSuccess = false;
       state.isDeleteSuccess = false;
+      state.isUpdateSuccess = false;
+      state.isAnswerSuccess = false;
       state.loading = false;
       state.error = false;
     },
@@ -58,6 +86,30 @@ export const handleCommentSlice = createSlice({
       })
       .addCase(deleteComment.rejected, (state) => {
         state.loading = false;
+        state.error = true;
+      })
+
+      .addCase(updateComment.pending, (state) => {
+        state.updateLoading = true;
+      })
+      .addCase(updateComment.fulfilled, (state, action) => {
+        state.isUpdateSuccess = action.payload;
+        state.updateLoading = false;
+      })
+      .addCase(updateComment.rejected, (state) => {
+        state.updateLoading = false;
+        state.error = true;
+      })
+
+      .addCase(answerComment.pending, (state) => {
+        state.answerLoading = true;
+      })
+      .addCase(answerComment.fulfilled, (state, action) => {
+        state.isAnswerSuccess = action.payload;
+        state.answerLoading = false;
+      })
+      .addCase(answerComment.rejected, (state) => {
+        state.answerLoading = false;
         state.error = true;
       });
   },

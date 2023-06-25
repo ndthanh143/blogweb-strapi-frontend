@@ -1,4 +1,5 @@
 {
   "oldest": "Oldest",
-  "latest": "Newest"
+  "latest": "Newest",
+  "noResult": "Category doesn't have any article yet"
 }

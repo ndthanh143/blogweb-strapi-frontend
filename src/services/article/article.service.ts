@@ -77,6 +77,38 @@ export const getArticlesByWriterAPI = async (writerId: number, { page, pageSize 
   return data.data;
 };
 
+export const getArticlesByCategoryAPI = async (
+  categoryId: number,
+  { page, pageSize }: PaginationOption,
+  sort?: string,
+) => {
+  const { data } = await axiosServer.get<ArticlesResponse>('/articles', {
+    params: {
+      filters: {
+        category: categoryId,
+      },
+      populate: {
+        thumbnail: '*',
+        category: {
+          populate: '*',
+        },
+        author: {
+          populate: '*',
+        },
+        pagination: {
+          page,
+          pageSize,
+        },
+      },
+      sort: {
+        publishedAt: sort || OrderEnum.DESC,
+      },
+    },
+  });
+
+  return data;
+};
+
 export const postArticleAPI = async (payload: PostArticlePayload) => {
   const formData = new FormData();
   formData.append('files', payload.data.thumbnail?.[0]);
@@ -86,8 +118,6 @@ export const postArticleAPI = async (payload: PostArticlePayload) => {
       'Content-Type': 'multipart/form-data',
     },
   });
-
-  // payload.data.content = payload.data.content.replaceAll(/http:\/\/127.0.0.1:1337\/uploads/g, '/uploads');
 
   const { data } = await axiosClient.post<BaseResponse<Article>>('/articles', {
     data: { ...payload.data, thumbnail: res.data?.[0].id },
@@ -119,7 +149,7 @@ export const searchArticlesAPI = async (searchQuery: string, { page, pageSize }:
         },
       },
       sort: {
-        publishedAt: sort || 'desc',
+        publishedAt: sort || OrderEnum.DESC,
       },
       pagination: {
         page,

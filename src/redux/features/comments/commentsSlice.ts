@@ -20,7 +20,7 @@ export const getCommentsArticle = createAsyncThunk('Categoriess/getCategory', (a
 );
 
 export const commentsSlice = createSlice({
-  name: 'Comment',
+  name: 'Comments',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

@@ -39,3 +39,7 @@ next-env.d.ts
 .env.development
 # Sentry Auth Token
 .sentryclirc
+
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-0.xml

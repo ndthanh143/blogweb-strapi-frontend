@@ -17,7 +17,7 @@ export default function Writer() {
   const dispatch = useDispatch();
 
   const { data: user, loading: userLoading } = useAppSelector((state) => state.userDetail);
-  const { data: articles, loading: articlesLoading } = useAppSelector((state) => state.articlesWriter);
+  const { data: articles, loading: articlesLoading } = useAppSelector((state) => state.articlesFilter);
 
   const loading = userLoading || articlesLoading;
 

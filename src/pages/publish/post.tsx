@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useController, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -9,7 +9,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { convertToSlug } from '@/utils/slugConvert';
 import { postArticle, resetState } from '@/redux/features/articles/postArticleSlice';
 import { ToastContainer, toast } from 'react-toastify';
-import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Button, Input, Select } from '@/components';
@@ -35,8 +34,6 @@ export default function PostBlog() {
 
   const { data: articleResponse, loading: postLoading } = useAppSelector((state) => state.postArticle);
 
-  const [contentEditor, setContentEditor] = useState('');
-
   const {
     register,
     handleSubmit,
@@ -48,14 +45,13 @@ export default function PostBlog() {
   });
 
   const {
-    field: { onChange, onBlur },
+    field: { onChange, onBlur, ref, value },
   } = useController({ control, name: 'content' });
 
   const onSubmitHandler = (payload: PostArticlePayloadAttributes) => {
     if (user) {
       payload.author = user.id;
       payload.slug = convertToSlug(payload.title);
-      console.log('content', payload.content);
       payload.content = payload.content.replaceAll(`${process.env.NEXT_PUBLIC_API_URL}`, '');
       dispatch(postArticle({ data: payload }));
     }
@@ -75,7 +71,6 @@ export default function PostBlog() {
     if (articleResponse) {
       toast.success('Post article successfully!');
       reset();
-      setContentEditor('');
       dispatch(resetState());
     }
   }, [dispatch, articleResponse, reset]);
@@ -123,7 +118,7 @@ export default function PostBlog() {
         <span className="text-sm font-thin">
           <span className="text-red-500">*</span> {translate.content}
         </span>
-        <Editor onChange={onChange} onBlur={onBlur} value={contentEditor} />
+        <Editor onChange={onChange} onBlur={onBlur} value={value || ''} ref={ref} />
         {errors.content && <span className="text-red-500">{errors.content.message}</span>}
       </div>
       <div className="flex justify-end">

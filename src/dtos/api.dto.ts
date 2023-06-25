@@ -8,3 +8,9 @@ export type SearchAPIProps = {
   options: PaginationOption;
   sort?: string;
 };
+
+export type FilterArticlesProps = {
+  id: number;
+  options: PaginationOption;
+  sort?: string;
+};

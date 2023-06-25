@@ -1,8 +1,19 @@
 import { axiosClient, axiosServer } from '@/utils/axiosClient';
-import { CommentPayload, CommentResponse, CommentsResponse } from './comment.dto';
+import {
+  AnswerCommentPayload,
+  CommentPayload,
+  CommentResponse,
+  CommentsResponse,
+  UpdateCommentPayload,
+} from './comment.dto';
+
+export const getCommentAPI = async (commentId: number) => {
+  const { data } = await axiosClient.get<CommentResponse>(`/comments/${commentId}`);
+
+  return data;
+};
 
 export const createCommentAPI = async (commentPayload: CommentPayload) => {
-  commentPayload.data.content.replaceAll(`${process.env.NEXT_PUBLIC_API_URL}`, '/uploads');
   const { data } = await axiosClient.post<CommentResponse>('/comments', commentPayload);
   if (data.data) {
     return true;
@@ -23,6 +34,12 @@ export const getCommentsArticleAPI = async (articleId: number) => {
         user: {
           populate: '*',
         },
+        answers: {
+          populate: '*',
+        },
+        comment: {
+          populate: '*',
+        },
       },
       sort: {
         publishedAt: 'desc',
@@ -34,15 +51,30 @@ export const getCommentsArticleAPI = async (articleId: number) => {
 };
 
 export const deleteCommentAPI = async (commentId: number) => {
-  try {
-    await axiosClient.delete(`/comments/${commentId}`);
-    return true;
-  } catch (error) {}
-  return false;
+  await axiosClient.delete(`/comments/${commentId}`);
+  return true;
 };
 
-export const updateCommentAPI = async (commentId: number, newContent: string) => {
-  const { data } = await axiosClient.put<CommentsResponse>(`/comments/${commentId}`, { data: { content: newContent } });
+export const updateCommentAPI = async (payload: UpdateCommentPayload) => {
+  const { commentId, newContent } = payload;
+  await axiosClient.put<CommentsResponse>(`/comments/${commentId}`, { data: { content: newContent } });
 
-  return data;
+  return true;
+};
+
+export const answerCommentAPI = async (commentPayload: AnswerCommentPayload) => {
+  const { commentId, reply, user, article } = commentPayload;
+
+  const payload = {
+    data: {
+      article,
+      user,
+      content: reply,
+      comment: commentId,
+    },
+  };
+
+  await axiosClient.post<CommentResponse>('/comments', payload);
+
+  return true;
 };

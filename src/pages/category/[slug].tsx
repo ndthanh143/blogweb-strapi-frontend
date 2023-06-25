@@ -8,9 +8,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import cx from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { Card, Select } from '@/components';
-import { ORDER_OPTIONS, OrderEnum } from '@/constants';
+import { Card, Pagination, Select } from '@/components';
+import { ORDER_OPTIONS, OrderEnum, PAGE_SIZE } from '@/constants';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
+import { getArticlesByCategory } from '@/redux/features/articles/articlesFilterSlice';
+import { ImSad } from 'react-icons/im';
 
 export default function Category() {
   const { t } = useTranslation('category');
@@ -21,20 +23,28 @@ export default function Category() {
 
   const [order, setOrder] = useState<OrderEnum>(OrderEnum.DESC);
 
-  const { data: categories, loading: categoriesLoading } = useAppSelector((state) => state.categories);
+  const [pageIndex, setPageIndex] = useState(1);
+
+  const { data: categories } = useAppSelector((state) => state.categories);
   const { data: category, loading: categoryLoading } = useAppSelector((state) => state.categoryDetail);
+  const { data: articles, loading: articlesLoading, pageCount } = useAppSelector((state) => state.articlesFilter);
 
   const { slug } = router.query;
+
+  const loading = categoryLoading && articlesLoading;
+
   useEffect(() => {
-    if (!category || category.slug !== slug) {
-      dispatch(getCategoryDetail(slug as string));
-    }
     if (categories.length === 0) {
       dispatch(getCategories());
     }
-  }, [dispatch, category, slug, categories.length]);
-
-  const loading = categoryLoading;
+    if (!category) {
+      dispatch(getCategoryDetail(slug as string));
+    } else {
+      dispatch(
+        getArticlesByCategory({ id: category.id, options: { page: pageIndex, pageSize: PAGE_SIZE }, sort: order }),
+      );
+    }
+  }, [dispatch, category, slug, categories.length, order, pageIndex]);
 
   return (
     <div className="my-8">
@@ -45,7 +55,7 @@ export default function Category() {
               href={{ pathname: `/category/${item.attributes.slug}` }}
               className={cx(
                 'px-4 py-2 cursor-pointer',
-                slug === item.attributes.slug && 'text-blue-500 border-b-2 border-blue-500',
+                slug === item.attributes.slug && 'text-color-primary border-b-2  border-primary',
               )}
               key={item.id}
             >
@@ -67,9 +77,9 @@ export default function Category() {
           </Select>
         </div>
       </div>
-      {category && (
+      {articles && !loading && articles.length > 0 ? (
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {category.articles.data.map((item) => (
+          {articles.map((item) => (
             <Card
               isLoading={loading}
               title={item.attributes.title}
@@ -82,7 +92,18 @@ export default function Category() {
             />
           ))}
         </div>
+      ) : (
+        <div className="flex items-center justify-center">
+          <span className="px-2">{t('noResult')}</span> <ImSad />
+        </div>
       )}
+
+      <Pagination
+        pageCount={pageCount}
+        pageRangeDisplayed={2}
+        onPageChange={(e) => setPageIndex(e.selected + 1)}
+        renderOnZeroPageCount={null}
+      />
     </div>
   );
 }

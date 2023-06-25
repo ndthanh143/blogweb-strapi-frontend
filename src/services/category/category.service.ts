@@ -17,17 +17,11 @@ export const getCategoryDetailAPI = async (slug: string) => {
         articles: {
           populate: {
             thumbnail: '*',
-            category: {
-              populate: '*',
-            },
-            author: {
-              populate: '*',
-            },
           },
         },
       },
     },
   });
 
-  return data.data?.[0].attributes;
+  return data.data?.[0];
 };

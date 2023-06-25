@@ -16,8 +16,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
 import { useTranslation } from 'next-i18next';
-import cx from 'classnames';
 import { Button, Input, MiniNavigation, Popper, Select, SwitchMode } from '@/components';
+import cx from 'classnames';
+import { useAppSelector } from '@/redux/store';
 
 export type SearchPayload = {
   searchQuery: string;
@@ -42,6 +43,8 @@ export function Header() {
 
   const { user, logout } = useAuth({});
 
+  const { data: categories } = useAppSelector((state) => state.categories);
+
   const translate = {
     home: t('home'),
     blog: t('blog'),
@@ -52,6 +55,7 @@ export function Header() {
     yourPost: t('yourPost'),
     account: t('account'),
     logout: t('logout'),
+    search: t('search'),
   };
 
   const { pathname, asPath, query, locale } = router;
@@ -83,7 +87,7 @@ export function Header() {
               {translate.home}
             </Link>
             <Link
-              href="/blog"
+              href={`/category/${categories?.[0]?.attributes.slug}`}
               className="px-4 mx-2 py-4 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500 active:bg-gray-300 dark:active:bg-slate-700 block"
               onClick={closeMenu}
             >
@@ -103,7 +107,7 @@ export function Header() {
           <Link href="/">{translate.home}</Link>
         </li>
         <li className="px-4 mx-2 py-2 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500">
-          <Link href="/blog">{translate.blog}</Link>
+          <Link href={`/category/${categories?.[0]?.attributes.slug}`}>{translate.blog}</Link>
         </li>
       </ul>
       <form
@@ -111,7 +115,7 @@ export function Header() {
         onSubmit={handleSubmit(onSubmitHandler)}
       >
         <Input
-          placeholder="Search"
+          placeholder={translate.search}
           endDecorator={<BiSearch />}
           className="bg-gray-100 dark:bg-search-dark dark:border-dark-mode"
           {...register('searchQuery')}
@@ -211,10 +215,10 @@ export function Header() {
         <Select
           defaultValue={locale || 'en'}
           onChange={(e) => router.push({ pathname, query }, asPath, { locale: e.target.value })}
-          className="w-fit pr-4 border-blue-400 text-blue-500 outline-none dark:border-blue-600"
+          className="w-fit pr-4 border-blue-400 text-blue-500 outline-none dark:border-primary"
         >
           <option value="en">ENG</option>
-          <option value="vi">VI</option>
+          <option value="vi">VIE</option>
         </Select>
       </div>
       <div className="hidden lg:flex col-span-1 flex-row-reverse order-6">

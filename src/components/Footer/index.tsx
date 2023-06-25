@@ -57,7 +57,7 @@ export function Footer() {
             <Link href="/" className="mb-2 hover:text-red-500 block">
               {translate.home}
             </Link>
-            <Link href="/blog" className="mb-2 hover:text-red-500 block">
+            <Link href={`/category/${data?.[0]?.attributes.slug}`} className="mb-2 hover:text-red-500 block">
               {translate.blog}
             </Link>
           </div>

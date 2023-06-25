@@ -3,9 +3,10 @@ import { getCategoryDetailAPI } from '@/services/category/category.service';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import { HydrateAction } from '../users/userSlice';
+import { BaseResponseData } from '@/dtos/base';
 
 interface CategoriesState {
-  data: Category | null;
+  data: BaseResponseData<Category> | null;
   loading: boolean;
   error: boolean;
 }

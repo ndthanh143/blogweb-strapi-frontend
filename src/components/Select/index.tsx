@@ -15,7 +15,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({ className, ...props
         )}
         {...props}
       />
-      <span className="absolute right-2 -z-10 dark:text-white">
+      <span className="absolute right-2 dark:text-white">
         <FiChevronDown />
       </span>
     </div>

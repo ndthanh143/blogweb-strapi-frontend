@@ -40,8 +40,11 @@ export function Card({ title, thumbnail, slug, category, author, publishedAt, cl
             {thumbnail.data && (
               <Image
                 src={getStrapiMedia(
-                  thumbnail.data.attributes.formats.small || thumbnail.data.attributes.formats.thumbnail,
-                ).replace(/\/v\d+\//g, '/q_60/')}
+                  thumbnail.data.attributes.formats.small ||
+                    thumbnail.data.attributes.formats.thumbnail ||
+                    thumbnail.data.attributes.formats.medium ||
+                    thumbnail.data.attributes.formats.large,
+                )}
                 alt={thumbnail.data.attributes.alternativeText || ''}
                 fill
                 style={{ objectFit: 'cover' }}
@@ -94,20 +97,22 @@ export function Card({ title, thumbnail, slug, category, author, publishedAt, cl
           </div>
         ) : (
           author && (
-            <Link href={`/writer/${author.data.id}`} className="flex items-center font-sm text-color-blur row-span-1">
-              <Avatar
-                src={
-                  author.data.attributes.avatar?.data &&
-                  getStrapiMedia(author.data.attributes.avatar.data.attributes.formats.thumbnail)
-                }
-                width={40}
-                height={40}
-                alt={author.data.attributes.avatar?.data?.attributes.alternativeText || ''}
-                size={author.data.attributes.avatar?.data?.attributes.formats.thumbnail + ''}
-              />
-              <p className="ml-2 mr-4 font-medium hover:text-color-primary">{author.data.attributes.name}</p>
+            <div className="flex items-center font-sm text-color-blur row-span-1">
+              <Link href={`/writer/${author.data.id}`} className="flex items-center">
+                <Avatar
+                  src={
+                    author.data.attributes.avatar?.data &&
+                    getStrapiMedia(author.data.attributes.avatar.data.attributes.formats.thumbnail)
+                  }
+                  width={40}
+                  height={40}
+                  alt={author.data.attributes.avatar?.data?.attributes.alternativeText || ''}
+                  size={author.data.attributes.avatar?.data?.attributes.formats.thumbnail + ''}
+                />
+                <p className="ml-2 mr-4 font-medium hover:text-color-primary">{author.data.attributes.name}</p>
+              </Link>
               <p>{moment(publishedAt).format('MMMM DD, YYYY')}</p>
-            </Link>
+            </div>
           )
         )}
       </div>

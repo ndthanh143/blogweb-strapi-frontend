@@ -6,6 +6,8 @@
 @import url('nprogress/nprogress.css');
 
 :root {
+  --ck-color-base-background: black;
+  --ck-color-link: #67b4fb;
 }
 
 * {

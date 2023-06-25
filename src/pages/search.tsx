@@ -16,10 +16,8 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Avatar, Button, Card, Input, Pagination, Select, SearchPayload } from '@/components';
-import { ORDER_OPTIONS, OrderEnum } from '@/constants';
+import { ORDER_OPTIONS, OrderEnum, PAGE_SIZE } from '@/constants';
 import scrollToTop from '@/utils/scrollToTop';
-
-const PAGE_SIZE = 3;
 
 const schema = object({
   searchQuery: string().required('is Required'),
@@ -96,14 +94,17 @@ export default function Search() {
             href={{ pathname: '/search', query: { q, type: 'posts' } }}
             className={cx(
               'px-4 py-2 cursor-pointer',
-              (type === 'posts' || !type) && 'text-blue-500 border-b-2 border-blue-500',
+              (type === 'posts' || !type) && ' text-color-primary border-b-2  border-primary',
             )}
           >
             {translate.posts}
           </Link>
           <Link
             href={{ pathname: '/search', query: { q, type: 'authors' } }}
-            className={cx('px-4 py-2 cursor-pointer', type === 'authors' && 'text-blue-500 border-b-2 border-blue-500')}
+            className={cx(
+              'px-4 py-2 cursor-pointer',
+              type === 'authors' && 'text-color-primary border-b-2  border-primary',
+            )}
           >
             {translate.authors}
           </Link>
@@ -131,7 +132,7 @@ export default function Search() {
             {users.map((item) => (
               <Link
                 href={`/writer/${item.id}`}
-                className="flex hover:bg- dark:hover:bg-blue-300 p-4 rounded-md"
+                className="flex hover: dark:hover:bg-blue-300 p-4 rounded-md"
                 key={item.id}
               >
                 <Avatar

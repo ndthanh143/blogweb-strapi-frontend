@@ -23,7 +23,7 @@ export default function Personal() {
 
   const dispatch = useAppDispatch();
 
-  const { data, isUpdated } = useAppSelector((state) => state.userDetail);
+  const { data, isUpdated, loading } = useAppSelector((state) => state.userDetail);
 
   const {
     register,
@@ -93,6 +93,8 @@ export default function Personal() {
             variant="solid"
             className="float-right ml-4 w-full lg:w-fit"
             aria-label="Submit - Click to submit your changes"
+            loading={loading}
+            disabled={loading}
           >
             Submit
           </Button>
@@ -101,6 +103,7 @@ export default function Personal() {
             variant="outlined"
             className="float-right w-full my-2 lg:my-0 lg:w-fit"
             onClick={() => reset()}
+            aria-label="Cancel"
           >
             Cancel
           </Button>
