@@ -41,12 +41,6 @@ export const getLoggedInUserAPI = async () => {
   return data;
 };
 
-export const forgotPassword = async (email: string) => {
-  const { data } = await axiosClient.post('/auth/forgot-password', email);
-
-  return data;
-};
-
 export const updateUserAPI = async (user: UserResponseData, payload: UpdateUserPayload) => {
   const { name, about, major, avatar } = payload;
 
@@ -60,11 +54,7 @@ export const updateUserAPI = async (user: UserResponseData, payload: UpdateUserP
     const formData = new FormData();
     formData.append('files', avatar?.[0]);
 
-    const { data } = await axiosClient.post<Avatar[]>('/upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    const { data } = await axiosClient.post<Avatar[]>('/upload', formData);
 
     response = await axiosClient.put(`/users/${user.id}`, { ...payload, avatar: data?.[0].id });
   } else {

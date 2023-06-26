@@ -6,6 +6,7 @@ import {
   CommentsResponse,
   UpdateCommentPayload,
 } from './comment.dto';
+import Cookies from 'js-cookie';
 
 export const getCommentAPI = async (commentId: number) => {
   const { data } = await axiosClient.get<CommentResponse>(`/comments/${commentId}`);
@@ -15,10 +16,10 @@ export const getCommentAPI = async (commentId: number) => {
 
 export const createCommentAPI = async (commentPayload: CommentPayload) => {
   const { data } = await axiosClient.post<CommentResponse>('/comments', commentPayload);
+
   if (data.data) {
     return true;
   }
-
   return false;
 };
 
@@ -52,11 +53,13 @@ export const getCommentsArticleAPI = async (articleId: number) => {
 
 export const deleteCommentAPI = async (commentId: number) => {
   await axiosClient.delete(`/comments/${commentId}`);
+
   return true;
 };
 
 export const updateCommentAPI = async (payload: UpdateCommentPayload) => {
   const { commentId, newContent } = payload;
+
   await axiosClient.put<CommentsResponse>(`/comments/${commentId}`, { data: { content: newContent } });
 
   return true;

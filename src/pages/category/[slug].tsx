@@ -13,6 +13,7 @@ import { ORDER_OPTIONS, OrderEnum, PAGE_SIZE } from '@/constants';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
 import { getArticlesByCategory } from '@/redux/features/articles/articlesFilterSlice';
 import { ImSad } from 'react-icons/im';
+import { AiOutlineLoading } from 'react-icons/ai';
 
 export default function Category() {
   const { t } = useTranslation('category');
@@ -77,7 +78,11 @@ export default function Category() {
           </Select>
         </div>
       </div>
-      {articles && !loading && articles.length > 0 ? (
+      {loading ? (
+        <span className="animate-spin duration-200">
+          <AiOutlineLoading />{' '}
+        </span>
+      ) : articles && articles.length > 0 ? (
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           {articles.map((item) => (
             <Card
@@ -97,7 +102,6 @@ export default function Category() {
           <span className="px-2">{t('noResult')}</span> <ImSad />
         </div>
       )}
-
       <Pagination
         pageCount={pageCount}
         pageRangeDisplayed={2}

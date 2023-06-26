@@ -8,16 +8,8 @@ export const axiosServer = axios.create({
   },
 });
 
-const accessToken = Cookies.get('access_token');
-
-const headers = {
-  'Content-Type': 'application/json',
-  Authorization: `Bearer ${accessToken}`,
-};
-
 export const axiosClient = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api`,
-  headers,
 });
 
 axiosServer.interceptors.response.use(
@@ -29,6 +21,15 @@ axiosServer.interceptors.response.use(
     return Promise.reject(error);
   },
 );
+
+axiosClient.interceptors.request.use((config) => {
+  const accessToken = Cookies.get('access_token');
+
+  config.headers['Content-Type'] = 'application/json';
+  config.headers['Authorization'] = `Bearer ${accessToken}`;
+
+  return config;
+});
 
 axiosClient.interceptors.response.use(
   function (response) {

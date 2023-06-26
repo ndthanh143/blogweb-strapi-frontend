@@ -4,6 +4,7 @@ import { axiosClient, axiosServer } from '@/utils/axiosClient';
 import { Avatar } from '../user/users.dto';
 import { PaginationOption } from '@/dtos/api.dto';
 import { OrderEnum } from '@/constants';
+import Cookies from 'js-cookie';
 
 export const getArticlesAPI = async ({ page, pageSize }: PaginationOption = {}) => {
   const { data } = await axiosServer.get<ArticlesResponse>('/articles', {
@@ -113,11 +114,7 @@ export const postArticleAPI = async (payload: PostArticlePayload) => {
   const formData = new FormData();
   formData.append('files', payload.data.thumbnail?.[0]);
 
-  const res = await axiosClient.post<Avatar[]>('/upload', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  });
+  const res = await axiosClient.post<Avatar[]>('/upload', formData);
 
   const { data } = await axiosClient.post<BaseResponse<Article>>('/articles', {
     data: { ...payload.data, thumbnail: res.data?.[0].id },

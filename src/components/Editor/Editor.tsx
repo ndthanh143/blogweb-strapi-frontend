@@ -1,10 +1,11 @@
 import { Avatar } from '@/services/user/users.dto';
-import { axiosClient } from '@/utils/axiosClient';
+import { axiosClient, axiosServer } from '@/utils/axiosClient';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { FileLoader, UploadAdapter } from '@ckeditor/ckeditor5-upload';
 import type { Editor as IEditor } from '@ckeditor/ckeditor5-core';
 import { ChangeEvent, ChangeEventHandler, forwardRef } from 'react';
+import Cookies from 'js-cookie';
 
 export type EditorProps = {
   value?: string;
@@ -34,9 +35,12 @@ function uploadPlugin(editor: IEditor) {
               body.append('files', file);
 
               try {
-                const { data } = await axiosClient.post<Avatar[]>('/upload', body, {
+                const accessToken = Cookies.get('access_token');
+
+                const { data } = await axiosServer.post<Avatar[]>('/upload', body, {
                   headers: {
                     'Content-Type': 'multipart/form-data',
+                    Authorization: 'Bearer ' + accessToken,
                   },
                 });
 

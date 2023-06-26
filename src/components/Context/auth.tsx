@@ -1,15 +1,7 @@
-import {
-  getMe,
-  postChangePassword,
-  postLogin,
-  postLogout,
-  postRegister,
-  resetStateError,
-} from '@/redux/features/auth/authSlice';
+import { getMe, postChangePassword, postLogin, postLogout, postRegister } from '@/redux/features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { ChangePasswordPayload, LoginPayload, RegisterPayload } from '@/services/auth/auth.dto';
 import { UserResponseData } from '@/services/user/users.dto';
-import { useRouter } from 'next/router';
 import { PropsWithChildren, createContext, useContext, useEffect } from 'react';
 
 type AuthContextProps = {
