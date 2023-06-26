@@ -16,7 +16,11 @@ const Seo: React.FC<{ seo: SEO }> = ({ seo }) => {
     ...seoWithDefaults,
     metaTitle: `${seoWithDefaults.metaTitle}` + (siteName ? ` | ${siteName}` : ''),
     shareImage:
-      seoWithDefaults.shareImage && getStrapiMedia(seoWithDefaults.shareImage.data.attributes.formats.thumbnail),
+      seoWithDefaults.shareImage &&
+      getStrapiMedia(
+        seoWithDefaults.shareImage.data.attributes.formats.thumbnail ||
+          seoWithDefaults.shareImage.data.attributes.formats.large,
+      ),
   };
 
   return (
@@ -37,9 +41,9 @@ const Seo: React.FC<{ seo: SEO }> = ({ seo }) => {
       )}
       {fullSeo.shareImage && (
         <>
+          <meta name="image" content={fullSeo.shareImage} />
           <meta property="og:image" content={fullSeo.shareImage} />
           <meta name="twitter:image" content={fullSeo.shareImage} />
-          <meta name="image" content={fullSeo.shareImage} />
         </>
       )}
       {fullSeo.article && <meta property="og:type" content="article" />}
