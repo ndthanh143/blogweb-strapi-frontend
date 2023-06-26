@@ -1,3 +1,4 @@
+const { withSentryConfig } = require('@sentry/nextjs');
 const { i18n } = require('./next-i18next.config.js');
 
 /** @type {import('next').NextConfig} */
@@ -8,13 +9,14 @@ const nextConfig = {
     loader: 'default',
     domains: ['res.cloudinary.com', '127.0.0.1'],
   },
+  experimental: {
+    forceSwcTransforms: true,
+  },
 };
 
 module.exports = nextConfig;
 
 // Injected content via Sentry wizard below
-
-const { withSentryConfig } = require('@sentry/nextjs');
 
 module.exports = withSentryConfig(
   module.exports,

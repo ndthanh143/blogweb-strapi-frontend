@@ -37,7 +37,7 @@ export function Avatar({ src, width, height, alt, size, isPicker, onClick, onCha
     >
       {previewUrl ? (
         <Image
-          src={previewUrl.replace(/\/v\d+\//g, '/q_40/')}
+          src={previewUrl}
           fill
           quality={100}
           alt={alt}

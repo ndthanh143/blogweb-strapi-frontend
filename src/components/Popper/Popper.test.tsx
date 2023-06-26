@@ -1,0 +1,11 @@
+import React from 'react';
+import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
+import { Popper } from '.';
+
+describe('Popper component', () => {
+  test('should render correctly', () => {
+    const component = renderer.create(<Popper isOpen={false} onClose={() => {}}></Popper>);
+    let tree = component.toJSON() as ReactTestRendererJSON;
+    expect(tree).toMatchSnapshot();
+  });
+});

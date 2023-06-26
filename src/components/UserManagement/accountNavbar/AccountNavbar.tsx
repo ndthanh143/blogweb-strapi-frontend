@@ -1,10 +1,12 @@
+'use client';
+
 import { HTMLAttributes, ReactNode, useState } from 'react';
 import { BsPersonFill, BsPersonVcardFill } from 'react-icons/bs';
 import { MdHome, MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight, MdSecurity } from 'react-icons/md';
 import { TfiAngleDown } from 'react-icons/tfi';
 import useBoolean from '@/hooks/useBoolean';
 import { HiKey } from 'react-icons/hi';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import cx from 'classnames';
 
 export interface NavbarSubMenuProps extends HTMLAttributes<HTMLDivElement> {

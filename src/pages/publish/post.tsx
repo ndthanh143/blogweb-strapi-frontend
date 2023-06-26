@@ -147,6 +147,6 @@ export const getStaticProps = storeWrapper.getStaticProps(({ dispatch }) => asyn
 
   return {
     props: { ...(await serverSideTranslations(locale || 'en', ['common', 'publish.post', 'header', 'footer'])) },
-    revalidate: 10,
+    revalidate: 5,
   };
 });

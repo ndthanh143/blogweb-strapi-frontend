@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps<{ homepage: HomepageData }> = storeW
           homepage: data,
           ...(await serverSideTranslations(locale || 'en', ['common', 'home', 'header', 'footer'])),
         },
-        revalidate: 10,
+        revalidate: 5,
       };
     },
 );

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label component should render correctly 1`] = `
+<span
+  className="px-4 py-1 rounded-lg font-medium bg-label-light text-color-primary dark:bg-label-dark hover:bg-color-primary dark:hover:bg-color-primary hover:text-white"
+>
+  You are the best!
+</span>
+`;

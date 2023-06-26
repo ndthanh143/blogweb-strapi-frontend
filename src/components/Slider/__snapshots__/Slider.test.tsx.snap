@@ -1,0 +1,2160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider component should render correctly 1`] = `
+<div
+  className="rounded-lg"
+>
+  <div
+    className="slick-slider slick-initialized"
+    dir="ltr"
+  >
+    <div
+      onClick={[Function]}
+    >
+      <svg
+        className="absolute hidden lg:block cursor-pointer z-10 text-5xl top-1/2 -translate-y-1/2 text-white opacity-50 hover:opacity-100"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          {
+            "color": undefined,
+          }
+        }
+        version="1.1"
+        viewBox="0 0 17 17"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g />
+        <path
+          d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"
+        />
+      </svg>
+    </div>
+    <div
+      className="slick-list"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={null}
+      onMouseMove={null}
+      onMouseUp={[Function]}
+      onTouchCancel={null}
+      onTouchEnd={[Function]}
+      onTouchMove={null}
+      onTouchStart={[Function]}
+      style={{}}
+    >
+      <div
+        className="slick-track"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        style={
+          {
+            "WebkitTransform": "translate3d(0px, 0px, 0px)",
+            "WebkitTransition": "",
+            "msTransform": "translateX(0px)",
+            "opacity": 1,
+            "transform": "translate3d(0px, 0px, 0px)",
+            "transition": "",
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={-1}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/too-much-javascript-why-the-frontend-needs-to-build-better"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Story
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Too Much JavaScript? Why the Frontend Needs to Build Better
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={false}
+          className="slick-slide slick-active slick-current"
+          data-index={0}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt="what-s-inside-a-black-hole"
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/chuong-10-selection-algorithms-2-problems-and-solutions-13-21"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Chương 10: SELECTION ALGORITHMS - 2.Problems & Solutions(13-21)
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Kevin Nguyen
+                    </p>
+                    <p>
+                      June 23, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={1}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/proxy-design-pattern-tro-thu-dac-luc-cua-developers"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Food
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Proxy Design Pattern - Trợ thủ đắc lực của Developers
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 23, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={2}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/angular-basics-best-practices-for-creating-a-new-project"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      News
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Angular Basics: Best Practices for Creating a New Project
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Cody Nguyen
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={3}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/removing-unused-css-with-purge-css"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Removing Unused CSS With PurgeCSS
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Jayden Nguyen
+                    </p>
+                    <p>
+                      June 25, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={4}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/chatgpt-is-giving-out-working-windows-11-keys"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    ChatGPT Is Giving Out Working Windows 11 Keys
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Marcus Nguyen
+                    </p>
+                    <p>
+                      June 25, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={5}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/guide-to-css-logical-properties"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Guide to CSS logical properties
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={6}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/backend-engineer-mo-hinh-osi-phan-1"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Backend Engineer Mô Hình OSI (Phần 1)
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Cody Nguyen
+                    </p>
+                    <p>
+                      June 24, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide"
+          data-index={7}
+          onClick={[Function]}
+          style={
+            {
+              "outline": "none",
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/too-much-javascript-why-the-frontend-needs-to-build-better"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Story
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Too Much JavaScript? Why the Frontend Needs to Build Better
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={8}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt="what-s-inside-a-black-hole"
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687419247%2Fmedium_what_s_inside_a_black_hole_360c63e36f.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/chuong-10-selection-algorithms-2-problems-and-solutions-13-21"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Chương 10: SELECTION ALGORITHMS - 2.Problems & Solutions(13-21)
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Kevin Nguyen
+                    </p>
+                    <p>
+                      June 23, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={9}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687462960%2Flarge_hinh_anh_chim_chao_mao_548c99ca25.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/proxy-design-pattern-tro-thu-dac-luc-cua-developers"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Food
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Proxy Design Pattern - Trợ thủ đắc lực của Developers
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 23, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={10}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687757410%2Fmedium_post5_91c9554a42.webp&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/angular-basics-best-practices-for-creating-a-new-project"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      News
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Angular Basics: Best Practices for Creating a New Project
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Cody Nguyen
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={11}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687670597%2Flarge_post11_c6b9791c02.png&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/removing-unused-css-with-purge-css"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Removing Unused CSS With PurgeCSS
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Jayden Nguyen
+                    </p>
+                    <p>
+                      June 25, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={12}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687677278%2Flarge_post12_5362b3d6aa.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/chatgpt-is-giving-out-working-windows-11-keys"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    ChatGPT Is Giving Out Working Windows 11 Keys
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Marcus Nguyen
+                    </p>
+                    <p>
+                      June 25, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={13}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687756850%2Fsmall_guide_css_logical_properties_nocdn_0e7907792e.png&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/guide-to-css-logical-properties"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Guide to CSS logical properties
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={14}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="undefined"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687602895%2Fsmall_osi_fc88cc940f.webp&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/backend-engineer-mo-hinh-osi-phan-1"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Technology
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Backend Engineer Mô Hình OSI (Phần 1)
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Cody Nguyen
+                    </p>
+                    <p>
+                      June 24, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          className="slick-slide slick-cloned"
+          data-index={15}
+          onClick={[Function]}
+          style={
+            {
+              "width": 0,
+            }
+          }
+          tabIndex="-1"
+        >
+          <div>
+            <div
+              className="rounded-lg relative aspect-[16/9] lg:aspect-[16/7] outline-none"
+              style={
+                {
+                  "display": "inline-block",
+                  "width": "100%",
+                }
+              }
+              tabIndex={-1}
+            >
+              <img
+                alt=""
+                className="rounded-lg"
+                data-nimg="fill"
+                decoding="async"
+                fetchpriority="high"
+                onError={[Function]}
+                onLoad={[Function]}
+                sizes="[object Object]"
+                src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=16&q=75 16w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdk9jp2gb5%2Fimage%2Fupload%2Fv1687758465%2Flarge_b433b93f_moon_app_com_elfmdiihktg_unsplash_1024x683_f26a479b37.jpg&w=3840&q=75 3840w"
+                style={
+                  {
+                    "bottom": 0,
+                    "color": "transparent",
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "contain",
+                    "objectPosition": undefined,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <a
+                href="/blog/too-much-javascript-why-the-frontend-needs-to-build-better"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90"
+                >
+                  <div
+                    className="my-4"
+                  >
+                    <span
+                      className="px-4 py-1 rounded-lg font-medium bg-color-primary text-white"
+                    >
+                      Story
+                    </span>
+                  </div>
+                  <p
+                    className="block font-bold text-lg lg:text-2xl mb-4 dark:text-color-bold-dark truncate break-all"
+                  >
+                    Too Much JavaScript? Why the Frontend Needs to Build Better
+                  </p>
+                  <div
+                    className="flex items-center drop-shadow-xl lg:text-color-blur"
+                  >
+                    <div
+                      className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+                      style={
+                        {
+                          "height": "40px",
+                          "width": "40px",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-full h-full text-gray-400 dark:text-white"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      className="ml-2 mr-4 font-medium"
+                    >
+                      Alex Nguyenn
+                    </p>
+                    <p>
+                      June 26, 2023
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <svg
+        className="absolute hidden lg:block cursor-pointer z-10 right-0 text-5xl top-1/2 -translate-y-1/2 text-white opacity-50 hover:opacity-100"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          {
+            "color": undefined,
+          }
+        }
+        version="1.1"
+        viewBox="0 0 17 17"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g />
+        <path
+          d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;

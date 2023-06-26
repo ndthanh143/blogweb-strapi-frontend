@@ -19,6 +19,6 @@
       "react": ["./node_modules/@types/react"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/redux/store.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/redux/store.ts", "jest.config.js", "babel.config.js"],
   "exclude": ["node_modules"]
 }

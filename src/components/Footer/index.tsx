@@ -33,7 +33,7 @@ export function Footer() {
 
   return (
     <div className="bg-footer-color dark:bg-footer-color-dark">
-      <div className="container mx-auto">
+      <div className="lg:container mx-auto">
         <div className="grid lg:grid-cols-6 grid-cols-1 text-center lg:text-left place-items-stretch gap-x-20 border-b-2 dark:border-dark-mode py-6">
           <div className="text-color-medium dark:text-color-medium-dark text-sm lg:col-span-2 py-4">
             <h1 className="text-color-bold dark:text-color-bold-dark text-base font-bold mb-3">{translate.about}</h1>

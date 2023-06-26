@@ -256,7 +256,7 @@ export const getStaticProps: GetStaticProps = storeWrapper.getStaticProps(
 
       return {
         props: { ...(await serverSideTranslations(locale || 'en', ['common', 'blog', 'header', 'footer'])) },
-        revalidate: 10,
+        revalidate: 5,
       };
     },
 );

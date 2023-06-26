@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component should render correctly 1`] = `
+<div
+  className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
+  style={
+    {
+      "height": "40px",
+      "width": "40px",
+    }
+  }
+>
+  <img
+    alt="avatar"
+    data-nimg="fill"
+    decoding="async"
+    fetchpriority="high"
+    onError={[Function]}
+    onLoad={[Function]}
+    sizes="120"
+    src="/_next/image?url=%2Fvi.png&w=3840&q=100"
+    srcSet="/_next/image?url=%2Fvi.png&w=16&q=100 16w, /_next/image?url=%2Fvi.png&w=32&q=100 32w, /_next/image?url=%2Fvi.png&w=48&q=100 48w, /_next/image?url=%2Fvi.png&w=64&q=100 64w, /_next/image?url=%2Fvi.png&w=96&q=100 96w, /_next/image?url=%2Fvi.png&w=128&q=100 128w, /_next/image?url=%2Fvi.png&w=256&q=100 256w, /_next/image?url=%2Fvi.png&w=384&q=100 384w, /_next/image?url=%2Fvi.png&w=640&q=100 640w, /_next/image?url=%2Fvi.png&w=750&q=100 750w, /_next/image?url=%2Fvi.png&w=828&q=100 828w, /_next/image?url=%2Fvi.png&w=1080&q=100 1080w, /_next/image?url=%2Fvi.png&w=1200&q=100 1200w, /_next/image?url=%2Fvi.png&w=1920&q=100 1920w, /_next/image?url=%2Fvi.png&w=2048&q=100 2048w, /_next/image?url=%2Fvi.png&w=3840&q=100 3840w"
+    style={
+      {
+        "bottom": 0,
+        "color": "transparent",
+        "height": "100%",
+        "left": 0,
+        "objectFit": "cover",
+        "objectPosition": undefined,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;

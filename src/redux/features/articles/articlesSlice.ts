@@ -62,12 +62,15 @@ export const articlesSlice = createSlice({
       })
       .addCase(getArticles.fulfilled, (state, action) => {
         state.data = action.payload.data;
+        console.log(action.payload.meta);
+
         if (state.data.length === action.payload.meta.pagination.total) {
           state.isMaximum = true;
         }
         state.loading = false;
       })
       .addCase(getArticles.rejected, (state) => {
+        console.log('hahahah');
         state.loading = false;
         state.error = false;
       })

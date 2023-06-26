@@ -4,10 +4,10 @@ import cx from 'classnames';
 export interface PopperProps extends HTMLAttributes<PropsWithChildren> {
   isOpen: boolean;
   onClose: () => void;
-  onItemClick: () => void;
+  onItemClick?: () => void;
 }
 
-export function Popper({ isOpen, onClose, onItemClick, className, children }: PopperProps) {
+export function Popper({ isOpen, onClose, onItemClick = () => {}, className, children }: PopperProps) {
   const popperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
