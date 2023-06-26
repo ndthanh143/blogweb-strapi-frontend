@@ -77,15 +77,11 @@ export const handleCommentSlice = createSlice({
         state.error = true;
       })
 
-      .addCase(deleteComment.pending, (state) => {
-        state.loading = true;
-      })
+      .addCase(deleteComment.pending, (state) => {})
       .addCase(deleteComment.fulfilled, (state, action) => {
         state.isDeleteSuccess = action.payload;
-        state.loading = false;
       })
       .addCase(deleteComment.rejected, (state) => {
-        state.loading = false;
         state.error = true;
       })
 
