@@ -32,7 +32,7 @@ export default function Category() {
 
   const { slug } = router.query;
 
-  const loading = categoryLoading && articlesLoading;
+  const loading = categoryLoading || articlesLoading;
 
   useEffect(() => {
     if (categories.length === 0) {
@@ -79,28 +79,27 @@ export default function Category() {
         </div>
       </div>
       {loading ? (
-        <span className="animate-spin duration-200">
-          <AiOutlineLoading />{' '}
+        <span className="flex my-32 justify-center animate-spin duration-200">
+          <AiOutlineLoading />
         </span>
-      ) : articles && articles.length > 0 ? (
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {articles.map((item) => (
-            <Card
-              isLoading={loading}
-              title={item.attributes.title}
-              thumbnail={item.attributes.thumbnail}
-              category={item.attributes.category}
-              author={item.attributes.author}
-              slug={item.attributes.slug}
-              publishedAt={item.attributes.publishedAt}
-              key={item.id}
-            />
-          ))}
-        </div>
       ) : (
-        <div className="flex items-center justify-center">
-          <span className="px-2">{t('noResult')}</span> <ImSad />
-        </div>
+        articles &&
+        articles.length > 0 && (
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {articles.map((item) => (
+              <Card
+                isLoading={loading}
+                title={item.attributes.title}
+                thumbnail={item.attributes.thumbnail}
+                category={item.attributes.category}
+                author={item.attributes.author}
+                slug={item.attributes.slug}
+                publishedAt={item.attributes.publishedAt}
+                key={item.id}
+              />
+            ))}
+          </div>
+        )
       )}
       <Pagination
         pageCount={pageCount}
