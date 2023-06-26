@@ -46,6 +46,13 @@ export const updateUserAPI = async (user: UserResponseData, payload: UpdateUserP
 
   let response: AxiosResponse;
 
+  const accessToken = Cookies.get('access_token');
+
+  const headers = {
+    'Content-Type': 'multipart/form-data',
+    Authorization: 'Bearer ' + accessToken,
+  };
+
   if (avatar && avatar.length > 0) {
     if (user.avatar) {
       await axiosClient.delete(`/upload/files/${user.avatar.id}`);
@@ -54,7 +61,7 @@ export const updateUserAPI = async (user: UserResponseData, payload: UpdateUserP
     const formData = new FormData();
     formData.append('files', avatar?.[0]);
 
-    const { data } = await axiosClient.post<Avatar[]>('/upload', formData);
+    const { data } = await axiosServer.post<Avatar[]>('/upload', formData, { headers });
 
     response = await axiosClient.put(`/users/${user.id}`, { ...payload, avatar: data?.[0].id });
   } else {

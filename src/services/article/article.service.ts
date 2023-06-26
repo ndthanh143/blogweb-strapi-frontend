@@ -114,7 +114,14 @@ export const postArticleAPI = async (payload: PostArticlePayload) => {
   const formData = new FormData();
   formData.append('files', payload.data.thumbnail?.[0]);
 
-  const res = await axiosClient.post<Avatar[]>('/upload', formData);
+  const accessToken = Cookies.get('access_token');
+
+  const headers = {
+    'Content-Type': 'multipart/form-data',
+    Authorization: 'Bearer ' + accessToken,
+  };
+
+  const res = await axiosServer.post<Avatar[]>('/upload', formData, { headers });
 
   const { data } = await axiosClient.post<BaseResponse<Article>>('/articles', {
     data: { ...payload.data, thumbnail: res.data?.[0].id },
