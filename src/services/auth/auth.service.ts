@@ -1,16 +1,22 @@
 import { axiosClient } from '@/utils/axiosClient';
-import { ChangePasswordPayload, LoginPayload, RegisterPayload } from './auth.dto';
+import { AuthResponse, ChangePasswordPayload, LoginPayload, RegisterPayload } from './auth.dto';
 import { updateUserAPI } from '../user/user.service';
-import { UserResponseData } from '../user/users.dto';
+import Cookies from 'js-cookie';
 
-export const loginAPI = async (loginPayload: LoginPayload) => await axiosClient.post('/login', loginPayload);
+export const loginAPI = async (loginPayload: LoginPayload) => {
+  const { data } = await axiosClient.post<AuthResponse>('/auth/local', loginPayload);
+
+  Cookies.set('access_token', data.jwt);
+};
 
 export const logoutAPI = async () => await axiosClient.post('/logout');
 
 export const registerAPI = async (registerPayload: RegisterPayload) => {
-  const { data } = await axiosClient.post<UserResponseData>('/register', registerPayload);
+  const { data } = await axiosClient.post<AuthResponse>('/auth/local/register', registerPayload);
 
-  updateUserAPI(data, { name: data.username });
+  Cookies.set('access_token', data.jwt);
+
+  updateUserAPI(data.user, { name: data.user.username });
 };
 
 export const changePasswordAPI = async (changePasswordPayload: ChangePasswordPayload) =>

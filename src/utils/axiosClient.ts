@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const axiosServer = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api`,
@@ -7,11 +8,16 @@ export const axiosServer = axios.create({
   },
 });
 
+const accessToken = Cookies.get('access_token');
+
+const headers = {
+  'Content-Type': 'application/json',
+  Authorization: `Bearer ${accessToken}`,
+};
+
 export const axiosClient = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api`,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  headers,
 });
 
 axiosServer.interceptors.response.use(

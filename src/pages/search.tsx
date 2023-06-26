@@ -18,6 +18,7 @@ import { useTranslation } from 'next-i18next';
 import { Avatar, Button, Card, Input, Pagination, Select, SearchPayload } from '@/components';
 import { ORDER_OPTIONS, OrderEnum, PAGE_SIZE } from '@/constants';
 import scrollToTop from '@/utils/scrollToTop';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const schema = object({
   searchQuery: string().required('is Required'),
@@ -125,8 +126,11 @@ export default function Search() {
           </div>
         )}
       </div>
-
-      {!loading && type === 'authors' ? (
+      {loading ? (
+        <span className="flex w-full justify-center my-32 animate-spin duration-200">
+          <AiOutlineLoading3Quarters />
+        </span>
+      ) : type === 'authors' ? (
         users.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
             {users.map((item) => (
@@ -179,7 +183,6 @@ export default function Search() {
           <span className="px-2">{translate.noResult}</span> <ImSad />
         </div>
       )}
-
       <Pagination
         pageCount={pageCount}
         pageRangeDisplayed={2}

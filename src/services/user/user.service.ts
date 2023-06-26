@@ -2,6 +2,8 @@ import { PaginationOption } from '@/dtos/api.dto';
 import { Avatar, UpdateUserPayload, UserResponseData } from '@/services/user/users.dto';
 import { axiosClient, axiosServer } from '@/utils/axiosClient';
 import { AxiosResponse } from 'axios';
+import Cookies from 'js-cookie';
+import { AuthResponse } from '../auth/auth.dto';
 
 export const getUserDetailAPI = async (id: number) => {
   const { data } = await axiosServer.get<UserResponseData>(`/users/${id}`, {
@@ -32,7 +34,9 @@ export const getUsersAPI = async () => {
 };
 
 export const getLoggedInUserAPI = async () => {
-  const { data } = await axiosClient.get<UserResponseData>('/users/me', { params: { populate: '*' } });
+  const { data } = await axiosClient.get<UserResponseData>('/users/me', {
+    params: { populate: '*' },
+  });
 
   return data;
 };
