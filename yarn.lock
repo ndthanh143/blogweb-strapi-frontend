@@ -3796,7 +3796,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16", "@types/react@^18.2.9":
+"@types/react@*", "@types/react@>=16":
   version "18.2.9"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.2.9.tgz"
   integrity sha512-pL3JAesUkF7PEQGxh5XOwdXGV907te6m1/Qe1ERJLgomojS6Ne790QiA7GUl434JEkFA2aAaB6qJ5z4e1zJn/w==
@@ -3809,6 +3809,15 @@
   version "18.2.12"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.12.tgz#95d584338610b78bb9ba0415e3180fb03debdf97"
   integrity sha512-ndmBMLCgn38v3SntMeoJaIrO6tGHYKMEBohCUmw8HoLLQdRMOIGXfeYaBTLe2lsFaSB3MOK1VXscYFnmLtTSmw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^18.2.0":
+  version "18.2.14"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.14.tgz#fa7a6fecf1ce35ca94e74874f70c56ce88f7a127"
+  integrity sha512-A0zjq+QN/O0Kpe30hA1GidzyFjatVvrpIvWLxD+xv67Vt91TWWgco9IvrJBkeyHm1trGaFS/FSGqPlhyeZRm0g==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -8028,11 +8037,6 @@ jest-matcher-utils@^29.5.0:
     jest-diff "^29.5.0"
     jest-get-type "^29.4.3"
     pretty-format "^29.5.0"
-
-jest-matchmedia-mock@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/jest-matchmedia-mock/-/jest-matchmedia-mock-1.1.0.tgz#eaae8c5d1dee4e4f7c59f8cb1b38b5d7ea842552"
-  integrity sha512-REnJRsOSCMpGAlkxmvVTqEBpregyFVi9MPEH3N83W1yLKzDdNehtCkcdDZduXq74PLtfI+11NyM4zKCK5ynV9g==
 
 jest-message-util@^29.5.0:
   version "29.5.0"

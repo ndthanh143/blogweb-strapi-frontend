@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next-i18next').UserConfig} */
 module.exports = {
   debug: process.env.NODE_ENV === 'development',
@@ -5,6 +7,7 @@ module.exports = {
     defaultLocale: 'en',
     locales: ['en', 'vi'],
   },
-  react: { useSuspense: false },
+  localePath: path.resolve('./public/locales'),
+  react: { useSuspense: true },
   reloadOnPrerender: process.env.NODE_ENV === 'development',
 };

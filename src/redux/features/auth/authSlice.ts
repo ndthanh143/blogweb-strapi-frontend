@@ -8,14 +8,15 @@ export interface AuthState {
   user: UserResponseData | null;
   loading: boolean;
   error: boolean;
-  isAuthenticated?: boolean;
-  isPasswordChanged?: boolean;
+  isAuthenticated: boolean;
+  isPasswordChanged: boolean;
 }
 
 const initialState: AuthState = {
   user: null,
   loading: false,
   error: false,
+  isAuthenticated: false,
   isPasswordChanged: false,
 };
 

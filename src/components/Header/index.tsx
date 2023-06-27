@@ -41,7 +41,7 @@ export function Header() {
 
   const { register, handleSubmit } = useForm<SearchPayload>({ resolver: yupResolver(schema) });
 
-  const { user, logout } = useAuth({});
+  const { user, logout } = useAuth();
 
   const { data: categories } = useAppSelector((state) => state.categories);
 
