@@ -1,38 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BLOG - GOLDENOWL
 
-## Getting Started
+BLOG - GOLDENOWL
 
-First, run the development server:
+## Prerequisite
+
+### yarn
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install -g yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note: -g is global install. If yarn is installed, skip this step**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+yarn
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Create .env file:**
 
-## Learn More
+```
+nano .env
+```
 
-To learn more about Next.js, take a look at the following resources:
+**.env**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NODE_ENV=
+NEXT_PUBLIC_API_URL=
+NEXT_PUBLIC_IMAGE_URL=
+NEXT_PUBLIC_CLOUDINARY_IMAGE_PATH=
+NEXT_PUBLIC_SITE_URL=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Note:** Please ask another dev to get access to the env vars in these files.
 
-## Deploy on Vercel
+### Run environment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Development mode**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+yarn dev
+```
+
+**Production mode**
+
+```bash
+yarn build
+```
+
+```bash
+yarn start
+```
+
+### Storybook
+
+**To run storybook**
+
+```
+yarn storybook
+```
+
+Storybook file must be in /`src`/`components`/`<component>`/`*.stories.tsx`
+
+Storybook is a tool for UI development. It makes development faster and easier by isolating components.
+Check the [document](https://storybook.js.org/docs/react/get-started/introduction) to get you started!
+
+### Jest Test
+
+**To run test for file**
+
+```
+yarn test <file>
+```
+
+**To run test coverage all file**
+
+```
+yarn test -- --coverage
+```
+
+**To run test coverage only components folder**
+
+```
+yarn test -u -- --coverage --watchAll=false --collectCoverageFrom="./src/components/**/*.js"
+```
+
+Test file must be in /src/`__tests__`
+
+Test file must have extension .test.ts(x)
+
+Check the [Jest document](https://jestjs.io/docs/getting-started) to get you started!
+
+## Deployment
+
+**Deployed on Vercel:**
+Contact your team to join Vercel team. Then go to `Site setting/Build & deploy` to config stating and production deploy
+
+**Staging:** Auto deploy & generate a different domain to test after PR
+
+**Production:** [Production](https://blogowl.vercel.app//)
+
+Cheers 🍺🍺
+Happy coding!
