@@ -8,6 +8,6 @@ module.exports = {
     locales: ['en', 'vi'],
   },
   localePath: path.resolve('./public/locales'),
-  react: { useSuspense: true },
+  react: { useSuspense: false },
   reloadOnPrerender: process.env.NODE_ENV === 'development',
 };
