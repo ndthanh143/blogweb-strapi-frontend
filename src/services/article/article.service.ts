@@ -30,8 +30,6 @@ export const getArticlesAPI = async ({ page, pageSize }: PaginationOption = {}) 
     },
   });
 
-  console.log('haha', data);
-
   return data;
 };
 

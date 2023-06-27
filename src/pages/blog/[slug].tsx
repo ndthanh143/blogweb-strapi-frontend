@@ -125,10 +125,6 @@ export default function Post() {
   let content = data?.attributes.content.replaceAll(/\/uploads/g, `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`);
   content = content?.replaceAll(/\/v\d+\//g, '/q_60/');
 
-  if (!router.isFallback && !data) {
-    return <p>Error 404</p>;
-  }
-
   return (
     data && (
       <div className="mb-8">
@@ -248,7 +244,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps: GetStaticProps = storeWrapper.getStaticProps(

@@ -55,8 +55,6 @@ export const articlesSlice = createSlice({
       })
       .addCase(getArticles.fulfilled, (state, action) => {
         state.data = action.payload.data;
-        console.log(action.payload.meta);
-
         if (state.data.length === action.payload.meta.pagination.total) {
           state.isMaximum = true;
         }

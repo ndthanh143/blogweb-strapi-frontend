@@ -41,7 +41,6 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    console.log('dispatch', isAuthenticated, isPasswordChanged);
     dispatch(getMe());
   }, [dispatch, isAuthenticated, isPasswordChanged]);
 

@@ -6,7 +6,6 @@ export interface LabelProps {
 }
 
 export function Label({ color, children, className }: HTMLAttributes<PropsWithChildren<LabelProps>>) {
-  console.log('renrerrrr');
   return (
     <span
       className={cx(
