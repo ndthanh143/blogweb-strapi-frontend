@@ -1,8 +1,7 @@
-import React from 'react';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
-import { Slider } from '.';
 import axios from 'axios';
 import { ArticlesResponse } from '@/services/article/article.dto';
+import { Slider } from '@/components';
 
 describe('Slider component', () => {
   test('should render correctly', async () => {

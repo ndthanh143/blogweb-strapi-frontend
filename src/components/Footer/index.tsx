@@ -1,18 +1,17 @@
 import { FiMail } from 'react-icons/fi';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
 import { useTranslation } from 'next-i18next';
 import { Button, Input } from '@/components';
 import Logo from '@/assets/logo';
+import { CategoryContext } from '@/pages/_app';
 
 export function Footer() {
   const { t } = useTranslation('footer');
 
-  const dispatch = useAppDispatch();
-
-  const { data } = useAppSelector((state) => state.categories);
+  const data = useContext(CategoryContext);
 
   const translate = {
     about: t('about'),
@@ -25,11 +24,11 @@ export function Footer() {
     cookie: t('cookie'),
   };
 
-  useEffect(() => {
-    if (data.length === 0) {
-      dispatch(getCategories());
-    }
-  }, [data.length, dispatch]);
+  // useEffect(() => {
+  //   if (data.length === 0) {
+  //     dispatch(getCategories());
+  //   }
+  // }, [data.length, dispatch]);
 
   return (
     <div className="bg-footer-color dark:bg-footer-color-dark">

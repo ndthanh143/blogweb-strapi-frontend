@@ -1,10 +1,9 @@
-import React from 'react';
+import { Popper } from '@/components';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
-import { Input } from '.';
 
-describe('Input component', () => {
+describe('Popper component', () => {
   test('should render correctly', () => {
-    const component = renderer.create(<Input type="text" defaultValue="type here..." />);
+    const component = renderer.create(<Popper isOpen={false} onClose={() => {}}></Popper>);
     let tree = component.toJSON() as ReactTestRendererJSON;
     expect(tree).toMatchSnapshot();
   });

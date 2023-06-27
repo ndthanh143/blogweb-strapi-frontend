@@ -127,7 +127,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = storeWrapper.getStaticProps(({ dispatch }) => async ({ params, locale }) => {
   await dispatch(getCategories());
-  await dispatch(getCategoryDetail(params?.slug as string));
+  if (params) {
+    await dispatch(getCategoryDetail(params?.slug as string));
+  }
 
   return {
     props: { ...(await serverSideTranslations(locale || 'en', ['common', 'category', 'header', 'footer'])) },

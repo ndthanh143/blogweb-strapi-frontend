@@ -103,12 +103,18 @@ export function Header() {
         <Logo />
       </Link>
       <ul className="hidden lg:flex md:col-span-4 lg:col-span-3 justify-center items-center text-color-bold dark:text-white order-2">
-        <li className="px-4 mx-2 py-2 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500">
-          <Link href="/">{translate.home}</Link>
-        </li>
-        <li className="px-4 mx-2 py-2 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500">
-          <Link href={`/category/${categories?.[0]?.attributes.slug}`}>{translate.blog}</Link>
-        </li>
+        <Link
+          href="/"
+          className="px-4 mx-2 py-2 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500"
+        >
+          {translate.home}
+        </Link>
+        <Link
+          href={`/category/${categories?.[0]?.attributes.slug}`}
+          className="px-4 mx-2 py-2 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500"
+        >
+          {translate.blog}
+        </Link>
       </ul>
       <form
         className={cx('order-7 mt-5 lg:m-0 lg:order-3 lg:block col-span-3', user && 'col-span-4')}

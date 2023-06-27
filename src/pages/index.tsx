@@ -2,12 +2,13 @@ import { HomepageData } from '@/services/homepage/homepage.dto';
 import { getArticles, getMoreArticles } from '@/redux/features/articles/articlesSlice';
 import { storeWrapper, useAppDispatch, useAppSelector } from '@/redux/store';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getHomepageAPI } from '@/services/homepage/homepage.service';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Button, Card, Slider, Seo } from '@/components';
 import { PAGE_SIZE } from '@/constants';
+import { getCategories } from '@/redux/features/categories/categoriesSlice';
 
 export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProps>) {
   const { t } = useTranslation('home');
@@ -47,6 +48,7 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
             slug={item.attributes.slug}
             publishedAt={item.attributes.publishedAt}
             key={item.id}
+            isRendered
           />
         ))}
       </div>
@@ -55,8 +57,10 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
         <div className="lg:flex justify-center">
           <Button
             variant="outlined"
-            className="my-8 mx-auto w-full lg:w-fit"
+            className="flex items-center my-8 mx-auto w-full lg:w-fit"
             onClick={handleLoadMore}
+            loading={loading}
+            disabled={loading}
             aria-label={translate.viewMore}
           >
             {translate.viewMore}

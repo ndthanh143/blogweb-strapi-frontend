@@ -1,15 +1,14 @@
-import React from 'react';
+import { Select } from '@/components';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
-import { MiniNavigation } from '.';
 
-describe('MiniNavigation component', () => {
+describe('Select component', () => {
   test('should render correctly', () => {
     const component = renderer.create(
-      <MiniNavigation>
-        <p>Home</p>
-        <p>Blog</p>
-        <p>Logout</p>
-      </MiniNavigation>,
+      <Select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
     );
     let tree = component.toJSON() as ReactTestRendererJSON;
     expect(tree).toMatchSnapshot();

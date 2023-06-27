@@ -1,10 +1,9 @@
-import React from 'react';
+import { SwitchMode } from '@/components';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
-import { Avatar } from './index';
 
-describe('Avatar component', () => {
+describe('SwitchMode component', () => {
   test('should render correctly', () => {
-    const component = renderer.create(<Avatar src="/vi.png" width={40} height={40} alt="avatar" size={'120'} />);
+    const component = renderer.create(<SwitchMode />);
     let tree = component.toJSON() as ReactTestRendererJSON;
     expect(tree).toMatchSnapshot();
   });

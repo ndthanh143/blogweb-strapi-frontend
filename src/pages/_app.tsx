@@ -15,6 +15,9 @@ import { getStrapiMedia } from '@/utils/media';
 import { LayoutKeys } from '@/dtos/layout.dto';
 import NProgress from 'nprogress';
 import '@/styles/globals.css';
+import { Category } from '@/services/category/category.dto';
+import { BaseResponseData } from '@/dtos/base';
+import { getCategoriesAPI } from '@/services/category/category.service';
 
 export type NextComponentType<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -26,6 +29,7 @@ type MyAppProps = AppProps & {
   };
 };
 export const GlobalContext = createContext<GlobalAttributes>({});
+export const CategoryContext = createContext<BaseResponseData<Category>[]>([]);
 
 NProgress.configure({ showSpinner: false });
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -36,7 +40,7 @@ Router.events.on('routeChangeError', () => {
 });
 
 const MyApp = ({ Component, ...rest }: MyAppProps) => {
-  const { global } = rest.pageProps;
+  const { global, categories } = rest.pageProps;
 
   const { store } = storeWrapper.useWrappedStore(rest);
 
@@ -60,15 +64,17 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
       <Seo seo={global.attributes.defaultSeo} />
 
       <GlobalContext.Provider value={global.attributes}>
-        <ThemeProvider attribute="class">
-          <Provider store={store}>
-            <AuthProvider>
-              <Layout>
-                <Component {...rest.pageProps} />
-              </Layout>
-            </AuthProvider>
-          </Provider>
-        </ThemeProvider>
+        <CategoryContext.Provider value={categories}>
+          <ThemeProvider attribute="class">
+            <Provider store={store}>
+              <AuthProvider>
+                <Layout>
+                  <Component {...rest.pageProps} />
+                </Layout>
+              </AuthProvider>
+            </Provider>
+          </ThemeProvider>
+        </CategoryContext.Provider>
       </GlobalContext.Provider>
     </>
   );
@@ -77,11 +83,11 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
 MyApp.getInitialProps = async (ctx: AppContext) => {
   const appProps = await App.getInitialProps(ctx);
 
-  const { req } = ctx.ctx;
-
   const { data } = await getGlobalAPI();
 
-  return { ...appProps, pageProps: { global: data, host: req?.headers.host } };
+  const { data: categories } = await getCategoriesAPI();
+
+  return { ...appProps, pageProps: { global: data, categories } };
 };
 
 export default appWithTranslation(MyApp);

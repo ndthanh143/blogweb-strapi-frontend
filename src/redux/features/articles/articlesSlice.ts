@@ -41,7 +41,14 @@ export const searchArticles = createAsyncThunk('articles/searchArticles', ({ que
 export const articlesSlice = createSlice({
   name: 'articles',
   initialState,
-  reducers: {},
+  reducers: {
+    addMoreData: (state, action) => {
+      state.data = [...state.data, ...action.payload.data];
+      if (state.data.length === action.payload.meta.pagination.total) {
+        state.isMaximum = true;
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase<typeof HYDRATE, HydrateAction>(HYDRATE, (state, action) => {

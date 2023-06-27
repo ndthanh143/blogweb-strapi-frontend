@@ -1,7 +1,6 @@
-import React from 'react';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
-import { Card } from '.';
 import axios from 'axios';
+import { Card } from '@/components';
 
 describe('Card component', () => {
   test('should render correctly', async () => {

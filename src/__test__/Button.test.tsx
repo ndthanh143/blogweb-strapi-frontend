@@ -1,6 +1,5 @@
-import React from 'react';
+import { Button } from '@/components';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
-import { Button } from '.';
 
 describe('Button component', () => {
   test('should render correctly', () => {

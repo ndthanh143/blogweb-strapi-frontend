@@ -41,7 +41,7 @@ export default function Post() {
 
   const router = useRouter();
 
-  const { data } = useArticle();
+  const { data, loading } = useArticle();
 
   const { user } = useAuth();
 
@@ -126,6 +126,7 @@ export default function Post() {
   content = content?.replaceAll(/\/v\d+\//g, '/q_60/');
 
   return (
+    !loading &&
     data && (
       <div className="mb-8">
         <ToastContainer />
