@@ -78,7 +78,7 @@ export function Header() {
       </div>
       <MiniNavigation isOpen={isOpenMenu}>
         <div className="w-full pt-2 px-4">
-          <ul className="col-span-5 text-color-bold dark:text-white ">
+          <div className="col-span-5 text-color-bold dark:text-white ">
             <Link
               href="/"
               className="px-4 mx-2 py-4 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500 active:bg-gray-300 dark:active:bg-slate-700 block"
@@ -93,7 +93,7 @@ export function Header() {
             >
               {translate.blog}
             </Link>
-          </ul>
+          </div>
         </div>
       </MiniNavigation>
       <Link
@@ -103,7 +103,7 @@ export function Header() {
       >
         <Logo />
       </Link>
-      <ul className="hidden lg:flex md:col-span-4 lg:col-span-3 justify-center items-center text-color-bold dark:text-white order-2">
+      <div className="hidden lg:flex md:col-span-4 lg:col-span-3 justify-center items-center text-color-bold dark:text-white order-2">
         <Link
           href="/"
           className="px-4 mx-2 py-2 cursor-pointer hover:bg-gray-200 transition-all duration-100 rounded-lg dark:hover:bg-slate-500"
@@ -116,7 +116,7 @@ export function Header() {
         >
           {translate.blog}
         </Link>
-      </ul>
+      </div>
       <form
         className={cx('order-7 mt-5 lg:m-0 lg:order-3 lg:block col-span-3', user && 'col-span-4')}
         onSubmit={handleSubmit(onSubmitHandler)}

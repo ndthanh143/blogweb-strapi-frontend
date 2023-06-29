@@ -21,7 +21,7 @@ export function Button({
       {...props}
       className={cx(
         variant === 'solid' &&
-          'bg-color-primary text-white hover:bg-color-primary-hover active:color-primary-active flex justify-center items-center border-transparent',
+          'bg-color-primary text-color-bold hover:bg-color-primary-hover active:color-primary-active flex justify-center items-center border-transparent',
         variant === 'outlined' &&
           'text-color-thin  dark:border-dark-mode dark:text-color-thin-dark hover:bg-gray-200 active:bg-gray-300 dark:hover:bg-blue-500 dark:hover:text-white dark:hover:border-blue-500 dark:active:bg-blue-700 dark:active:border-blue-700',
         variant === 'text' && 'hover:bg-gray-200 dark:hover:bg-slate-500 border-transparent',

@@ -68,7 +68,7 @@ export function Slider({ data }: SliderProps) {
               sizes={item.attributes.thumbnail.data.attributes.formats.large + ''}
               priority
             />
-            <Link href={`/blog/${item.attributes.slug}`}>
+            <Link href={`/blog/${item.attributes.slug}`} aria-label={`Go to ${item.attributes.title} page`}>
               <div className="absolute w-5/6 lg:w-2/5 text-sm drop-shadow-2xl lg:left-16 text-white lg:text-inherit bottom-4 lg:bg-white px-4 lg:px-8 py-4 rounded-lg lg:dark:bg-dark-mode lg:bg-opacity-90">
                 <div className="my-4">
                   <Label color="primary">{item.attributes.category.data.attributes.name}</Label>

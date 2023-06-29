@@ -36,7 +36,12 @@ export const Card = memo(
               </svg>
             </div>
           ) : (
-            <Link href={`/blog/${slug}`} className="w-full h-full block relative" data-cy="post">
+            <Link
+              href={`/blog/${slug}`}
+              className="w-full h-full block relative"
+              data-cy="post"
+              aria-label={`Go to ${title}`}
+            >
               {thumbnail.data && (
                 <Image
                   src={getStrapiMedia(
