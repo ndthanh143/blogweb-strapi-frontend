@@ -114,11 +114,13 @@ export default function Post() {
   }, [dispatch, isPostSuccess, isDeleteSuccess, isUpdateSuccess, isAnswerSuccess, data]);
 
   const seo: SEO = {
-    metaTitle: data?.attributes.title,
-    metaDescription: data?.attributes.description,
-    shareImage: data?.attributes.thumbnail,
+    metaTitle: data.attributes.title,
+    metaDescription: data.attributes.description,
+    shareImage: data.attributes.thumbnail,
     article: true,
   };
+
+  console.log('hahaha', seo);
 
   const shareUrl = process.env.NEXT_PUBLIC_SITE_URL + router.asPath;
 
@@ -130,7 +132,7 @@ export default function Post() {
     data && (
       <div className="mb-8">
         <ToastContainer />
-        <Seo seo={seo} />
+        {seo && <Seo seo={seo} />}
         <div>
           <div className="my-4">
             <Label color="primary">{data.attributes.category.data.attributes.name}</Label>
