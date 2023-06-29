@@ -1,10 +1,15 @@
 {
   "about": "About",
+  "aboutContent": "We are the best team and company in the Asia, join with us is the best choice and decision of your life, make it clearly and don't worry a bout monney. We are everythings you need",
   "quickLink": "Quick Link",
   "category": "Category",
   "home": "Home",
   "blog": "Blog",
   "terms": "Term of Use",
   "privacy": "Privacy Policy",
-  "cookie": "Cookie Policy"
+  "cookie": "Cookie Policy",
+  "formTitle": "Weekly Newsletter",
+  "formDesc": "Get blog articles and offers via email",
+  "formInputPlaceHolder": "Your email",
+  "subscribe": "Subscribe"
 }

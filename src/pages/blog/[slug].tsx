@@ -12,15 +12,7 @@ import { useArticle } from '@/hooks/useArticle';
 import { useEffect, useState } from 'react';
 import { getCommentsArticle } from '@/redux/features/comments/commentsSlice';
 import dynamic from 'next/dynamic';
-import { useAuth } from '@/hooks/useAuth';
-import { UpdateCommentPayload } from '@/services/comment/comment.dto';
-import {
-  answerComment,
-  deleteComment,
-  postComment,
-  resetState,
-  updateComment,
-} from '@/redux/features/comments/commentSlice';
+import { resetState } from '@/redux/features/comments/commentSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
@@ -35,12 +27,17 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useComment } from '@/hooks/useComment';
 import { usePath } from '@/hooks/usePath';
+import 'moment/locale/vi';
 
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
 export default function Post() {
   const { t } = useTranslation('blog');
 
   const dispatch = useAppDispatch();
+
+  const { locale } = useRouter();
+
+  moment.locale(locale);
 
   const { data: comments, loading: commentsLoading } = useAppSelector((state) => state.comments);
 
@@ -84,9 +81,9 @@ export default function Post() {
   }, [dispatch, isPostSuccess, isDeleteSuccess, isUpdateSuccess, isAnswerSuccess]);
 
   const seo: SEO = {
-    metaTitle: data.attributes.title,
-    metaDescription: data.attributes.description,
-    shareImage: data.attributes.thumbnail,
+    metaTitle: data?.attributes.title,
+    metaDescription: data?.attributes.description,
+    shareImage: data?.attributes.thumbnail,
     article: true,
   };
 
@@ -124,7 +121,7 @@ export default function Post() {
             >
               {data.attributes.author.data.attributes.name}
             </Link>
-            <p>{moment(data.attributes.publishedAt).format('MMMM DD, YYYY')}</p>
+            <p>{moment(data.attributes.publishedAt).format(locale === 'vi' ? 'DD MMMM, YYYY' : 'MMMM DD, YYYY')}</p>
           </div>
           {content && (
             <div

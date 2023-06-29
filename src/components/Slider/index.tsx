@@ -10,6 +10,7 @@ import SliderSlick from 'react-slick';
 import { CSSProperties } from 'react';
 import moment from 'moment';
 import { BaseResponseData } from '@/dtos/base';
+import { useRouter } from 'next/router';
 
 export interface SliderProps {
   data: BaseResponseData<Article>[];
@@ -38,6 +39,9 @@ const SliderNextArrow = ({ onClick }: ArrowProps) => {
 };
 
 export function Slider({ data }: SliderProps) {
+  const { locale } = useRouter();
+
+  moment.locale(locale || 'en');
   return (
     <div className="rounded-lg">
       <SliderSlick
@@ -88,7 +92,9 @@ export function Slider({ data }: SliderProps) {
                     size={item.attributes.author.data.attributes.avatar?.data?.attributes.formats.thumbnail.size + ''}
                   />
                   <p className="ml-2 mr-4 font-medium">{item.attributes.author.data.attributes.name}</p>
-                  <p>{moment(item.attributes.publishedAt).format('MMMM DD, YYYY')}</p>
+                  <p>
+                    {moment(item.attributes.publishedAt).format(locale === 'vi' ? 'DD MMMM, YYYY' : 'MMMM DD, YYYY')}
+                  </p>
                 </div>
               </div>
             </Link>

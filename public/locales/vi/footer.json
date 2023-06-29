@@ -1,10 +1,15 @@
 {
   "about": "Về chúng tôi",
+  "aboutContent": "Chúng tôi là đội và công ty tốt nhất ở Châu Á, tham gia với chúng tôi là sự lựa chọn và quyết định tốt nhất trong cuộc đời bạn, hãy làm rõ điều đó và đừng lo lắng về vấn đề tiền bạc. Chúng tôi là tất cả những gì bạn cần",
   "quickLink": "Liên kết nhanh",
   "category": "Thể loại",
   "home": "Trang chủ",
   "blog": "Bài viết",
   "terms": "Điều khoản sử dụng",
   "privacy": "Chính sách bảo mật",
-  "cookie": "Chính sách cookie"
+  "cookie": "Chính sách cookie",
+  "formTitle": "Thư gửi hàng tuần",
+  "formDesc": "Nhận thông tin bài viết mới nhất thông qua email",
+  "formInputPlaceHolder": "Email của bạn",
+  "subscribe": "Đăng ký"
 }

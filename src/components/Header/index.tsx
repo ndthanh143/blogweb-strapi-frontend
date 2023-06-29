@@ -217,7 +217,7 @@ export function Header() {
         <Select
           defaultValue={locale || 'en'}
           onChange={(e) => router.push({ pathname, query }, asPath, { locale: e.target.value })}
-          className="w-fit pr-4 border-blue-400 text-blue-500 outline-none dark:border-primary"
+          className="w-fit border-blue-400 text-blue-500 outline-none dark:border-primary"
         >
           <option value="en">ENG</option>
           <option value="vi">VIE</option>

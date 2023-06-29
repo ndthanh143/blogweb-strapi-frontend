@@ -16,6 +16,7 @@ import { LayoutKeys } from '@/dtos/layout.dto';
 import NProgress from 'nprogress';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
 import '@/styles/globals.css';
+import 'moment/locale/vi';
 
 export type NextComponentType<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;

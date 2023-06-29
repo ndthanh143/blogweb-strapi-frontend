@@ -13,6 +13,7 @@ export function Footer() {
 
   const translate = {
     about: t('about'),
+    aboutContent: t('aboutContent'),
     quickLink: t('quickLink'),
     category: t('category'),
     home: t('home'),
@@ -20,6 +21,10 @@ export function Footer() {
     terms: t('terms'),
     privacy: t('privacy'),
     cookie: t('cookie'),
+    formTitle: t('formTitle'),
+    formDesc: t('formDesc'),
+    formInputPlaceHolder: t('formInputPlaceHolder'),
+    subscribe: t('subscribe'),
   };
 
   return (
@@ -28,10 +33,7 @@ export function Footer() {
         <div className="grid lg:grid-cols-6 grid-cols-1 text-center lg:text-left place-items-stretch gap-x-20 border-b-2 dark:border-dark-mode py-6">
           <div className="text-color-medium dark:text-color-medium-dark text-sm lg:col-span-2 py-4">
             <h1 className="text-color-bold dark:text-color-bold-dark text-base font-bold mb-3">{translate.about}</h1>
-            <p className="mb-3 text-color-thin dark:text-color-thin-dark">
-              We are the best team and company in the Asia, join with us is the best choice and decision of your life,
-              make it clearly and don&apos;t worry a bout monney. We are everythings you need
-            </p>
+            <p className="mb-3 text-color-thin dark:text-color-thin-dark">{translate.aboutContent}</p>
             <p className="dark:text-color-thin-dark">
               <span className="text-base font-bold text-color-bold dark:text-color-bold-dark">Email: </span>
               alex.nguyen.goldenowl@gmail.com
@@ -66,11 +68,11 @@ export function Footer() {
               ))}
           </div>
           <div className="lg:col-span-2 bg-white text-center px-6 rounded-lg dark:bg-input-dark py-4">
-            <h1 className="font-bold mb-1 dark:text-color-bold-dark">Weekly Newsletter</h1>
-            <p className="mb-8 dark:text-color-blur">Get blog articles and offers via email</p>
-            <Input placeholder="Your Email" endDecorator={<FiMail />} />
+            <h1 className="font-bold mb-1 dark:text-color-bold-dark">{translate.formTitle}</h1>
+            <p className="mb-8 dark:text-color-blur">{translate.formDesc}</p>
+            <Input placeholder={translate.formInputPlaceHolder} endDecorator={<FiMail />} />
             <Button variant="solid" type="submit" className="mt-3 w-full" aria-label="Subcribe Email">
-              Subcribe
+              {translate.subscribe}
             </Button>
           </div>
         </div>

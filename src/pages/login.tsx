@@ -64,7 +64,7 @@ export default function Login() {
   return (
     <>
       <Seo seo={seo} />
-      <div className="h-screen flex items-center justify-center text-center">
+      <div className="container h-screen flex items-center justify-center text-center">
         <div className="w-3/4 lg:w-1/2 shadow-2xl dark:shadow-blue-500/50 p-12 bg-white dark:bg-dark-mode rounded-lg overflow-hidden ">
           <form onSubmit={handleSubmit(onSubmitHandler)}>
             <Link href="/" className="flex justify-center">

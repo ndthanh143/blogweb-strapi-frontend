@@ -10,14 +10,14 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({ className, ...props
       <select
         ref={ref}
         className={cx(
-          'pl-4 pr-8 py-2 w-full bg-transparent dark:bg-dark-mode dark:text-gray-200 border-2 rounded-lg dark:border-dark-mode appearance-none placeholder-gray-400 cursor-pointer',
+          'pl-4 py-2 w-full bg-transparent dark:bg-dark-mode dark:text-gray-200 border-2 rounded-lg dark:border-dark-mode placeholder-gray-400 cursor-pointer',
           className,
         )}
         {...props}
       />
-      <span className="absolute right-2 dark:text-white z-10">
+      {/* <span className="absolute right-2 dark:text-white z-10">
         <FiChevronDown />
-      </span>
+      </span> */}
     </div>
   );
 });

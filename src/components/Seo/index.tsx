@@ -23,8 +23,6 @@ const Seo: React.FC<{ seo: SEO }> = ({ seo }) => {
       ),
   };
 
-  console.log('hihi', fullSeo.shareImage);
-
   return (
     <Head>
       {fullSeo.metaTitle && (

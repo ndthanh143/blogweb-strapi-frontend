@@ -6,6 +6,8 @@ import Link from 'next/link';
 import moment from 'moment';
 import { getStrapiMedia } from '@/utils/media';
 import { Article } from '@/services/article/article.dto';
+import { useRouter } from 'next/router';
+import 'moment/locale/vi';
 
 type FilterArticle = Omit<Article, 'content' | 'createdAt' | 'updatedAt' | 'description'>;
 
@@ -15,6 +17,10 @@ export type CardProps = (({ isLoading: true } & Partial<FilterArticle>) | ({ isL
 
 export const Card = memo(
   ({ title, thumbnail, slug, category, author, publishedAt, className, isLoading }: CardProps) => {
+    const { locale } = useRouter();
+
+    moment.locale(locale || 'en');
+
     return (
       <div
         className={cx(
@@ -116,7 +122,7 @@ export const Card = memo(
                   />
                   <p className="ml-2 mr-4 font-medium hover:text-color-primary">{author.data.attributes.name}</p>
                 </Link>
-                <p>{moment(publishedAt).format('MMMM DD, YYYY')}</p>
+                <p>{moment(publishedAt).format(locale === 'vi' ? 'DD MMMM, YYYY' : 'MMMM DD, YYYY')}</p>
               </div>
             )
           )}
