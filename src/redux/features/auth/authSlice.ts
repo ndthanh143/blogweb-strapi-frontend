@@ -45,12 +45,6 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(HYDRATE, (state, action: HydrateAction) => {
-        return {
-          ...state,
-          ...action.payload.auth,
-        };
-      })
       .addCase(postLogin.pending, (state) => {
         state.loading = true;
         state.error = false;

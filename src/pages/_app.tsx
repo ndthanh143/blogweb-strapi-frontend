@@ -14,11 +14,8 @@ import { Seo, AuthProvider, Layouts } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import { LayoutKeys } from '@/dtos/layout.dto';
 import NProgress from 'nprogress';
-import '@/styles/globals.css';
-import { Category } from '@/services/category/category.dto';
-import { BaseResponseData } from '@/dtos/base';
-import { getCategoriesAPI } from '@/services/category/category.service';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
+import '@/styles/globals.css';
 
 export type NextComponentType<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -30,7 +27,6 @@ type MyAppProps = AppProps & {
   };
 };
 export const GlobalContext = createContext<GlobalAttributes>({});
-export const CategoryContext = createContext<BaseResponseData<Category>[]>([]);
 
 NProgress.configure({ showSpinner: false });
 Router.events.on('routeChangeStart', () => NProgress.start());

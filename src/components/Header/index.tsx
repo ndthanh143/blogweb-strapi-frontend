@@ -189,7 +189,7 @@ export function Header() {
           </div>
         ) : (
           <div className="flex justify-center items-center">
-            <span className="px-2 text-3xl lg:text-base lg:hidden" onClick={() => router.push('/login')}>
+            <span className="px-2 text-3xl lg:text-base lg:hidden cursor-pointer" onClick={() => router.push('/login')}>
               <MdLogin />
             </span>
             <span className="hidden lg:flex text-sm">

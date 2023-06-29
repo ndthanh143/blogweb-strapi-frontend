@@ -79,6 +79,8 @@ export default function Post() {
     dispatch(resetState());
 
     dispatch(getCommentsArticle(data.id));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, isPostSuccess, isDeleteSuccess, isUpdateSuccess, isAnswerSuccess]);
 
   const seo: SEO = {
