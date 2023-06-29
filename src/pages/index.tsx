@@ -8,7 +8,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Button, Card, Slider, Seo } from '@/components';
 import { PAGE_SIZE } from '@/constants';
-import { getCategories } from '@/redux/features/categories/categoriesSlice';
 
 export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProps>) {
   const { t } = useTranslation('home');
