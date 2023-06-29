@@ -18,6 +18,7 @@ import '@/styles/globals.css';
 import { Category } from '@/services/category/category.dto';
 import { BaseResponseData } from '@/dtos/base';
 import { getCategoriesAPI } from '@/services/category/category.service';
+import { getCategories } from '@/redux/features/categories/categoriesSlice';
 
 export type NextComponentType<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -40,7 +41,7 @@ Router.events.on('routeChangeError', () => {
 });
 
 const MyApp = ({ Component, ...rest }: MyAppProps) => {
-  const { global, categories } = rest.pageProps;
+  const { global } = rest.pageProps;
 
   const { store } = storeWrapper.useWrappedStore(rest);
 
@@ -64,30 +65,28 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
       <Seo seo={global.attributes.defaultSeo} />
 
       <GlobalContext.Provider value={global.attributes}>
-        <CategoryContext.Provider value={categories}>
-          <ThemeProvider attribute="class">
-            <Provider store={store}>
-              <AuthProvider>
-                <Layout>
-                  <Component {...rest.pageProps} />
-                </Layout>
-              </AuthProvider>
-            </Provider>
-          </ThemeProvider>
-        </CategoryContext.Provider>
+        <ThemeProvider attribute="class">
+          <Provider store={store}>
+            <AuthProvider>
+              <Layout>
+                <Component {...rest.pageProps} />
+              </Layout>
+            </AuthProvider>
+          </Provider>
+        </ThemeProvider>
       </GlobalContext.Provider>
     </>
   );
 };
 
-MyApp.getInitialProps = async (ctx: AppContext) => {
+MyApp.getInitialProps = storeWrapper.getInitialAppProps(({ dispatch }) => async (ctx: AppContext) => {
   const appProps = await App.getInitialProps(ctx);
 
   const { data } = await getGlobalAPI();
 
-  const { data: categories } = await getCategoriesAPI();
+  await dispatch(getCategories());
 
-  return { ...appProps, pageProps: { global: data, categories } };
-};
+  return { ...appProps, pageProps: { global: data } };
+});
 
 export default appWithTranslation(MyApp);
