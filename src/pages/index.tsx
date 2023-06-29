@@ -18,7 +18,7 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
   const { loading, data, nextPage: page, isMaximum } = useAppSelector((state) => state.articles);
 
   const handleLoadMore = () => {
-    dispatch(getMoreArticles({ page, pageSize: PAGE_SIZE }));
+    dispatch(getMoreArticles({ page, pageSize: 1 }));
   };
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
         <div className="lg:flex justify-center">
           <Button
             variant="outlined"
-            className="flex items-center my-8 mx-auto w-full lg:w-fit"
+            className="flex justify-center items-center my-8 mx-auto w-full lg:w-fit"
             onClick={handleLoadMore}
             loading={loading}
             disabled={loading}

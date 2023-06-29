@@ -3,6 +3,8 @@ import { changePasswordAPI, loginAPI, logoutAPI, registerAPI } from '@/services/
 import { getLoggedInUserAPI } from '@/services/user/user.service';
 import { UserResponseData } from '@/services/user/users.dto';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { HYDRATE } from 'next-redux-wrapper';
+import { HydrateAction } from '../users/userSlice';
 
 export interface AuthState {
   user: UserResponseData | null;
@@ -43,6 +45,12 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(HYDRATE, (state, action: HydrateAction) => {
+        return {
+          ...state,
+          ...action.payload.auth,
+        };
+      })
       .addCase(postLogin.pending, (state) => {
         state.loading = true;
         state.error = false;

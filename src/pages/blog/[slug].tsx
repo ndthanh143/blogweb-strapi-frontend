@@ -33,19 +33,14 @@ import {
   TwitterShareButton,
 } from 'react-share';
 import { useTranslation } from 'next-i18next';
+import { useComment } from '@/hooks/useComment';
+import { usePath } from '@/hooks/usePath';
 
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
 export default function Post() {
   const { t } = useTranslation('blog');
+
   const dispatch = useAppDispatch();
-
-  const router = useRouter();
-
-  const { data, loading } = useArticle();
-
-  const { user } = useAuth();
-
-  const [comment, setComment] = useState('');
 
   const { data: comments, loading: commentsLoading } = useAppSelector((state) => state.comments);
 
@@ -57,38 +52,13 @@ export default function Post() {
     loading: commentResLoading,
   } = useAppSelector((state) => state.handleComment);
 
-  const onSubmitHandler = () => {
-    if (user && data) {
-      const payload = {
-        data: { content: comment, user: user.id, article: data.id },
-      };
-      dispatch(postComment(payload));
-    } else {
-      router.push('/login');
-    }
-  };
+  const [comment, setComment] = useState('');
 
-  const onDeleteHandler = (commentId: number) => {
-    if (user && data) {
-      dispatch(deleteComment(commentId));
-    }
-  };
+  const { data, loading } = useArticle();
 
-  const onUpdateCommentHandler = (payload: UpdateCommentPayload) => {
-    dispatch(updateComment(payload));
-  };
+  const { onSubmitHandler, onDeleteHandler, onUpdateCommentHandler, onAnswerCommentHandler } = useComment();
 
-  const onAnswerCommentHandler = (commentId: number, reply: string) => {
-    if (user && data) {
-      const payload = {
-        article: data.id,
-        user: user.id,
-        commentId,
-        reply,
-      };
-      dispatch(answerComment(payload));
-    }
-  };
+  const { currentUrl: shareUrl } = usePath();
 
   useEffect(() => {
     if (isPostSuccess) {
@@ -108,10 +78,8 @@ export default function Post() {
 
     dispatch(resetState());
 
-    if (data) {
-      dispatch(getCommentsArticle(data.id));
-    }
-  }, [dispatch, isPostSuccess, isDeleteSuccess, isUpdateSuccess, isAnswerSuccess, data]);
+    dispatch(getCommentsArticle(data.id));
+  }, [dispatch, isPostSuccess, isDeleteSuccess, isUpdateSuccess, isAnswerSuccess]);
 
   const seo: SEO = {
     metaTitle: data.attributes.title,
@@ -119,10 +87,6 @@ export default function Post() {
     shareImage: data.attributes.thumbnail,
     article: true,
   };
-
-  console.log('hahaha', seo);
-
-  const shareUrl = process.env.NEXT_PUBLIC_SITE_URL + router.asPath;
 
   let content = data?.attributes.content.replaceAll(/\/uploads/g, `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`);
   content = content?.replaceAll(/\/v\d+\//g, '/q_60/');
@@ -191,7 +155,7 @@ export default function Post() {
                 variant="solid"
                 disabled={comment === ''}
                 loading={commentResLoading}
-                onClick={onSubmitHandler}
+                onClick={() => onSubmitHandler(comment, data)}
                 aria-label="Comment - CLick to submit your comment"
               >
                 {t('comment')}
@@ -216,7 +180,7 @@ export default function Post() {
                         key={comment.id}
                         onDelete={() => onDeleteHandler(comment.id)}
                         onUpdate={(newContent) => onUpdateCommentHandler({ commentId: comment.id, newContent })}
-                        onAnswer={(reply) => onAnswerCommentHandler(comment.id, reply)}
+                        onAnswer={(reply) => onAnswerCommentHandler(comment.id, reply, data)}
                         className="py-4"
                       />
 
