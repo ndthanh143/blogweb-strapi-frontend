@@ -17,7 +17,7 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
   const { loading, data, nextPage: page, isMaximum } = useAppSelector((state) => state.articles);
 
   const handleLoadMore = () => {
-    dispatch(getMoreArticles({ page, pageSize: 1 }));
+    dispatch(getMoreArticles({ page, pageSize: PAGE_SIZE }));
   };
 
   useEffect(() => {
