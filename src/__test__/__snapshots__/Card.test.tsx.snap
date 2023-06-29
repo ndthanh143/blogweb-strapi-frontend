@@ -9,6 +9,7 @@ exports[`Card component should render correctly 1`] = `
   >
     <a
       className="w-full h-full block relative"
+      data-cy="post"
       href="/blog/chuong-10-selection-algorithms-2-problems-and-solutions-13-21"
       onClick={[Function]}
       onMouseEnter={[Function]}

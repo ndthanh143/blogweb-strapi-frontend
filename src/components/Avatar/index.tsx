@@ -13,7 +13,7 @@ export type AvatarProps = {
   onClick?: () => void;
 } & (({ isPicker: true } & { onChange: HandleChange }) | ({ isPicker?: false } & { onChange?: HandleChange }));
 
-export function Avatar({ src, width, height, alt, size, isPicker, onClick, onChange }: AvatarProps) {
+export function Avatar({ src, width, height, alt, size, isPicker, onClick, onChange, ...props }: AvatarProps) {
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
@@ -31,6 +31,7 @@ export function Avatar({ src, width, height, alt, size, isPicker, onClick, onCha
 
   return (
     <div
+      {...props}
       className="rounded-full overflow-hidden cursor-pointer relative hover:opacity-60"
       style={{ width: `${width}px`, height: `${height}px` }}
       onClick={onClick}

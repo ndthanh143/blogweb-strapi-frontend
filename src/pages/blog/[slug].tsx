@@ -149,7 +149,11 @@ export default function Post() {
                 size={data.attributes.author.data.attributes.avatar?.data?.attributes.formats.thumbnail + '' || ''}
               />
             </Link>
-            <Link href={`/writer/${data.attributes.author.data.id}`} className="mx-4 font-medium hover:text-blue-500">
+            <Link
+              href={`/writer/${data.attributes.author.data.id}`}
+              className="mx-4 font-medium hover:text-blue-500"
+              data-cy="author"
+            >
               {data.attributes.author.data.attributes.name}
             </Link>
             <p>{moment(data.attributes.publishedAt).format('MMMM DD, YYYY')}</p>

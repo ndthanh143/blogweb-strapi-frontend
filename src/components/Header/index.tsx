@@ -99,6 +99,7 @@ export function Header() {
       <Link
         href="/"
         className="flex justify-center items-center lg:flex lg:h-full text-black dark:text-white lg:col-span-2 order-1"
+        data-cy="logo"
       >
         <Logo />
       </Link>
@@ -151,6 +152,7 @@ export function Header() {
                 alt={(user.avatar && user.avatar.alternativeText) || ''}
                 onClick={toggleDropdown}
                 size={(user.avatar && user.avatar.formats.thumbnail + '') || ''}
+                data-cy="toggle-avatar"
               />
               <Popper isOpen={isOpenDropdown} onClose={closeDropdown} onItemClick={closeDropdown}>
                 <Link
@@ -177,6 +179,7 @@ export function Header() {
                 <div
                   className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white pl-4 py-2 flex items-center pr-8 border-t dark:border-dark-mode"
                   onClick={handleLogout}
+                  data-cy="logout"
                 >
                   <MdLogout />
                   <span className="ml-3">{translate.logout}</span>
