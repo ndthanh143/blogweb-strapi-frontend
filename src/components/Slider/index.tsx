@@ -66,7 +66,7 @@ export function Slider({ data }: SliderProps) {
               alt={item.attributes.thumbnail.data.attributes.alternativeText || ''}
               fill
               style={{
-                objectFit: 'contain',
+                objectFit: 'cover',
               }}
               className="rounded-lg"
               sizes={item.attributes.thumbnail.data.attributes.formats.large + ''}
