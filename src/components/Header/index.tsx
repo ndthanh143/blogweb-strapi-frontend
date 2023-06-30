@@ -70,7 +70,7 @@ export function Header() {
   };
 
   return (
-    <div className="container grid grid-cols-3 lg:grid-cols-12 justify-between mx-auto py-6">
+    <div className="container grid grid-cols-3 lg:grid-cols-12 justify-between items-center mx-auto py-6">
       <div className="lg:hidden col-span-1 z-20 order-1">
         <span className="text-4xl cursor-pointer flex" onClick={toggleMenu}>
           <AiOutlineMenu />
