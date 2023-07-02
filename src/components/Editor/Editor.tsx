@@ -2,11 +2,10 @@ import { Avatar } from '@/services/user/users.dto';
 import { axiosServer } from '@/utils/axiosClient';
 import Cookies from 'js-cookie';
 import { useTheme } from 'next-themes';
-import dynamic from 'next/dynamic';
 import { SetStateAction } from 'react';
 import rehypeSanitize from 'rehype-sanitize';
 
-import MDEditor, { commands } from '@uiw/react-md-editor';
+import MDEditor from '@uiw/react-md-editor';
 
 export interface EditorProps {
   value: string;

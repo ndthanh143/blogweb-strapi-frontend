@@ -46,20 +46,14 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
 
   const Layout = Layouts[Component.Layout] ?? ((page: PropsWithChildren<ReactElement>) => page);
 
+  console.log('hahaha', global.attributes.favicon.data.attributes.format);
+
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon.data.attributes.formats.thumbnail)} />
-        <link
-          rel="shortcut icon"
-          href={getStrapiMedia(global.attributes.favicon.data.attributes.formats.thumbnail)}
-          hrefLang="en"
-        />
-        <link
-          rel="shortcut icon"
-          href={getStrapiMedia(global.attributes.favicon.data.attributes.formats.thumbnail)}
-          hrefLang="vi"
-        />
+        <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon.data.attributes)} />
+        <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon.data.attributes)} hrefLang="en" />
+        <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon.data.attributes)} hrefLang="vi" />
       </Head>
       <Seo seo={global.attributes.defaultSeo} />
 

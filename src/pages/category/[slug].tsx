@@ -12,7 +12,6 @@ import { Card, Pagination, Select } from '@/components';
 import { ORDER_OPTIONS, OrderEnum, PAGE_SIZE } from '@/constants';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
 import { getArticlesByCategory } from '@/redux/features/articles/articlesFilterSlice';
-import { ImSad } from 'react-icons/im';
 import { AiOutlineLoading } from 'react-icons/ai';
 
 export default function Category() {
