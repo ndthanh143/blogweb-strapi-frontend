@@ -11,7 +11,7 @@ import { postArticle, resetState } from '@/redux/features/articles/postArticleSl
 import { ToastContainer, toast } from 'react-toastify';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import { Button, Input, Select } from '@/components';
+import { Button, DropZone, Input, Select } from '@/components';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
 
 const schema = object({
@@ -37,6 +37,7 @@ export default function PostBlog() {
   const {
     register,
     handleSubmit,
+    setValue,
     reset,
     formState: { errors },
     control,
@@ -45,7 +46,7 @@ export default function PostBlog() {
   });
 
   const {
-    field: { onChange, onBlur, ref, value },
+    field: { onChange, value },
   } = useController({ control, name: 'content' });
 
   const onSubmitHandler = (payload: PostArticlePayloadAttributes) => {
@@ -78,22 +79,15 @@ export default function PostBlog() {
   return (
     <form onSubmit={handleSubmit(onSubmitHandler)} className="mb-4">
       <ToastContainer />
-      <div className="mb-4">
-        <span className="text-sm font-thin">
-          <span className="text-red-500">*</span> {translate.title}
-        </span>
-        <Input {...register('title')} placeholder="Title" />
-        {errors.title && <span className="text-red-500">{errors.title.message}</span>}
-      </div>
-      <div className="mb-4 grid grid-cols-2 gap-4">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div className="col-span-1">
           <span className="text-sm font-thin">
-            <span className="text-red-500">*</span> {translate.thumbnail}
+            <span className="text-red-500">*</span> {translate.title}
           </span>
-          <Input {...register('thumbnail')} type="file" />
-          {errors.thumbnail && <span className="text-red-500">{errors.thumbnail.message}</span>}
+          <Input {...register('title')} placeholder="Title" />
+          {errors.title && <span className="text-red-500">{errors.title.message}</span>}
         </div>
-        <div>
+        <div className="col-span-1">
           <span className="text-sm font-thin">
             <span className="text-red-500">*</span> {translate.category}
           </span>
@@ -109,6 +103,13 @@ export default function PostBlog() {
       </div>
       <div className="mb-4">
         <span className="text-sm font-thin">
+          <span className="text-red-500">*</span> {translate.thumbnail}
+        </span>
+        <DropZone onChange={(data) => setValue('thumbnail', data)} />
+        {errors.thumbnail && <span className="text-red-500">{errors.thumbnail.message}</span>}
+      </div>
+      <div className="mb-4">
+        <span className="text-sm font-thin">
           <span className="text-red-500">*</span> {translate.description}
         </span>
         <Input {...register('description')} placeholder="Description" />
@@ -118,7 +119,7 @@ export default function PostBlog() {
         <span className="text-sm font-thin">
           <span className="text-red-500">*</span> {translate.content}
         </span>
-        <Editor onChange={onChange} onBlur={onBlur} value={value || ''} ref={ref} />
+        <Editor value={value} onChange={onChange} />
         {errors.content && <span className="text-red-500">{errors.content.message}</span>}
       </div>
       <div className="flex justify-end">

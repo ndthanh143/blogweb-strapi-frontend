@@ -4,7 +4,7 @@ const { i18n } = require('./next-i18next.config.js');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n,
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
     loader: 'default',
     domains: ['res.cloudinary.com', '127.0.0.1'],
@@ -14,7 +14,8 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const removeImports = require('next-remove-imports')();
+module.exports = removeImports(nextConfig);
 
 // Injected content via Sentry wizard below
 

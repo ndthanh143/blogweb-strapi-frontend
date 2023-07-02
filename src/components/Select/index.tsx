@@ -1,24 +1,18 @@
 import { DetailedHTMLProps, SelectHTMLAttributes, forwardRef } from 'react';
 import cx from 'classnames';
-import { FiChevronDown } from 'react-icons/fi';
 
 export type SelectProps = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>(({ className, ...props }, ref) => {
   return (
-    <div className="relative flex items-center">
-      <select
-        ref={ref}
-        className={cx(
-          'pl-4 py-2 w-full bg-transparent dark:bg-dark-mode dark:text-gray-200 border-2 rounded-lg dark:border-dark-mode placeholder-gray-400 cursor-pointer',
-          className,
-        )}
-        {...props}
-      />
-      {/* <span className="absolute right-2 dark:text-white z-10">
-        <FiChevronDown />
-      </span> */}
-    </div>
+    <select
+      ref={ref}
+      className={cx(
+        'pl-4 py-2 w-full bg-transparent dark:bg-dark-mode dark:text-gray-200 border-2 rounded-lg dark:border-dark-mode placeholder-gray-400 cursor-pointer',
+        className,
+      )}
+      {...props}
+    />
   );
 });
 

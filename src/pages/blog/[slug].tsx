@@ -27,6 +27,8 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useComment } from '@/hooks/useComment';
 import { usePath } from '@/hooks/usePath';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import 'moment/locale/vi';
 
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
@@ -50,6 +52,8 @@ export default function Post() {
   } = useAppSelector((state) => state.handleComment);
 
   const [comment, setComment] = useState('');
+
+  const [value, setValue] = useState('**Hello world!!!**');
 
   const { data, loading } = useArticle();
 
@@ -116,7 +120,7 @@ export default function Post() {
             </Link>
             <Link
               href={`/writer/${data.attributes.author.data.id}`}
-              className="mx-4 font-medium hover:text-blue-500"
+              className="mx-4 font-medium hover:text-color-primary"
               data-cy="author"
             >
               {data.attributes.author.data.attributes.name}
@@ -124,12 +128,9 @@ export default function Post() {
             <p>{moment(data.attributes.publishedAt).format(locale === 'vi' ? 'DD MMMM, YYYY' : 'MMMM DD, YYYY')}</p>
           </div>
           {content && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: content,
-              }}
-              className="my-4"
-            />
+            <section className="rich-text py-6 dark:text-color-medium-dark text-lg font-normal leading-10 space-y-5">
+              <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>
+            </section>
           )}
         </div>
         <div className="my-2">
@@ -147,7 +148,7 @@ export default function Post() {
           <h2 className="font-medium text-2xl mb-4">{t('titleComment')}</h2>
           <div className="border dark:border-dark-mode p-4 mb-8 rounded-lg">
             <div className="flex-1">
-              <Editor onChange={(e) => setComment(e.target.value)} value={comment} />
+              <Editor value={comment} onChange={setComment} />
             </div>
             <div className="flex justify-end mt-4">
               <Button

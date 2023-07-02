@@ -1,93 +1,94 @@
 import { Avatar } from '@/services/user/users.dto';
-import { axiosClient, axiosServer } from '@/utils/axiosClient';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import { FileLoader, UploadAdapter } from '@ckeditor/ckeditor5-upload';
-import type { Editor as IEditor } from '@ckeditor/ckeditor5-core';
-import { ChangeEvent, ChangeEventHandler, forwardRef } from 'react';
+import { axiosServer } from '@/utils/axiosClient';
 import Cookies from 'js-cookie';
+import { useTheme } from 'next-themes';
+import dynamic from 'next/dynamic';
+import { SetStateAction } from 'react';
+import rehypeSanitize from 'rehype-sanitize';
 
-export type EditorProps = {
-  value?: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  onBlur?: ChangeEventHandler<HTMLInputElement>;
+import MDEditor, { commands } from '@uiw/react-md-editor';
+
+export interface EditorProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+const onImagePasted = async (
+  dataTransfer: DataTransfer,
+  setMarkdown: (value: SetStateAction<string | undefined>) => void,
+) => {
+  const files: File[] = [];
+  for (let index = 0; index < dataTransfer.items.length; index += 1) {
+    const file = dataTransfer.files.item(index);
+
+    if (file) {
+      files.push(file);
+    }
+  }
+
+  await Promise.all(
+    files.map(async (file) => {
+      const body = new FormData();
+
+      body.append('files', file);
+
+      const accessToken = Cookies.get('access_token');
+
+      const { data } = await axiosServer.post<Avatar[]>('/upload', body, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: 'Bearer ' + accessToken,
+        },
+      });
+      const insertedMarkdown = insertToTextArea(`![](${data?.[0].url})`);
+      if (!insertedMarkdown) {
+        return;
+      }
+      setMarkdown(insertedMarkdown);
+    }),
+  );
 };
 
-function initPlugin(editor: IEditor) {
-  editor.ui.view.editable.extendTemplate({
-    attributes: {
-      style: {
-        minHeight: '200px',
-      },
-    },
-  });
-}
+const insertToTextArea = (intsertString: string) => {
+  const textarea = document.querySelector('textarea');
+  if (!textarea) {
+    return null;
+  }
 
-function uploadPlugin(editor: IEditor) {
-  editor.plugins.get('FileRepository').createUploadAdapter = function (loader: FileLoader): UploadAdapter {
-    return {
-      upload: function () {
-        return new Promise((resolve, reject) =>
-          loader.file.then(async (file) => {
-            if (file) {
-              const body = new FormData();
+  let sentence = textarea.value;
+  const len = sentence.length;
+  const pos = textarea.selectionStart;
+  const end = textarea.selectionEnd;
 
-              body.append('files', file);
+  const front = sentence.slice(0, pos);
+  const back = sentence.slice(pos, len);
 
-              try {
-                const accessToken = Cookies.get('access_token');
+  sentence = front + intsertString + back;
 
-                const { data } = await axiosServer.post<Avatar[]>('/upload', body, {
-                  headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: 'Bearer ' + accessToken,
-                  },
-                });
+  textarea.value = sentence;
+  textarea.selectionEnd = end + intsertString.length;
 
-                resolve({ default: data?.[0].url });
-              } catch (error) {
-                reject(error);
-              }
-            }
-          }),
-        );
-      },
-    };
-  };
-}
+  return sentence;
+};
 
-const Editor = forwardRef<CKEditor<ClassicEditor>, EditorProps>(({ value, onChange, onBlur, ...props }, ref) => {
+export default function Editor({ value, onChange }: EditorProps) {
+  const { theme } = useTheme();
+
   return (
-    <CKEditor
-      ref={ref}
-      {...props}
-      config={{
-        extraPlugins: [initPlugin, uploadPlugin],
-      }}
-      editor={ClassicEditor}
-      data={value}
-      onChange={(_, editor) => {
-        if (onChange) {
-          const data = editor.getData();
-          onChange({
-            target: {
-              value: data,
-            },
-          } as ChangeEvent<HTMLInputElement>);
-        }
-      }}
-      onBlur={(_, editor) => {
-        if (onBlur) {
-          const data = editor.getData();
-          onBlur({
-            target: {
-              value: data,
-            },
-          } as ChangeEvent<HTMLInputElement>);
-        }
-      }}
-    />
+    <div data-color-mode={theme}>
+      <MDEditor
+        value={value}
+        previewOptions={{
+          rehypePlugins: [[rehypeSanitize]],
+        }}
+        onChange={onChange}
+        onPaste={async (event) => {
+          await onImagePasted(event.clipboardData, onChange);
+        }}
+        onDrop={async (event) => {
+          await onImagePasted(event.dataTransfer, onChange);
+        }}
+      />
+    </div>
   );
-});
-
-export default Editor;
+}

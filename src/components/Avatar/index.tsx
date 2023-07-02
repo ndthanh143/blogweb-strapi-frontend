@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { HiUserCircle } from 'react-icons/hi';
 
-type HandleChange = (data: FileList | null) => void;
+export type HandleChange = (data: FileList | null) => void;
 
 export type AvatarProps = {
   src?: string;

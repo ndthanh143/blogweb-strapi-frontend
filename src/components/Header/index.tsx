@@ -19,6 +19,7 @@ import { useTranslation } from 'next-i18next';
 import { Button, Input, MiniNavigation, Popper, Select, SwitchMode } from '@/components';
 import cx from 'classnames';
 import { useAppSelector } from '@/redux/store';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 export type SearchPayload = {
   searchQuery: string;
@@ -56,9 +57,11 @@ export function Header() {
     account: t('account'),
     logout: t('logout'),
     search: t('search'),
+    langVie: t('langVie'),
+    langEng: t('langEng'),
   };
 
-  const { pathname, asPath, query, locale } = router;
+  const { pathname, asPath, query } = router;
 
   const onSubmitHandler = ({ searchQuery }: SearchPayload) => {
     router.push(`/search?q=${searchQuery}`);
@@ -147,8 +150,8 @@ export function Header() {
                       user.avatar.formats.large,
                   )
                 }
-                width={40}
-                height={40}
+                width={50}
+                height={50}
                 alt={(user.avatar && user.avatar.alternativeText) || ''}
                 onClick={toggleDropdown}
                 size={(user.avatar && user.avatar.formats.thumbnail + '') || ''}
@@ -214,14 +217,7 @@ export function Header() {
         )}
       </div>
       <div className="col-span-1 hidden lg:flex justify-end order-5">
-        <Select
-          defaultValue={locale || 'en'}
-          onChange={(e) => router.push({ pathname, query }, asPath, { locale: e.target.value })}
-          className="w-fit border-blue-400 text-blue-500 outline-none dark:border-primary"
-        >
-          <option value="en">ENG</option>
-          <option value="vi">VIE</option>
-        </Select>
+        <LanguageSwitcher onChange={(lang) => router.push({ pathname, query }, asPath, { locale: lang })} />
       </div>
       <div className="hidden lg:flex col-span-1 flex-row-reverse order-6">
         <SwitchMode onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))} />

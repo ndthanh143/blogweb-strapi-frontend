@@ -11,6 +11,8 @@ import { HTMLAttributes, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useAppSelector } from '@/redux/store';
 import cx from 'classnames';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
 
 export interface ICommentProps extends HTMLAttributes<HTMLDivElement> {
@@ -75,7 +77,7 @@ export function Comment({ data, onDelete = () => {}, onUpdate, onAnswer = () => 
 
       {isUpdating && (
         <div className="py-2">
-          <Editor onChange={(e) => setComment(e.target.value)} value={comment} />
+          <Editor value={comment} onChange={setComment} />
           <div className="flex flex-row-reverse my-4">
             <Button
               variant="solid"
@@ -94,12 +96,11 @@ export function Comment({ data, onDelete = () => {}, onUpdate, onAnswer = () => 
       )}
       {!isUpdating && (
         <>
-          <div
-            className="text-lg font-light my-2"
-            dangerouslySetInnerHTML={{
-              __html: data.content.replaceAll(/\/uploads/g, `${process.env.API_NEXT_PUBLIC_IMAGE_URL}/uploads`),
-            }}
-          ></div>
+          <div className="text-lg font-light my-2">
+            <section className="rich-text py-6">
+              <Markdown remarkPlugins={[remarkGfm]}>{data.content}</Markdown>
+            </section>
+          </div>
           <div className="flex">
             <div className="flex items-center text-xl text-color-thin font-semibold border-r-2 dark:border-dark-mode px-2">
               <span className="opacity-40 hover:!opacity-100 cursor-pointer">
@@ -142,7 +143,7 @@ export function Comment({ data, onDelete = () => {}, onUpdate, onAnswer = () => 
           </div>
           {isAnswering && (
             <div className="py-2">
-              <Editor onChange={(e) => setReply(e.target.value)} value={reply} />
+              <Editor value={reply} onChange={setReply} />
               <div className="flex flex-row-reverse my-4">
                 <Button
                   variant="solid"

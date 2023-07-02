@@ -16,3 +16,6 @@ export * from './SwitchMode';
 export * from './Layout';
 export * from './Seo';
 export * from './Context';
+export * from './ScrollTopButton';
+export * from './LanguageSwitcher';
+export * from './DropZone';

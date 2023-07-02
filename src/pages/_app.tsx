@@ -16,6 +16,8 @@ import { LayoutKeys } from '@/dtos/layout.dto';
 import NProgress from 'nprogress';
 import { getCategories } from '@/redux/features/categories/categoriesSlice';
 import '@/styles/globals.css';
+import '@uiw/react-md-editor/markdown-editor.css';
+import '@uiw/react-markdown-preview/markdown.css';
 import 'moment/locale/vi';
 
 export type NextComponentType<P = {}, IP = P> = NextPage<P, IP> & {

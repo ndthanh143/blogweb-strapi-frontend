@@ -73,13 +73,13 @@ export default function SignUp() {
   }, []);
 
   return (
-    <div className="h-screen flex items-center justify-center text-center">
-      <div className="w-3/4 lg:w-1/2 shadow-2xl dark:shadow-blue-500/50 p-12 bg-white dark:bg-dark-mode rounded-lg overflow-hidden ">
+    <div className="container h-screen flex items-center justify-center text-center">
+      <div className="w-full lg:w-1/2 shadow-2xl dark:shadow-blue-500/50 p-6 sm:p-12 bg-white dark:bg-dark-mode rounded-lg overflow-hidden ">
         <form onSubmit={handleSubmit(onSubmitHandler)}>
           <Link href="/" className="flex justify-center">
             <Logo />
           </Link>
-          <p className="font-bold text-xl lg:text-2xl my-4">{translate.title}</p>
+          <p className="font-bold text-lg sm:text-xl lg:text-2xl my-4">{translate.title}</p>
           {error && <p className="bg-red-50 dark:bg-dark-mode text-red-500 py-2 rounded-md">{translate.error}</p>}
 
           <Input

@@ -68,7 +68,7 @@ export function Footer() {
               ))}
           </div>
           <div className="lg:col-span-2 bg-white text-center px-6 rounded-lg dark:bg-input-dark py-4">
-            <h1 className="font-bold mb-1 dark:text-color-bold-dark">{translate.formTitle}</h1>
+            <h1 className="font-bold mb-1 dark:text-color-bold-dark text-xl">{translate.formTitle}</h1>
             <p className="mb-8 dark:text-color-blur">{translate.formDesc}</p>
             <Input placeholder={translate.formInputPlaceHolder} endDecorator={<FiMail />} />
             <Button variant="solid" type="submit" className="mt-3 w-full" aria-label="Subcribe Email">

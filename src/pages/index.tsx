@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { getHomepageAPI } from '@/services/homepage/homepage.service';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import { Button, Card, Slider, Seo } from '@/components';
+import { Button, Card, Slider, Seo, DropZone } from '@/components';
 import { PAGE_SIZE } from '@/constants';
 
 export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProps>) {
@@ -51,7 +51,6 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
           />
         ))}
       </div>
-
       {!isMaximum && (
         <div className="lg:flex justify-center">
           <Button

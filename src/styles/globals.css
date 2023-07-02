@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 @import url('react-toastify/dist/ReactToastify.css');
-@import url('./ckeditor.css');
 @import url('nprogress/nprogress.css');
-
+@import url('./Editor.css');
 :root {
-  --ck-color-base-background: black;
-  --ck-color-link: #67b4fb;
+  --color-canvas-default: #ffffff;
 }
 
 * {
@@ -21,4 +19,15 @@ body {
 
 div[aria-hidden='true'] {
   visibility: hidden;
+}
+
+.dark .rich-text h1,
+.dark .rich-text h2,
+.dark .rich-text h3,
+.dark .rich-text h4 {
+  @apply text-color-bold-dark;
+}
+
+.rich-text a {
+  @apply text-blue-500 hover:underline;
 }

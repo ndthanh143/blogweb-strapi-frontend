@@ -1,0 +1,15 @@
+.w-md-editor-toolbar {
+  background-color: transparent !important;
+}
+
+.w-md-editor {
+  background-color: transparent !important;
+}
+
+.wmde-markdown {
+  background-color: transparent !important;
+}
+
+.w-md-editor-area {
+  height: 100%;
+}

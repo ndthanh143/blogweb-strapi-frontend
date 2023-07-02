@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -45,19 +47,50 @@ module.exports = {
         'spin-fast': 'spin .5s linear infinite',
       },
     },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     container: {
       padding: {
-        DEFAULT: '0rem',
-        sm: '2rem',
-        lg: '4rem',
+        DEFAULT: '1rem',
+        sm: '1rem',
+        md: '3rem',
+        lg: '2rem',
         xl: '5rem',
         '2xl': '6rem',
       },
     },
-    backgroundImage: {
-      vi: "url('/vi.png')",
-      eng: "url('/eng.png')",
-    },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        h1: {
+          fontSize: theme('fontSize.4xl'),
+          fontWeight: theme('fontWeight.extrabold'),
+          opacity: theme('opacity-100'),
+          textColor: theme('textColor.color-bold'),
+        },
+        h2: {
+          fontSize: theme('fontSize.3xl'),
+          fontWeight: theme('fontWeight.bold'),
+          textColor: theme('textColor.color-bold'),
+          textColor: theme('textColor.color-bold'),
+          opacity: theme('opacity-90'),
+        },
+        h3: {
+          fontSize: theme('fontSize.2xl'),
+          fontWeight: theme('fontWeight.semibold'),
+          textColor: theme('textColor.color-bold'),
+          opacity: theme('opacity-90'),
+        },
+        h4: { fontSize: theme('fontSize.xl'), fontWeight: theme('fontWeight.medium'), opacity: theme('opacity-90') },
+        h5: { fontSize: theme('fontSize.lg'), fontWeight: theme('fontWeight.normal'), opacity: theme('opacity-90') },
+      });
+    }),
+  ],
 };
