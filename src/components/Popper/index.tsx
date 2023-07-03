@@ -28,7 +28,7 @@ export function Popper({ isOpen, onClose, onItemClick = () => {}, className, chi
     <div
       ref={popperRef}
       className={cx(
-        'absolute -bottom-1 right-0 translate-y-full bg-white dark:bg-dark-mode text-color-thin dark:text-color-thin-dark font-semibold z-10 border dark:border-dark-mode min-w-max rounded-md overflow-hidden origin-top-right transition-all duration-400',
+        'absolute -bottom-1 right-0 translate-y-full bg-white dark:bg-dark-mode text-color-thin dark:text-color-thin-dark font-semibold border dark:border-dark-mode min-w-max rounded-md overflow-hidden origin-top-right transition-all duration-400 z-10',
         isOpen ? 'scale-1' : ' scale-0',
         className,
       )}

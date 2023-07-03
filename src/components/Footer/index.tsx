@@ -47,10 +47,10 @@ export function Footer() {
             <h1 className="text-color-bold dark:text-color-bold-dark text-base font-bold mb-3">
               {translate.quickLink}
             </h1>
-            <Link href="/" className="mb-2 hover:text-red-500 block">
+            <Link href="/" className="mb-2 hover:text-color-primary block">
               {translate.home}
             </Link>
-            <Link href={`/category/${data?.[0]?.attributes.slug}`} className="mb-2 hover:text-red-500 block">
+            <Link href={`/category/${data?.[0]?.attributes.slug}`} className="mb-2 hover:text-color-primary block">
               {translate.blog}
             </Link>
           </div>
@@ -60,7 +60,7 @@ export function Footer() {
               data.map((item) => (
                 <Link
                   href={`/category/${item.attributes.slug}`}
-                  className="mb-2 hover:text-red-500 block w-full"
+                  className="mb-2 hover:text-color-primary block w-full"
                   key={item.id}
                 >
                   {item.attributes.name}
@@ -81,13 +81,13 @@ export function Footer() {
             <Logo />
           </div>
           <div className="lg:col-span-1 lg:flex justify-between text-sm text-color-medium dark:text-color-medium-dark">
-            <Link href="/" className="px-4 py-4 hover:text-red-500">
+            <Link href="/" className="px-4 py-4 hover:text-color-primary">
               {translate.terms}
             </Link>
-            <Link href="/" className="px-4 py-4 hover:text-red-500">
+            <Link href="/" className="px-4 py-4 hover:text-color-primary">
               {translate.privacy}
             </Link>
-            <Link href="/" className="px-4 py-4 hover:text-red-500">
+            <Link href="/" className="px-4 py-4 hover:text-color-primary">
               {translate.cookie}
             </Link>
           </div>

@@ -81,7 +81,7 @@ export function Header() {
           <AiOutlineMenu />
         </span>
       </div>
-      <MiniNavigation isOpen={isOpenMenu}>
+      <MiniNavigation isOpen={isOpenMenu} className="top-20">
         <div className="w-full pt-2 px-4">
           <div className="col-span-5 text-color-bold dark:text-white ">
             <Link

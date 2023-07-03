@@ -3,6 +3,7 @@ import { SetStateAction } from 'react';
 import rehypeSanitize from 'rehype-sanitize';
 import { uploadImageAPI } from '@/services/media/media.service';
 import MDEditor from '@uiw/react-md-editor';
+import { MarkdownComponents } from '../Markdown';
 
 export interface EditorProps {
   value: string;

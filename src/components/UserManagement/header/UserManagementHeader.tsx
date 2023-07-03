@@ -17,14 +17,14 @@ export default function UserManagementHeader(props: UserManagementHeaderProps) {
   const { user, logout } = useAuth();
 
   return (
-    <div className="grid p-4 mx-2 fixed top-0 bg-white dark:bg-dark-mode overflow-hidden grid-cols-10 z-10 w-full">
-      <Link href="/" className="flex items-center col-span-3">
+    <div className="grid grid-cols-10 p-4 mx-2 fixed top-0 bg-white dark:bg-dark-mode  z-10 w-full">
+      <Link href="/" className="flex items-center col-start-4 col-end-7 lg:col-span-3">
         <Logo />
       </Link>
       {user && (
-        <div className="items-center flex col-span-7 text-sm justify-end">
+        <div className="items-center flex col-span-4 lg:col-span-7 text-sm justify-end">
           <div className="relative flex items-center">
-            <p className="mx-4">Welcome {user.name}!</p>
+            <p className="hidden lg:block mx-4">Welcome {user.name}!</p>
             <Avatar
               src={user.avatar && getStrapiMedia(user.avatar.formats.thumbnail)}
               width={40}

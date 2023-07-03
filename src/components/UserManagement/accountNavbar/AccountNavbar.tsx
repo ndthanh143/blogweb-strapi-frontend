@@ -70,11 +70,45 @@ export const SubMenuItem = ({ children, href, className, ...props }: NavbarSubMe
 export default function AccountNavbar({ className }: HTMLAttributes<HTMLDivElement>) {
   const [isCollapse, setIsCollapse] = useState(false);
 
+  const { value: isOpenMenu, setFalse: closeMenu, toggle: toggleMenu } = useBoolean(false);
+
   return (
     <div>
+      <div className="fixed top-6 left-5 lg:hidden col-span-1 z-20">
+        <span className="text-2xl cursor-pointer flex" onClick={toggleMenu}>
+          <AiOutlineMenu />
+        </span>
+      </div>
+      <MiniNavigation isOpen={isOpenMenu} className="top-16">
+        <div className="w-full pt-2 px-4">
+          <div className="col-span-5 text-color-bold dark:text-white ">
+            <SubMenuItem href="/account" onClick={closeMenu}>
+              <MdHome />
+              <span className={cx('mx-4', isCollapse && 'hidden')}>Home</span>
+            </SubMenuItem>
+            <NavbarSubMenu
+              startIcons={<BsPersonVcardFill />}
+              title="My Profile"
+              className="py-2"
+              isCollapse={isCollapse}
+            >
+              <NavbarSubMenuItem href="/account/profile/personal" isCollapse onClick={closeMenu}>
+                <BsPersonFill />
+                <span className={cx('mx-4', isCollapse && 'hidden')}>Personal Info</span>
+              </NavbarSubMenuItem>
+            </NavbarSubMenu>
+            <NavbarSubMenu startIcons={<MdSecurity />} title="Security" className="py-2" isCollapse={isCollapse}>
+              <NavbarSubMenuItem href="/account/security/password" onClick={closeMenu}>
+                <HiKey />
+                <span className={cx('mx-4', isCollapse && 'hidden')}> Password</span>
+              </NavbarSubMenuItem>
+            </NavbarSubMenu>
+          </div>
+        </div>
+      </MiniNavigation>
       <div
         className={cx(
-          'flex text-base text-color-bold dark:text-color-bold-dark transition-all duration-100 disable flex-col h-screen justify-between',
+          'hidden lg:flex text-base text-color-bold dark:text-color-bold-dark transition-all duration-100 disable flex-col h-screen justify-between',
           isCollapse && '!text-2xl',
           className,
         )}

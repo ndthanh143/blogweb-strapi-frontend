@@ -136,7 +136,7 @@ export default function Search() {
             {users.map((item) => (
               <Link
                 href={`/writer/${item.id}`}
-                className="flex hover: dark:hover:bg-blue-300 p-4 rounded-md"
+                className="flex hover:bg-color-primary dark:hover:bg-color-primary-hover p-4 rounded-md"
                 key={item.id}
               >
                 <Avatar
