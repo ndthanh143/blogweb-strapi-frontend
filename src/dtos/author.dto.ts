@@ -1,5 +1,5 @@
 import { BasePaginationResponse, BaseSingleResponse } from './base';
-import { Media } from './media.dto';
+import { Media } from '../services/media/media.dto';
 
 export type AuthorResponse = BaseSingleResponse<Author>;
 

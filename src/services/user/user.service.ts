@@ -1,9 +1,9 @@
 import { PaginationOption } from '@/dtos/api.dto';
-import { Avatar, UpdateUserPayload, UserResponseData } from '@/services/user/users.dto';
+import { UpdateUserPayload, UserResponseData } from '@/services/user/users.dto';
 import { axiosClient, axiosServer } from '@/utils/axiosClient';
 import { AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
-import { AuthResponse } from '../auth/auth.dto';
+import { ImageUpload } from '../media/media.dto';
 
 export const getUserDetailAPI = async (id: number) => {
   const { data } = await axiosServer.get<UserResponseData>(`/users/${id}`, {
@@ -61,7 +61,7 @@ export const updateUserAPI = async (user: UserResponseData, payload: UpdateUserP
     const formData = new FormData();
     formData.append('files', avatar?.[0]);
 
-    const { data } = await axiosServer.post<Avatar[]>('/upload', formData, { headers });
+    const { data } = await axiosServer.post<ImageUpload[]>('/upload', formData, { headers });
 
     response = await axiosClient.put(`/users/${user.id}`, { ...payload, avatar: data?.[0].id });
   } else {

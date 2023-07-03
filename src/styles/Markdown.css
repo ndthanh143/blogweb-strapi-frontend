@@ -1,0 +1,14 @@
+.rich-text h1,
+h2,
+h3,
+h4 {
+  @apply dark:text-color-bold-dark;
+}
+
+.rich-text a {
+  @apply text-blue-500 hover:underline;
+}
+
+.rich-text pre {
+  overflow-x: auto;
+}

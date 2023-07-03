@@ -1,4 +1,4 @@
-import { ImageType } from '@/dtos/media.dto';
+import { ImageType } from '@/services/media/media.dto';
 
 export function getStrapiURL(path: string = '') {
   return `${process.env.NEXT_PUBLIC_API_URL}${path}`;

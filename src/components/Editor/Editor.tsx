@@ -1,10 +1,7 @@
-import { Avatar } from '@/services/user/users.dto';
-import { axiosServer } from '@/utils/axiosClient';
-import Cookies from 'js-cookie';
 import { useTheme } from 'next-themes';
 import { SetStateAction } from 'react';
 import rehypeSanitize from 'rehype-sanitize';
-
+import { uploadImageAPI } from '@/services/media/media.service';
 import MDEditor from '@uiw/react-md-editor';
 
 export interface EditorProps {
@@ -27,18 +24,8 @@ const onImagePasted = async (
 
   await Promise.all(
     files.map(async (file) => {
-      const body = new FormData();
+      const data = await uploadImageAPI(file);
 
-      body.append('files', file);
-
-      const accessToken = Cookies.get('access_token');
-
-      const { data } = await axiosServer.post<Avatar[]>('/upload', body, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: 'Bearer ' + accessToken,
-        },
-      });
       const insertedMarkdown = insertToTextArea(`![](${data?.[0].url})`);
       if (!insertedMarkdown) {
         return;
@@ -80,6 +67,7 @@ export default function Editor({ value, onChange }: EditorProps) {
         previewOptions={{
           rehypePlugins: [[rehypeSanitize]],
         }}
+        preview="edit"
         onChange={onChange}
         onPaste={async (event) => {
           await onImagePasted(event.clipboardData, onChange);

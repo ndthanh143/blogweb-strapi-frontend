@@ -1,5 +1,5 @@
 import { CommentAttribute, UpdateCommentPayload } from '@/services/comment/comment.dto';
-import { Avatar, Button, Popper } from '@/components';
+import { Avatar, Button, Markdown, Popper } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import moment from 'moment';
 import Link from 'next/link';
@@ -11,8 +11,6 @@ import { HTMLAttributes, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useAppSelector } from '@/redux/store';
 import cx from 'classnames';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
 
 export interface ICommentProps extends HTMLAttributes<HTMLDivElement> {
@@ -96,11 +94,9 @@ export function Comment({ data, onDelete = () => {}, onUpdate, onAnswer = () => 
       )}
       {!isUpdating && (
         <>
-          <div className="text-lg font-light my-2">
-            <section className="rich-text py-6">
-              <Markdown remarkPlugins={[remarkGfm]}>{data.content}</Markdown>
-            </section>
-          </div>
+          <section className="rich-text py-6">
+            <Markdown markdown={data.content} />
+          </section>
           <div className="flex">
             <div className="flex items-center text-xl text-color-thin font-semibold border-r-2 dark:border-dark-mode px-2">
               <span className="opacity-40 hover:!opacity-100 cursor-pointer">
@@ -112,7 +108,10 @@ export function Comment({ data, onDelete = () => {}, onUpdate, onAnswer = () => 
               </span>
             </div>
             <div className="flex items-center ml-2 ">
-              <p className="text-blue-500 hover:underline hover:decoration-1 cursor-pointer" onClick={openAnswer}>
+              <p
+                className="text-color-medium dark:text-color-medium-dark hover:underline hover:decoration-1 cursor-pointer"
+                onClick={openAnswer}
+              >
                 Answer
               </p>
               {user && user.id === data.user.data.id && (

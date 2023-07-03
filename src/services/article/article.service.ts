@@ -1,10 +1,10 @@
 import { BaseResponse } from '@/dtos/base';
 import { Article, ArticlesResponse, PostArticlePayload } from '@/services/article/article.dto';
 import { axiosClient, axiosServer } from '@/utils/axiosClient';
-import { Avatar } from '../user/users.dto';
 import { PaginationOption } from '@/dtos/api.dto';
 import { OrderEnum } from '@/constants';
 import Cookies from 'js-cookie';
+import { ImageUpload } from '../media/media.dto';
 
 export const getArticlesAPI = async ({ page, pageSize }: PaginationOption = {}) => {
   const { data } = await axiosServer.get<ArticlesResponse>('/articles', {
@@ -121,7 +121,7 @@ export const postArticleAPI = async (payload: PostArticlePayload) => {
     Authorization: 'Bearer ' + accessToken,
   };
 
-  const res = await axiosServer.post<Avatar[]>('/upload', formData, { headers });
+  const res = await axiosServer.post<ImageUpload[]>('/upload', formData, { headers });
 
   const { data } = await axiosClient.post<BaseResponse<Article>>('/articles', {
     data: { ...payload.data, thumbnail: res.data?.[0].id },

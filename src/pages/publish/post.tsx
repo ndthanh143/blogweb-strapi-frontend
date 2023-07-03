@@ -49,6 +49,10 @@ export default function PostBlog() {
     field: { onChange, value },
   } = useController({ control, name: 'content' });
 
+  const {
+    field: { value: thumbnail },
+  } = useController({ control, name: 'thumbnail' });
+
   const onSubmitHandler = (payload: PostArticlePayloadAttributes) => {
     if (user) {
       payload.author = user.id;
@@ -105,7 +109,7 @@ export default function PostBlog() {
         <span className="text-sm font-thin">
           <span className="text-red-500">*</span> {translate.thumbnail}
         </span>
-        <DropZone onChange={(data) => setValue('thumbnail', data)} />
+        <DropZone {...register('thumbnail')} files={thumbnail} />
         {errors.thumbnail && <span className="text-red-500">{errors.thumbnail.message}</span>}
       </div>
       <div className="mb-4">

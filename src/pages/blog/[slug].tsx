@@ -1,4 +1,4 @@
-import { Avatar, Label, Seo, Comment, Button, Popper } from '@/components';
+import { Avatar, Label, Seo, Comment, Button, Popper, Markdown } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import moment from 'moment';
 import { storeWrapper, useAppDispatch, useAppSelector } from '@/redux/store';
@@ -27,8 +27,6 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useComment } from '@/hooks/useComment';
 import { usePath } from '@/hooks/usePath';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import 'moment/locale/vi';
 
 const Editor = dynamic(() => import('@/components/Editor/Editor'), { ssr: false });
@@ -129,7 +127,7 @@ export default function Post() {
           </div>
           {content && (
             <section className="rich-text py-6 dark:text-color-medium-dark text-lg font-normal leading-10 space-y-5">
-              <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>
+              <Markdown markdown={content} />
             </section>
           )}
         </div>

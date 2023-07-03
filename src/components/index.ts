@@ -19,3 +19,4 @@ export * from './Context';
 export * from './ScrollTopButton';
 export * from './LanguageSwitcher';
 export * from './DropZone';
+export * from './Markdown';

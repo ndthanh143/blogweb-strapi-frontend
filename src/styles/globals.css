@@ -4,6 +4,8 @@
 @import url('react-toastify/dist/ReactToastify.css');
 @import url('nprogress/nprogress.css');
 @import url('./Editor.css');
+@import url('./Markdown.css');
+
 :root {
   --color-canvas-default: #ffffff;
 }
@@ -19,15 +21,4 @@ body {
 
 div[aria-hidden='true'] {
   visibility: hidden;
-}
-
-.dark .rich-text h1,
-.dark .rich-text h2,
-.dark .rich-text h3,
-.dark .rich-text h4 {
-  @apply text-color-bold-dark;
-}
-
-.rich-text a {
-  @apply text-blue-500 hover:underline;
 }

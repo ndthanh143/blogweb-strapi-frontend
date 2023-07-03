@@ -46,8 +46,6 @@ const MyApp = ({ Component, ...rest }: MyAppProps) => {
 
   const Layout = Layouts[Component.Layout] ?? ((page: PropsWithChildren<ReactElement>) => page);
 
-  console.log('hahaha', global.attributes.favicon.data.attributes.format);
-
   return (
     <>
       <Head>

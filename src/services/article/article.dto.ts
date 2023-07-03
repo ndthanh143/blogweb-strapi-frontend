@@ -1,6 +1,6 @@
 import { BasePaginationResponse, BaseSingleResponse } from '../../dtos/base';
 import { CategoryResponse } from '../category/category.dto';
-import { Media } from '../../dtos/media.dto';
+import { Media } from '../media/media.dto';
 import { UserResponse } from '../user/users.dto';
 import { AuthorResponse } from '@/dtos/author.dto';
 

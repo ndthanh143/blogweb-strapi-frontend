@@ -1,5 +1,5 @@
 import { Article } from '../article/article.dto';
-import { Formats } from '../../dtos/media.dto';
+import { ImageUpload } from '../media/media.dto';
 import { BaseSingleResponse } from '@/dtos/base';
 
 export type UserResponse = BaseSingleResponse<UserResponseData>;
@@ -18,29 +18,8 @@ export interface UserResponseData {
   name: string;
   role: Role;
   articles: Article[];
-  avatar?: Avatar;
+  avatar?: ImageUpload;
 }
-
-export interface Avatar {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl: null;
-  provider: string;
-  provider_metadata: null;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
 export interface Role {
   id: number;
   name: string;

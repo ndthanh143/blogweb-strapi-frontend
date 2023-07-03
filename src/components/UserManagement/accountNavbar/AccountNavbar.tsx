@@ -8,6 +8,9 @@ import useBoolean from '@/hooks/useBoolean';
 import { HiKey } from 'react-icons/hi';
 import { useRouter } from 'next/navigation';
 import cx from 'classnames';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { MiniNavigation } from '@/components/MiniNavigation';
+import Link from 'next/link';
 
 export interface NavbarSubMenuProps extends HTMLAttributes<HTMLDivElement> {
   startIcons?: ReactNode;
@@ -71,7 +74,7 @@ export default function AccountNavbar({ className }: HTMLAttributes<HTMLDivEleme
     <div>
       <div
         className={cx(
-          'text-base text-color-bold dark:text-color-bold-dark transition-all duration-100 disable flex flex-col h-screen justify-between',
+          'flex text-base text-color-bold dark:text-color-bold-dark transition-all duration-100 disable flex-col h-screen justify-between',
           isCollapse && '!text-2xl',
           className,
         )}

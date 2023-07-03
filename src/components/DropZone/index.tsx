@@ -1,30 +1,45 @@
 import cx from 'classnames';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, DragEvent, forwardRef, DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import Image from 'next/image';
-import { HandleChange } from '../Avatar';
 
-export interface DropZoneProps {
-  onChange: HandleChange;
+export interface DropZoneProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+  files: FileList;
 }
 
-export function DropZone({ onChange, ...props }: DropZoneProps) {
-  const [file, setFile] = useState<File | null>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+export const DropZone = forwardRef<HTMLInputElement, DropZoneProps>(({ files, ...props }: DropZoneProps, ref) => {
+  const [previewUrl, setPreviewUrl] = useState<string | null>();
+
+  const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPreviewUrl(reader.result as string);
+    };
+    reader.readAsDataURL(e.dataTransfer.files[0]);
+  };
 
   useEffect(() => {
-    if (file) {
+    if (files) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreviewUrl(reader.result as string);
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(files[0]);
     } else {
       setPreviewUrl(null);
     }
-  }, [file]);
+  }, [files]);
 
   return (
-    <div className="rounded-lg overflow-hidden justify-center w-full h-64 relative cursor-pointer">
+    <div
+      className="rounded-lg overflow-hidden justify-center w-full h-64 relative cursor-pointer"
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
       {previewUrl && (
         <Image
           src={previewUrl}
@@ -52,9 +67,9 @@ export function DropZone({ onChange, ...props }: DropZoneProps) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
             ></path>
           </svg>
@@ -63,17 +78,8 @@ export function DropZone({ onChange, ...props }: DropZoneProps) {
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
         </div>
-        <input
-          id="dropzone-file"
-          type="file"
-          className="hidden"
-          onChange={(e) => {
-            setFile(e.target.files && e.target.files?.[0]);
-            onChange(e.target.files);
-          }}
-          {...props}
-        />
+        <input ref={ref} id="dropzone-file" type="file" className="hidden" {...props} />
       </label>
     </div>
   );
-}
+});

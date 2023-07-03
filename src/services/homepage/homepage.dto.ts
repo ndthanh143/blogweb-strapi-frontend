@@ -1,4 +1,4 @@
-import { Media } from '../../dtos/media.dto';
+import { Media } from '../media/media.dto';
 
 export interface HomepageResponse {
   data: HomepageData;
