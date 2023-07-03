@@ -6,7 +6,6 @@ import {
   CommentsResponse,
   UpdateCommentPayload,
 } from './comment.dto';
-import Cookies from 'js-cookie';
 
 export const getCommentAPI = async (commentId: number) => {
   const { data } = await axiosClient.get<CommentResponse>(`/comments/${commentId}`);
