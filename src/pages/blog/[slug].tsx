@@ -1,4 +1,4 @@
-import { Avatar, Label, Seo, Comment, Button, Popper, Markdown } from '@/components';
+import { Avatar, Label, Seo, Comment, Button, Markdown } from '@/components';
 import { getStrapiMedia } from '@/utils/media';
 import moment from 'moment';
 import { storeWrapper, useAppDispatch, useAppSelector } from '@/redux/store';

@@ -2,7 +2,7 @@ import { HomepageData } from '@/services/homepage/homepage.dto';
 import { getArticles, getMoreArticles } from '@/redux/features/articles/articlesSlice';
 import { storeWrapper, useAppDispatch, useAppSelector } from '@/redux/store';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getHomepageAPI } from '@/services/homepage/homepage.service';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';

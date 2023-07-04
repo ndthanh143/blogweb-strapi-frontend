@@ -1,6 +1,6 @@
 import Logo from '@/assets/logo';
 import Link from 'next/link';
-import { FaFacebook, FaGithub, FaGoogle, FaLock } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';

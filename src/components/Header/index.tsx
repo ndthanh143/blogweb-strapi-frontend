@@ -20,8 +20,6 @@ import { Button, Input, MiniNavigation, Popper, Select, SwitchMode } from '@/com
 import cx from 'classnames';
 import { useAppSelector } from '@/redux/store';
 import LanguageSwitcher from '../LanguageSwitcher';
-import { BsBell } from 'react-icons/bs';
-import { FiSettings } from 'react-icons/fi';
 
 export type SearchPayload = {
   searchQuery: string;
