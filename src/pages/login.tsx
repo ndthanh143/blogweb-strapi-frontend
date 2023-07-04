@@ -1,6 +1,6 @@
 import Logo from '@/assets/logo';
 import Link from 'next/link';
-import { FaLock } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaGoogle, FaLock } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';
@@ -21,7 +21,6 @@ const schema = object({
   identifier: string().required('Required'),
   password: string().required('Required'),
 });
-
 export default function Login() {
   const { t } = useTranslation('login');
 
@@ -99,29 +98,6 @@ export default function Login() {
               </Link>
             </div>
           </form>
-          {/* <div>
-            <h1 className="font-semibold text-xl relative text-blue-500 py-4">Login with others ways</h1>
-            <div className="grid grid-cols-3 gap-4 text-xs lg:text-lg">
-              <Button variant="outlined" className="col-span-1 flex items-center justify-center">
-                <span className="mx-2 text-blue-600">
-                  <FaFacebook />
-                </span>
-                <span className="mr-2"> Facebook</span>
-              </Button>
-              <Button variant="outlined" className="col-span-1 flex items-center justify-center">
-                <span className="mx-2 text-red-500">
-                  <FaGoogle />
-                </span>
-                <span className="mr-2"> Google</span>
-              </Button>
-              <Button variant="outlined" className="col-span-1 flex items-center justify-center">
-                <span className="mx-2">
-                  <FaGithub />
-                </span>
-                <span className="mr-2"> Github</span>
-              </Button>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

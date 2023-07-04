@@ -26,7 +26,8 @@
     "src/redux/store.ts",
     "jest.config.js",
     "babel.config.js",
-    "src/components/Markdown"
+    "src/components/Markdown",
+    "src/pages/api/auth/[...nextauth].js"
   ],
   "exclude": ["node_modules", "./cypress.config.ts", "cypress", "**/*.cy.tsx"]
 }

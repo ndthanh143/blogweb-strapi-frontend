@@ -2,6 +2,8 @@ import { getMe, postChangePassword, postLogin, postLogout, postRegister } from '
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { ChangePasswordPayload, LoginPayload, RegisterPayload } from '@/services/auth/auth.dto';
 import { UserResponseData } from '@/services/user/users.dto';
+import Cookies from 'js-cookie';
+import { useSession } from 'next-auth/react';
 import { PropsWithChildren, createContext, useEffect } from 'react';
 
 type AuthContextProps = {
