@@ -1,3 +1,7 @@
+export interface BaseResponse<T> {
+  data: BaseResponseData<T>[];
+  meta: Meta;
+}
 export interface BasePaginationResponse<T> {
   data: BaseResponseData<T>[];
   meta: Meta;

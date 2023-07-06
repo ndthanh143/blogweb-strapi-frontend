@@ -56,11 +56,11 @@ export default function UserManagementHeader(props: UserManagementHeaderProps) {
                 <span className="ml-3">Account</span>
               </Link>
               <Link
-                href="/"
+                href="/account/your-posts"
                 className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white pl-4 py-2 flex items-center pr-8"
               >
                 <MdNote />
-                <span className="ml-3">your posts</span>
+                <span className="ml-3">Your posts</span>
               </Link>
               <div
                 className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white pl-4 py-2 flex items-center pr-8 border-t dark:border-dark-mode"

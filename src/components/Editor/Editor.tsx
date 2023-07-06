@@ -5,7 +5,7 @@ import { uploadImageAPI } from '@/services/media/media.service';
 import MDEditor from '@uiw/react-md-editor';
 
 export interface EditorProps {
-  value: string;
+  value?: string;
   onChange: (value: string) => void;
 }
 

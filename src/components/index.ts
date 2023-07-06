@@ -20,3 +20,4 @@ export * from './ScrollTopButton';
 export * from './LanguageSwitcher';
 export * from './DropZone';
 export * from './Markdown';
+export * from './DeleteModal';

@@ -8,6 +8,7 @@ import { object, ref, string } from 'yup';
 import { resetStateChangePassword } from '@/redux/features/auth/authSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { Button, Input } from '@/components';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const schema = object({
   currentPassword: string()

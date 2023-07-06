@@ -24,6 +24,11 @@ export type PostArticlePayload = {
   data: PostArticlePayloadAttributes;
 };
 
+export type UpdateArticlePayload = {
+  articleId: number;
+  data: PostArticlePayloadAttributes;
+};
+
 export type PostArticlePayloadAttributes = {
   title: string;
   description: string;

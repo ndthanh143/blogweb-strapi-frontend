@@ -1,4 +1,5 @@
 import Logo from '@/assets/logo';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Account() {
   return (

@@ -20,8 +20,9 @@ const initialState: ArticlesState = {
   pageCount: 0,
 };
 
-export const getArticlesByWriter = createAsyncThunk('articles/getArticlesByWriter', (id: number) =>
-  getArticlesByWriterAPI(id, {}),
+export const getArticlesByWriter = createAsyncThunk(
+  'articles/getArticlesByWriter',
+  ({ id, options }: FilterArticlesProps) => getArticlesByWriterAPI(id, options),
 );
 
 export const getArticlesByCategory = createAsyncThunk(
@@ -45,8 +46,9 @@ export const articlesFilterSlice = createSlice({
         state.loading = true;
       })
       .addCase(getArticlesByWriter.fulfilled, (state, action) => {
-        state.data = action.payload;
+        state.data = action.payload.data;
         state.loading = false;
+        state.pageCount = action.payload.meta.pagination.pageCount;
       })
       .addCase(getArticlesByWriter.rejected, (state) => {
         state.loading = false;

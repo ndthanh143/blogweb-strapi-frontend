@@ -10,6 +10,7 @@ import { mixed, object, string } from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, Button, Input } from '@/components';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const schema = object({
   avatar: mixed(),

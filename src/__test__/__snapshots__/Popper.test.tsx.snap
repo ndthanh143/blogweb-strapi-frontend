@@ -2,7 +2,7 @@
 
 exports[`Popper component should render correctly 1`] = `
 <div
-  className="absolute -bottom-1 right-0 translate-y-full bg-white dark:bg-dark-mode text-color-thin dark:text-color-thin-dark font-semibold z-10 border dark:border-dark-mode min-w-max rounded-md overflow-hidden origin-top-right transition-all duration-400  scale-0"
+  className="absolute -bottom-1 right-0 translate-y-full bg-white dark:bg-dark-mode text-color-thin dark:text-color-thin-dark font-semibold border dark:border-dark-mode min-w-max rounded-md overflow-hidden origin-top-right transition-all duration-400 z-10  scale-0"
 >
   <div
     onClick={[Function]}

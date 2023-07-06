@@ -185,6 +185,13 @@ export function Header() {
                     <ImProfile />
                     <span className="ml-3">{translate.account}</span>
                   </Link>
+                  <Link
+                    href="/account/your-posts"
+                    className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white pl-4 py-2 flex items-center pr-8"
+                  >
+                    <MdNote />
+                    <span className="ml-3">{translate.yourPost}</span>
+                  </Link>
                   <div
                     className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white pl-4 py-2 flex items-center pr-8 border-t dark:border-dark-mode"
                     onClick={handleLogout}

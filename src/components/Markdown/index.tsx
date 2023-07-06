@@ -1,6 +1,4 @@
-import { PropsWithChildren } from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
@@ -66,9 +64,5 @@ export const MarkdownComponents: object = {
 };
 
 export function Markdown({ markdown }: IMarkdownProps) {
-  return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={MarkdownComponents}>
-      {markdown}
-    </ReactMarkdown>
-  );
+  return <ReactMarkdown components={MarkdownComponents}>{markdown}</ReactMarkdown>;
 }

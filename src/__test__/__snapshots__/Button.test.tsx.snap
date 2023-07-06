@@ -2,7 +2,7 @@
 
 exports[`Button component should render correctly 1`] = `
 <button
-  className="bg-color-primary text-white hover:bg-color-primary-hover active:color-primary-active flex justify-center items-center border-transparent py-2 px-4 rounded-md font-semibold border"
+  className="bg-color-primary text-color-bold hover:bg-color-primary-hover active:color-primary-active flex justify-center items-center border-transparent py-2 px-4 rounded-md font-semibold border"
 >
   Click me!
 </button>

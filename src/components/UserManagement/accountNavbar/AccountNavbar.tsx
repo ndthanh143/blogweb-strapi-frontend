@@ -2,7 +2,13 @@
 
 import { HTMLAttributes, ReactNode, useState } from 'react';
 import { BsPersonFill, BsPersonVcardFill } from 'react-icons/bs';
-import { MdHome, MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight, MdSecurity } from 'react-icons/md';
+import {
+  MdHome,
+  MdKeyboardDoubleArrowLeft,
+  MdKeyboardDoubleArrowRight,
+  MdOutlineArticle,
+  MdSecurity,
+} from 'react-icons/md';
 import { TfiAngleDown } from 'react-icons/tfi';
 import useBoolean from '@/hooks/useBoolean';
 import { HiKey } from 'react-icons/hi';
@@ -10,7 +16,6 @@ import { useRouter } from 'next/navigation';
 import cx from 'classnames';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { MiniNavigation } from '@/components/MiniNavigation';
-import Link from 'next/link';
 
 export interface NavbarSubMenuProps extends HTMLAttributes<HTMLDivElement> {
   startIcons?: ReactNode;
@@ -103,6 +108,10 @@ export default function AccountNavbar({ className }: HTMLAttributes<HTMLDivEleme
                 <span className={cx('mx-4', isCollapse && 'hidden')}> Password</span>
               </NavbarSubMenuItem>
             </NavbarSubMenu>
+            <SubMenuItem href="/account/your-posts">
+              <MdOutlineArticle />
+              <span className={cx('mx-4', isCollapse && 'hidden')}>Your posts</span>
+            </SubMenuItem>
           </div>
         </div>
       </MiniNavigation>
@@ -130,6 +139,10 @@ export default function AccountNavbar({ className }: HTMLAttributes<HTMLDivEleme
               <span className={cx('mx-4', isCollapse && 'hidden')}> Password</span>
             </NavbarSubMenuItem>
           </NavbarSubMenu>
+          <SubMenuItem href="/account/your-posts">
+            <MdOutlineArticle />
+            <span className={cx('mx-4', isCollapse && 'hidden')}>Your posts</span>
+          </SubMenuItem>
         </div>
         <SubMenuItem className="border-t border-r border-b" onClick={() => setIsCollapse(!isCollapse)}>
           {isCollapse ? <MdKeyboardDoubleArrowRight /> : <MdKeyboardDoubleArrowLeft />}

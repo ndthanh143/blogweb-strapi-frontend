@@ -10,6 +10,7 @@ import { getUsersAPI } from '@/services/user/user.service';
 import { SEO } from '@/services/homepage/homepage.dto';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Avatar, Card, Seo, SocialMedia } from '@/components';
+import { PAGE_SIZE } from '@/constants';
 
 export default function Writer() {
   const router = useRouter();
@@ -102,7 +103,7 @@ export const getStaticProps: GetStaticProps = storeWrapper.getStaticProps(
 
       await dispatch(getUserDetail(writerId));
 
-      await dispatch(getArticlesByWriter(writerId));
+      await dispatch(getArticlesByWriter({ id: writerId, options: { page: 1, pageSize: PAGE_SIZE } }));
 
       return {
         props: {
