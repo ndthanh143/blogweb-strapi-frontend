@@ -33,6 +33,13 @@ export default function Home({ homepage }: InferGetStaticPropsType<GetStaticProp
 
   return (
     <div className="my-4">
+      <button
+        onClick={() => {
+          window.location.href = 'googlechrome://tracnghiemtinhcach.vn';
+        }}
+      >
+        Go to another app
+      </button>
       <Seo seo={homepage.attributes.seo} />
       <Slider data={data.slice(0, PAGE_SIZE)} />
       <h1 className="text-xl font-bold mt-16 mb-4">{translate.titleContent}</h1>
